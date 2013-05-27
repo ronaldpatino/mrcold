@@ -6,6 +6,7 @@
     <!-- Bootstrap -->
     <?php wp_head(); ?>
 
+    <link rel="stylesheet" type="text/css" href="<?php bloginfo('template_url'); ?>/assets/css/style.css" />
     <script src="assets/js/holder.js"></script>
     <script type="text/javascript" src="<?php bloginfo('template_url'); ?>/assets/scripts/holder.js"></script>
 </head>
@@ -242,7 +243,7 @@
 
             <div class="row">
                 <!-- Publicidad -->
-                <div class="span4">
+                <div class="span4 publicidad">
                     <div class="thumbnail">
                         <img data-src="holder.js/300x200" alt="">
                     </div>
