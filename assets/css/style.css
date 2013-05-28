@@ -1,3 +1,7 @@
+body{
+    background-color: #e9edf0;
+}
+
 .publicidad{
     margin-bottom: 20px;
 }
@@ -6,13 +10,13 @@
 .container-narrow {
     margin: 0 auto;
     max-width: 940px;
+    background-color: #ffffff;
 }
 
 /*Top items */
 
 .top-navbar{
-
-    margin-bottom: 0px;
+    margin-bottom: 0 !important;
 }
 
 .top-navbar-inner{
@@ -22,7 +26,7 @@
     border-bottom: 1px solid #006bae;
     border-radius: 0;
     box-shadow: none;
-    min-height: 40px;
+    min-height: 20px;
     padding-left: 20px;
     padding-right: 20px;
     padding-top: 5px;
@@ -30,20 +34,26 @@
 
 .img-top
 {
-    margin: 10px 3px 3px 3px;
+    margin: 0 3px 3px 3px;
     width: 25px;
     height: 25px;
 }
 
 
 .p-top{
-    margin-top: 10px;
+    margin: 0 0 0 0;
 }
 
+form.navbar-search {
+    margin-top: -1px;
+}
 
+form.navbar-search .input-append {
+    margin-bottom: 0px;
+}
 .navbar-search .search-query {
     border-radius: 5px 0 0 5px;
-    padding: 4px 14px;
+    padding: 2px 10px;
     border-right-style: none;
 }
 
@@ -54,6 +64,7 @@
     border: 1px solid #CCCCCC;
     box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset;
     border-left-style: none;
+    padding: 2px;
 }
 
 /* End top items*/
@@ -239,3 +250,23 @@ div.navbar-menu .nav > li > a.opinion:hover, div.subnav .nav > li.active > a.opi
 
 
 /*Fin mas leido*/
+
+
+/*Incio Titulares*/
+
+.noticia-principal{
+
+    width: 600px;
+    margin-left: 10px;
+}
+.noticia-principal > h3{
+    display: block;
+    font-family: 'TheSerifOffice',georgia,serif;
+    font-size: 1.98em;
+    font-weight: normal;
+    line-height: 105%;
+    margin: 0 0 1rem;
+
+}
+
+/*Fin titulares*/

@@ -18,20 +18,20 @@
 
     <div class="navbar top-navbar">
         <div class="navbar-inner top-navbar-inner">
-                <div class="control-group">
-                    <div class="controls">
-                        <form class="navbar-search pull-right">
-                            <div class="input-append">
-                                <input  class="search-query" placeholder="Search" type="text" class="span2"><span class="add-on"><i class="icon-search"> </i></span>
-                            </div>
-                        </form>
-                    </div>
-                    <p class="pull-left p-top">Some interesting content</p>
-                    <img class="pull-left img-top" src="https://s3.amazonaws.com/jetstrap-site/images/what_icon.png">
-                    <a href="#"><img title="El Mercurio Noticias Ecuador Facebook" alt="El Mercurio Noticias Ecuador Facebook" class="pull-right img-top" src="<?php bloginfo('template_url'); ?>/assets/img/facebook.png"></a>
-                    <a href="#"><img title="El Mercurio Noticias Ecuador Twitter"  alt="El Mercurio Noticias Ecuador Twitter" class="pull-right img-top" src="<?php bloginfo('template_url'); ?>/assets/img/twitter.png"></a>
-                    <a href="#"><img title="El Mercurio Noticias Ecuador YouTube" alt="El Mercurio Noticias Ecuador YouTube" class="pull-right img-top" src="<?php bloginfo('template_url'); ?>/assets/img/youtube.png"></a>
+            <div class="control-group">
+                <div class="controls">
+                    <form class="navbar-search pull-right">
+                        <div class="input-append">
+                            <input  class="search-query" placeholder="Buscar en El Mercurio" type="text" class="span2"><span class="add-on"><i class="icon-search"> </i></span>
+                        </div>
+                    </form>
                 </div>
+                <p class="pull-left p-top">Some interesting content</p>
+                <img class="pull-left img-top" src="https://s3.amazonaws.com/jetstrap-site/images/what_icon.png">
+                <a href="#"><img title="El Mercurio Noticias Ecuador Facebook" alt="El Mercurio Noticias Ecuador Facebook" class="pull-right img-top" src="<?php bloginfo('template_url'); ?>/assets/img/facebook.png"></a>
+                <a href="#"><img title="El Mercurio Noticias Ecuador Twitter"  alt="El Mercurio Noticias Ecuador Twitter" class="pull-right img-top" src="<?php bloginfo('template_url'); ?>/assets/img/twitter.png"></a>
+                <a href="#"><img title="El Mercurio Noticias Ecuador YouTube" alt="El Mercurio Noticias Ecuador YouTube" class="pull-right img-top" src="<?php bloginfo('template_url'); ?>/assets/img/youtube.png"></a>
+            </div>
 
 
 
@@ -79,7 +79,21 @@
 
     <!-- Inicio Titulares -->
     <div class="row-fluid">
-        <div class="span8">...</div>
+        <div class="span8">
+            <div class="noticia-principal">
+                <h3>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
+                    labore
+                </h3>
+                <img data-src="holder.js/600x324">
+
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
+                    labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                    laboris nisi ut aliquip ex ea commodo consequat.
+                </p>
+            </div>
+        </div>
         <div class="span4">...</div>
     </div>
 
