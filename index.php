@@ -13,22 +13,25 @@
 <body>
 
 <body>
-<div class="container">
+<div class="container top-container">
     <div class="navbar">
-        <div class="navbar-inner">
+        <div class="navbar-inner top-menu">
             <div class="container">
-                <div class="pull-left">
-                    Some interesting content
-                </div>
+                <div class="pull-left "><p class="fecha-top">Some interesting content</p></div>
                 <div class="control-group">
                     <div class="controls">
-                        <input class="pull-right" type="search">
+                        <form class="navbar-search pull-right">
+                            <div class="input-append">
+                                <input  class="search-query" placeholder="Search" type="text" class="span2"><span class="add-on"><i class="icon-search"> </i></span>
+                            </div>
+                        </form>
                     </div>
                 </div>
-                <img class="pull-left" src="https://s3.amazonaws.com/jetstrap-site/images/what_icon.png" width="20">
-                <img class="pull-right" src="https://s3.amazonaws.com/jetstrap-site/images/what_icon.png" width="20">
-                <img class="pull-right" src="https://s3.amazonaws.com/jetstrap-site/images/what_icon.png" width="20">
-                <img class="pull-right" src="https://s3.amazonaws.com/jetstrap-site/images/what_icon.png" width="20">
+
+                <img class="pull-left img-top" src="https://s3.amazonaws.com/jetstrap-site/images/what_icon.png" width="20">
+                <img class="pull-right img-top" src="https://s3.amazonaws.com/jetstrap-site/images/what_icon.png" width="20">
+                <img class="pull-right img-top" src="https://s3.amazonaws.com/jetstrap-site/images/what_icon.png" width="20">
+                <img class="pull-right img-top" src="https://s3.amazonaws.com/jetstrap-site/images/what_icon.png" width="20">
             </div>
         </div>
     </div>
@@ -37,8 +40,8 @@
 
 <div class="container">
     <!-- Main hero unit for a primary marketing message or call to action -->
-    <div class="hero-unit">
-        <h1>logo</h1>
+    <div class="hero-unit logo">
+        <h1>LOGO</h1>
     </div>
 
     <!-- Inicio Menu -->
