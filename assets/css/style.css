@@ -3,19 +3,25 @@
 }
 
 
-/*Top items */
-
-.top-container{
-    height: 55px;
+.container-narrow {
+    margin: 0 auto;
+    max-width: 940px;
 }
 
-.top-menu{
+/*Top items */
+
+.top-navbar{
+
+    margin-bottom: 0px;
+}
+
+.top-navbar-inner{
     background-color: #ffffff;
     background-image: none;
     border: 0px;
-    border-bottom: 1px solid blue;
+    border-bottom: 1px solid #006bae;
     border-radius: 0;
-    box-shadow: 0 0 4px rgba(0, 0, 0, 0.067);
+    box-shadow: none;
     min-height: 40px;
     padding-left: 20px;
     padding-right: 20px;
@@ -24,13 +30,14 @@
 
 .img-top
 {
-    margin: -3px 3px 3px 3px;
+    margin: 10px 3px 3px 3px;
     width: 20px;
     height: 20px;
 }
 
-.fecha-top{
-    margin-top: 8px;
+
+.p-top{
+    margin-top: 10px;
 }
 
 
@@ -53,8 +60,139 @@
 
 /*logo items*/
 .logo {
-    padding:40px;
-    margin-bottom: 5px;
+    text-align: center;
 }
 
 /*end logo items*/
+
+/*Menu*/
+
+.navbar-menu{
+    background-color: #ffffff;
+    background-image: none;
+    border-top: 1px solid #006bae;
+    border-left: 1px solid #006bae;
+    border-bottom: 5px solid #006bae;
+    border-right: 1px solid #006bae;
+    border-radius: 0;
+    box-shadow: none;
+    min-height: 40px;
+    padding-left: 0px;
+    padding-right: 20px;
+    font-weight: bold;
+}
+
+div.navbar-menu .nav > li > a:hover, div.subnav .nav > li.active > a:hover {
+    background-color: #006bae;
+    border-color: transparent;
+}
+
+div.navbar-menu .nav > li > a, div.subnav .nav > li.active > a:hover {
+    border-right: 1px solid #006bae;
+}
+
+.navbar .nav > li > a {
+    padding: 10px 13px;
+}
+
+.navbar .nav > li > a {
+    text-decoration: none;
+    text-shadow: none;
+}
+
+.cuenca{
+    color:#ff0024 !important;
+}
+
+div.navbar-menu .nav > li > a.cuenca:hover, div.subnav .nav > li.active > a.cuenca:hover {
+    background-color: #ff0024;
+    border-color: transparent;
+    color: #FFFFFF !important;
+}
+
+
+.deportes{
+    color:#bb731e !important;
+}
+
+div.navbar-menu .nav > li > a.deportes:hover, div.subnav .nav > li.active > a.deportes:hover {
+    background-color: #bb731e;
+    border-color: transparent;
+    color: #FFFFFF !important;
+}
+
+
+
+.sucesos{
+    color:#aa3c3b !important;
+}
+
+div.navbar-menu .nav > li > a.sucesos:hover, div.subnav .nav > li.active > a.sucesos:hover {
+    background-color: #aa3c3b;
+    border-color: transparent;
+    color: #FFFFFF !important;
+}
+
+.nacionales{
+    color:#020056 !important;
+}
+
+div.navbar-menu .nav > li > a.nacionales:hover, div.subnav .nav > li.active > a.nacionales:hover {
+    background-color: #020056;
+    border-color: transparent;
+    color: #FFFFFF !important;
+}
+
+
+.austro{
+    color:#139916 !important;
+}
+div.navbar-menu .nav > li > a.austro:hover, div.subnav .nav > li.active > a.austro:hover {
+    background-color: #020056;
+    border-color: transparent;
+    color: #FFFFFF !important;
+}
+
+
+
+.cultura{
+    color:#c92727 !important;
+}
+div.navbar-menu .nav > li > a.cultura:hover, div.subnav .nav > li.active > a.cultura:hover {
+    background-color: #c92727;
+    border-color: transparent;
+    color: #FFFFFF !important;
+}
+
+
+.farandula{
+    color:#613fed !important;
+}
+div.navbar-menu .nav > li > a.farandula:hover, div.subnav .nav > li.active > a.farandula:hover {
+    background-color: #613fed;
+    border-color: transparent;
+    color: #FFFFFF !important;
+}
+
+
+.mundo{
+    color:#0a70d5 !important;
+}
+
+div.navbar-menu .nav > li > a.mundo:hover, div.subnav .nav > li.active > a.mundo:hover {
+    background-color: #0a70d5;
+    border-color: transparent;
+    color: #FFFFFF !important;
+}
+
+.opinion{
+    color:#7d7d7d !important;
+}
+div.navbar-menu .nav > li > a.opinion:hover, div.subnav .nav > li.active > a.opinion:hover {
+    background-color: #7d7d7d;
+    border-color: transparent;
+    color: #FFFFFF !important;
+}
+
+
+/*end Menu*/
