@@ -27,10 +27,10 @@
                         </form>
                     </div>
                     <p class="pull-left p-top">Some interesting content</p>
-                    <img class="pull-left img-top" src="https://s3.amazonaws.com/jetstrap-site/images/what_icon.png" width="20">
-                    <img class="pull-right img-top" src="https://s3.amazonaws.com/jetstrap-site/images/what_icon.png" width="20">
-                    <img class="pull-right img-top" src="https://s3.amazonaws.com/jetstrap-site/images/what_icon.png" width="20">
-                    <img class="pull-right img-top" src="https://s3.amazonaws.com/jetstrap-site/images/what_icon.png" width="20">
+                    <img class="pull-left img-top" src="https://s3.amazonaws.com/jetstrap-site/images/what_icon.png">
+                    <a href="#"><img title="El Mercurio Noticias Ecuador Facebook" alt="El Mercurio Noticias Ecuador Facebook" class="pull-right img-top" src="<?php bloginfo('template_url'); ?>/assets/img/facebook.png"></a>
+                    <a href="#"><img title="El Mercurio Noticias Ecuador Twitter"  alt="El Mercurio Noticias Ecuador Twitter" class="pull-right img-top" src="<?php bloginfo('template_url'); ?>/assets/img/twitter.png"></a>
+                    <a href="#"><img title="El Mercurio Noticias Ecuador YouTube" alt="El Mercurio Noticias Ecuador YouTube" class="pull-right img-top" src="<?php bloginfo('template_url'); ?>/assets/img/youtube.png"></a>
                 </div>
 
 
@@ -70,13 +70,20 @@
 
     <!-- Mas leido -->
     <ul class="breadcrumb">
-        <li><a href="#">Home</a> <span class="divider">/</span></li>
-        <li><a href="#">Library</a> <span class="divider">/</span></li>
-        <li class="active">Data</li>
+        <li> Lo M&aacute;s Le&iacute;do </li>
+        <li><a href="#">Library</a> <span class="divider">&nbsp;</span></li>
+        <li><a href="#">Library</a> <span class="divider">&nbsp;</span></li>
+        <li><a href="#">Library</a> <span class="divider">&nbsp;</span></li>
     </ul>
     <!-- Fin Mas leido -->
 
+    <!-- Inicio Titulares -->
+    <div class="row-fluid">
+        <div class="span8">...</div>
+        <div class="span4">...</div>
+    </div>
 
+    <!-- Fin titulares -->
 
 
 </div>
