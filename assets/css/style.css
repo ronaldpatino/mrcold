@@ -257,7 +257,8 @@ div.navbar-menu .nav > li > a.opinion:hover, div.subnav .nav > li.active > a.opi
 .noticia-principal{
 
     width: 600px;
-    margin-left: 10px;
+    margin: 0 0 20px 10px;
+
 }
 .noticia-principal > h3{
     display: block;
@@ -269,4 +270,162 @@ div.navbar-menu .nav > li > a.opinion:hover, div.subnav .nav > li.active > a.opi
 
 }
 
+.noticia-principal > p{
+
+}
+
 /*Fin titulares*/
+
+/*Noticias Secundarias*/
+
+.row-fluid [class*="noticia-secundaria"]:first-child{
+    width: 294px;
+    margin: 0 0 0 10px;
+    position: relative;
+    float: left;
+}
+
+.row-fluid [class*="noticia-secundaria"]{
+    width: 294px;
+    margin: 0 0 0 10px;
+    margin-right: 10px;
+    position: relative;
+    float: right;
+}
+
+.noticia-secundaria > img.cuenca {
+    border-top: 2px solid #ff0024;
+}
+
+.noticia-secundaria > img.deportes {
+    border-top: 2px solid #bb731e;
+}
+
+
+.noticia-secundaria > img.sucesos {
+    border-top: 2px solid #aa3c3b;
+}
+
+.noticia-secundaria > img.nacionales {
+    border-top: 2px solid #020056;
+}
+
+.noticia-secundaria > img.austro {
+    border-top: 2px solid #139916;
+}
+
+.noticia-secundaria > img.cultura {
+    border-top: 2px solid #c92727;
+}
+
+.noticia-secundaria > img.farandula {
+    border-top: 2px solid #613fed;
+}
+
+.noticia-secundaria > img.mundo {
+    border-top: 2px solid #0a70d5;
+}
+
+.noticia-secundaria > img.opinion {
+    border-top: 2px solid #0a70d5;
+}
+
+
+
+
+
+
+
+
+.noticia-secundaria > h3{
+    display: block;
+    font-family: 'TheSerifOffice',georgia,serif;
+    font-size: 1.2em;
+    font-weight: normal;
+    line-height: 105%;
+    margin: 0 0 5px 0;
+
+}
+
+.noticia-secundaria > p{
+    font-size: 12px;
+
+}
+/*Fin Noticias Secundarias*/
+
+/*Ultimas noticias*/
+
+.ultimas-noticias{
+    margin-left: 10px !important;
+}
+
+.widget-box {
+    background: none repeat scroll 0 0 #F9F9F9;
+    border-left: 1px solid #CDCDCD;
+    border-right: 1px solid #CDCDCD;
+    border-top: 1px solid #CDCDCD;
+    clear: both;
+    margin-bottom: 16px;
+    margin-top: 0px;
+    position: relative;
+}
+
+.widget-title, .modal-header, .table th, div.dataTables_wrapper .ui-widget-header, .ui-dialog .ui-dialog-titlebar {
+    background-color: #EFEFEF;
+    background-image: -moz-linear-gradient(center top , #FDFDFD 0%, #EAEAEA 100%);
+    border-bottom: 1px solid #CDCDCD;
+    height: 36px;
+}
+
+.widget-content {
+    border-bottom: 1px solid #CDCDCD;
+    padding: 12px 15px;
+}
+
+.nopadding {
+    padding: 0 !important;
+}
+
+.widget-title h5 {
+    color: #666666;
+    float: left;
+    font-size: 12px;
+    font-weight: bold;
+    line-height: 12px;
+    margin: 0;
+    padding: 12px;
+    text-shadow: 0 1px 0 #FFFFFF;
+}
+
+.new-update:first-child {
+    border-top: medium none;
+}
+.new-update {
+    border-top: 1px solid #DDDDDD;
+    padding: 10px 10px;
+}
+
+.new-update span {
+    display: block;
+}
+
+.new-update a {
+    font-size: 12px;
+    line-height: 1px;
+}
+.update-done, .update-alert, .update-notice {
+    display: block;
+    float: left;
+    max-width: 88%;
+}
+
+.new-update .update-date {
+    color: #000000;
+    float: right;
+    margin: 0 2px 0 0;
+    text-align: center;
+    width: 30px;
+}
+
+
+/*Fin Ultimas Noticias*/

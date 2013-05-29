@@ -27,7 +27,6 @@
                     </form>
                 </div>
                 <p class="pull-left p-top"><?php echo get_fecha(); get_clima();?></p>
-
                 <a href="#"><img title="El Mercurio Noticias Ecuador Facebook" alt="El Mercurio Noticias Ecuador Facebook" class="pull-right img-top" src="<?php bloginfo('template_url'); ?>/assets/img/facebook.png"></a>
                 <a href="#"><img title="El Mercurio Noticias Ecuador Twitter"  alt="El Mercurio Noticias Ecuador Twitter" class="pull-right img-top" src="<?php bloginfo('template_url'); ?>/assets/img/twitter.png"></a>
                 <a href="#"><img title="El Mercurio Noticias Ecuador YouTube" alt="El Mercurio Noticias Ecuador YouTube" class="pull-right img-top" src="<?php bloginfo('template_url'); ?>/assets/img/youtube.png"></a>
@@ -78,7 +77,7 @@
     <!-- Fin Mas leido -->
 
     <!-- Inicio Titulares -->
-    <div class="row-fluid">
+    <div class="row-fluid" >
         <div class="span8">
             <div class="noticia-principal">
                 <h3>
@@ -93,8 +92,275 @@
                     laboris nisi ut aliquip ex ea commodo consequat.
                 </p>
             </div>
+            <!-- Inicio Noticias Secundarias-->
+            <div class="row-fluid">
+                <div class="span12">
+                    <div class="noticia-secundaria">
+                        <h3>
+                            Consectetur adipisicing elit, sed do eiusmod tempor incididunt ut.
+                        </h3>
+                        <img class="cuenca" data-src="holder.js/294x154">
+
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
+                            labore et dolore magna aliqua.
+                        </p>
+                    </div>
+
+
+                    <div class="noticia-secundaria">
+                        <h3>
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                        </h3>
+                        <img class="deportes" data-src="holder.js/294x154">
+
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
+                            labore et dolore magna aliqua.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <!-- Fin Noticias Secundarias-->
+
+            <!-- Inicio Noticias Secundarias-->
+            <div class="row-fluid">
+                <div class="span12">
+                    <div class="noticia-secundaria">
+                        <h3>
+                            Consectetur adipisicing elit, sed do eiusmod tempor incididunt ut.
+                        </h3>
+                        <img class="austro" data-src="holder.js/294x154">
+
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
+                            labore et dolore magna aliqua.
+                        </p>
+                    </div>
+
+
+                    <div class="noticia-secundaria">
+                        <h3>
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                        </h3>
+                        <img class="nacionales" data-src="holder.js/294x154">
+
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
+                            labore et dolore magna aliqua.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <!-- Fin Noticias Secundarias-->
+
+            <!-- Inicio Noticias Secundarias-->
+            <div class="row-fluid">
+                <div class="span12">
+                    <div class="noticia-secundaria">
+                        <h3>
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                        </h3>
+                        <img class="deportes" data-src="holder.js/294x154">
+
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
+                            labore et dolore magna aliqua.
+                        </p>
+                    </div>
+
+
+                    <div class="noticia-secundaria">
+                        <h3>
+                            Consectetur adipisicing elit, sed do eiusmod tempor incididunt ut.
+                        </h3>
+                        <img class="sucesos" data-src="holder.js/294x154">
+
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
+                            labore et dolore magna aliqua.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <!-- Fin Noticias Secundarias-->
+
+            <!-- Inicio Noticias Secundarias-->
+            <div class="row-fluid">
+                <div class="span12">
+                    <div class="noticia-secundaria">
+                        <h3>
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                        </h3>
+                        <img class="farandula" data-src="holder.js/294x154">
+
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
+                            labore et dolore magna aliqua.
+                        </p>
+                    </div>
+
+
+                    <div class="noticia-secundaria">
+                        <h3>
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                        </h3>
+                        <img class="deportes" data-src="holder.js/294x154">
+
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
+                            labore et dolore magna aliqua.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <!-- Fin Noticias Secundarias-->
         </div>
-        <div class="span4">...</div>
+        <div class="span4 ultimas-noticias">
+            <div class="row-fluid">
+                <!-- Inicio Bloque de Noticias -->
+                <div class="span12 widget-box">
+
+                    <div class="widget-title">
+                        <h5>Ultimas Noticia</h5>
+                    </div>
+
+                    <!-- Incio Noticia -->
+                    <div class="widget-content nopadding updates">
+                        <div class="new-update clearfix">
+                            <div class="update-done">
+                                <a title="" href="#">Lorem ipsum dolor sit amet, consectetur adipisicing elit. </a>
+                            </div>
+                            <div class="update-date"><span class="update-day">08:00</span></div>
+
+                        </div>
+                    </div>
+                    <!-- Fin Noticia -->
+                    <!-- Incio Noticia -->
+                    <div class="widget-content nopadding updates">
+                        <div class="new-update clearfix">
+                            <div class="update-done">
+                                <a title="" href="#">Consectetur adipisicing elit, sed do eiusmod tempor incididunt ut. </a>
+                            </div>
+                            <div class="update-date"><span class="update-day">08:00</span></div>
+
+                        </div>
+                    </div>
+                    <!-- Fin Noticia -->
+                    <!-- Incio Noticia -->
+                    <div class="widget-content nopadding updates">
+                        <div class="new-update clearfix">
+                            <div class="update-done">
+                                <a title="" href="#">Lorem ipsum dolor sit amet, consectetur adipisicing elit. </a>
+                            </div>
+                            <div class="update-date"><span class="update-day">08:00</span></div>
+
+                        </div>
+                    </div>
+                    <!-- Fin Noticia -->
+                    <!-- Incio Noticia -->
+                    <div class="widget-content nopadding updates">
+                        <div class="new-update clearfix">
+                            <div class="update-done">
+                                <a title="" href="#">Consectetur adipisicing elit, sed do eiusmod tempor incididunt ut. </a>
+                            </div>
+                            <div class="update-date"><span class="update-day">08:00</span></div>
+
+                        </div>
+                    </div>
+                    <!-- Fin Noticia -->
+                    <!-- Incio Noticia -->
+                    <div class="widget-content nopadding updates">
+                        <div class="new-update clearfix">
+                            <div class="update-done">
+                                <a title="" href="#">Lorem ipsum dolor sit amet, consectetur adipisicing elit. </a>
+                            </div>
+                            <div class="update-date"><span class="update-day">08:00</span></div>
+
+                        </div>
+                    </div>
+                    <!-- Fin Noticia -->
+                    <!-- Incio Noticia -->
+                    <div class="widget-content nopadding updates">
+                        <div class="new-update clearfix">
+                            <div class="update-done">
+                                <a title="" href="#">Consectetur adipisicing elit, sed do eiusmod tempor incididunt ut. </a>
+                            </div>
+                            <div class="update-date"><span class="update-day">08:00</span></div>
+
+                        </div>
+                    </div>
+                    <!-- Fin Noticia -->
+                    <!-- Incio Noticia -->
+                    <div class="widget-content nopadding updates">
+                        <div class="new-update clearfix">
+                            <div class="update-done">
+                                <a title="" href="#">Lorem ipsum dolor sit amet, consectetur adipisicing elit. </a>
+                            </div>
+                            <div class="update-date"><span class="update-day">08:00</span></div>
+
+                        </div>
+                    </div>
+                    <!-- Fin Noticia -->
+                    <!-- Incio Noticia -->
+                    <div class="widget-content nopadding updates">
+                        <div class="new-update clearfix">
+                            <div class="update-done">
+                                <a title="" href="#">Lorem ipsum dolor sit amet, consectetur adipisicing elit. </a>
+                            </div>
+                            <div class="update-date"><span class="update-day">08:00</span></div>
+
+                        </div>
+                    </div>
+                    <!-- Fin Noticia -->
+                    <!-- Incio Noticia -->
+                    <div class="widget-content nopadding updates">
+                        <div class="new-update clearfix">
+                            <div class="update-done">
+                                <a title="" href="#">Lorem ipsum dolor sit amet, consectetur adipisicing elit. </a>
+                            </div>
+                            <div class="update-date"><span class="update-day">08:00</span></div>
+
+                        </div>
+                    </div>
+                    <!-- Fin Noticia -->
+                    <!-- Incio Noticia -->
+                    <div class="widget-content nopadding updates">
+                        <div class="new-update clearfix">
+                            <div class="update-done">
+                                <a title="" href="#">Lorem ipsum dolor sit amet, consectetur adipisicing elit. </a>
+                            </div>
+                            <div class="update-date"><span class="update-day">08:00</span></div>
+
+                        </div>
+                    </div>
+                    <!-- Fin Noticia -->
+                    <!-- Incio Noticia -->
+                    <div class="widget-content nopadding updates">
+                        <div class="new-update clearfix">
+                            <div class="update-done">
+                                <a title="" href="#">Lorem ipsum dolor sit amet, consectetur adipisicing elit. </a>
+                            </div>
+                            <div class="update-date"><span class="update-day">08:00</span></div>
+
+                        </div>
+                    </div>
+                    <!-- Fin Noticia -->
+
+                </div>
+                <!-- Fin Bloque de Noticias -->
+                <!-- Inicio Bloque de Noticias -->
+                <div class="row-fluid">
+                    <div class="span12">
+                        <img data-src="holder.js/295x295">
+                    </div>
+                </div>
+            </div>
+
+
+
+
+        </div>
     </div>
 
     <!-- Fin titulares -->
