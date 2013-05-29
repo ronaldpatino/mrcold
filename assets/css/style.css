@@ -524,3 +524,71 @@ div.navbar-menu .nav > li > a.opinion:hover, div.subnav .nav > li.active > a.opi
     line-height: 105%;
 }
 /*Fin Tricolumna*/
+
+/*Sociales*/
+
+.container-narrow-sociales {
+    margin: 0 auto;
+    max-width: 940px;
+    margin-bottom: 20px;
+}
+
+.sociales {
+    background-color: #014E9C;
+}
+
+.sociales-derecha {
+    background-color: #014E9C;
+    margin-left: 1px !important;
+    width: 33.9% !important;
+}
+
+.sociales-thumbnails{
+    width: 599px !important;
+    padding-left: 10px;
+}
+
+.sociales-thumbnails-item{
+    border: 0 !important;
+    padding: 0;
+    margin-top: 20px;
+}
+
+
+.sociales-carousel-control {
+    background: none repeat scroll 0 0 #222222;
+    border: 3px solid #FFFFFF;
+    border-radius: 23px 23px 23px 23px;
+    color: #FFFFFF;
+    font-size: 20px;
+    font-weight: 100;
+    height: 20px;
+    left: 190px;
+    line-height: 18px;
+    margin-top: -20px;
+    opacity: 0.5;
+    position: absolute;
+    text-align: center;
+    top: 100%;
+    width: 20px;
+}
+.sociales-carousel-control.right {
+    left: auto;
+    right: 195px;
+}
+.sociales-carousel-control:hover, .sociales-carousel-control:focus {
+    color: #FFFFFF;
+    opacity: 0.9;
+    text-decoration: none;
+}
+
+
+.sociales-carousel-indicators {
+    list-style: none outside none;
+    margin: 0;
+    position: absolute;
+    right: 15px;
+    top: 215px;
+    z-index: 5;
+}
+/*Fin Sociales*/

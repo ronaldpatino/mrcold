@@ -441,6 +441,89 @@
     </div>
 </div>
 
+<div class="container-narrow-sociales">
+    <div class="row-fluid">
+        <div class="span8 sociales">
+
+                    <div class="carousel slide" id="myCarousel">
+                        <div class="carousel-inner">
+                            <div class="item active">
+                                <ul class="thumbnails sociales-thumbnails">
+                                    <li class="span4">
+                                        <div class="thumbnail sociales-thumbnails-item">
+                                            <img data-src="holder.js/189x144">
+                                            <p>Thumbnail caption...</p>
+                                        </div>
+                                    </li>
+
+                                    <li class="span4">
+                                        <div class="thumbnail sociales-thumbnails-item">
+                                            <img data-src="holder.js/189x144">
+                                            <p>Thumbnail caption...</p>
+                                        </div>
+                                    </li>
+
+
+                                    <li class="span4">
+                                        <div class="thumbnail sociales-thumbnails-item">
+                                            <img data-src="holder.js/189x144">
+                                            <p>Thumbnail caption...</p>
+                                        </div>
+                                    </li>
+
+                                </ul>
+                            </div>
+
+                            <div class="item">
+                                <ul class="thumbnails sociales-thumbnails">
+                                    <li class="span4">
+                                        <div class="thumbnail sociales-thumbnails-item">
+                                            <img data-src="holder.js/189x144">
+                                            <p>Thumbnail caption...</p>
+                                        </div>
+                                    </li>
+
+                                    <li class="span4">
+                                        <div class="thumbnail sociales-thumbnails-item">
+                                            <img data-src="holder.js/189x144">
+                                            <p>Thumbnail caption...</p>
+                                        </div>
+                                    </li>
+
+
+                                    <li class="span4">
+                                        <div class="thumbnail sociales-thumbnails-item">
+                                            <img data-src="holder.js/189x144">
+                                            <p>Thumbnail caption...</p>
+                                        </div>
+                                    </li>
+
+                                </ul>
+                            </div>
+
+
+
+
+                        </div>
+
+                        <a data-slide="prev" href="#myCarousel" class="left sociales-carousel-control">‹</a>
+                        <ol class="carousel-indicators sociales-carousel-indicators">
+                            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                            <li data-target="#myCarousel" data-slide-to="1"></li>
+                            <li data-target="#myCarousel" data-slide-to="2"></li>
+                        </ol>
+                        <a data-slide="next" href="#myCarousel" class="right sociales-carousel-control">›</a>
+
+                    </div>
+            
+
+
+        </div>
+        <div class="span4 sociales-derecha">
+            sole
+        </div>
+    </div>
+</div>
 <!-- Fin tricol-->
 
 <?php wp_footer(); ?>
