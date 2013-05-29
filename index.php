@@ -15,7 +15,6 @@
 <body>
 
 <div class="container-narrow">
-
     <div class="navbar top-navbar">
         <div class="navbar-inner top-navbar-inner">
             <div class="control-group">
@@ -185,36 +184,6 @@
             </div>
             <!-- Fin Noticias Secundarias-->
 
-            <!-- Inicio Noticias Secundarias-->
-            <div class="row-fluid">
-                <div class="span12">
-                    <div class="noticia-secundaria">
-                        <h3>
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                        </h3>
-                        <img class="farandula" data-src="holder.js/294x154">
-
-                        <p>
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
-                            labore et dolore magna aliqua.
-                        </p>
-                    </div>
-
-
-                    <div class="noticia-secundaria">
-                        <h3>
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                        </h3>
-                        <img class="deportes" data-src="holder.js/294x154">
-
-                        <p>
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
-                            labore et dolore magna aliqua.
-                        </p>
-                    </div>
-                </div>
-            </div>
-            <!-- Fin Noticias Secundarias-->
         </div>
         <div class="span4 ultimas-noticias">
             <div class="row-fluid">
@@ -229,7 +198,7 @@
                     <div class="widget-content nopadding updates">
                         <div class="new-update clearfix">
                             <div class="update-done">
-                                <a title="" href="#">Lorem ipsum dolor sit amet, consectetur adipisicing elit. </a>
+                                <a href="#" title="">Lorem ipsum dolor sit amet, consectetur adipisicing elit. </a>
                             </div>
                             <div class="update-date"><span class="update-day">08:00</span></div>
 
@@ -284,40 +253,18 @@
                     <div class="widget-content nopadding updates">
                         <div class="new-update clearfix">
                             <div class="update-done">
+                                <a title="" href="#">Lorem ipsum dolor sit amet, consectetur adipisicing elit. </a>
+                            </div>
+                            <div class="update-date"><span class="update-day">08:00</span></div>
+
+                        </div>
+                    </div>
+                    <!-- Fin Noticia -->
+                    <!-- Incio Noticia -->
+                    <div class="widget-content nopadding updates">
+                        <div class="new-update clearfix">
+                            <div class="update-done">
                                 <a title="" href="#">Consectetur adipisicing elit, sed do eiusmod tempor incididunt ut. </a>
-                            </div>
-                            <div class="update-date"><span class="update-day">08:00</span></div>
-
-                        </div>
-                    </div>
-                    <!-- Fin Noticia -->
-                    <!-- Incio Noticia -->
-                    <div class="widget-content nopadding updates">
-                        <div class="new-update clearfix">
-                            <div class="update-done">
-                                <a title="" href="#">Lorem ipsum dolor sit amet, consectetur adipisicing elit. </a>
-                            </div>
-                            <div class="update-date"><span class="update-day">08:00</span></div>
-
-                        </div>
-                    </div>
-                    <!-- Fin Noticia -->
-                    <!-- Incio Noticia -->
-                    <div class="widget-content nopadding updates">
-                        <div class="new-update clearfix">
-                            <div class="update-done">
-                                <a title="" href="#">Lorem ipsum dolor sit amet, consectetur adipisicing elit. </a>
-                            </div>
-                            <div class="update-date"><span class="update-day">08:00</span></div>
-
-                        </div>
-                    </div>
-                    <!-- Fin Noticia -->
-                    <!-- Incio Noticia -->
-                    <div class="widget-content nopadding updates">
-                        <div class="new-update clearfix">
-                            <div class="update-done">
-                                <a title="" href="#">Lorem ipsum dolor sit amet, consectetur adipisicing elit. </a>
                             </div>
                             <div class="update-date"><span class="update-day">08:00</span></div>
 
@@ -349,24 +296,155 @@
 
                 </div>
                 <!-- Fin Bloque de Noticias -->
-                <!-- Inicio Bloque de Noticias -->
+
+                <!-- Inicio Bloque de Publicidad -->
                 <div class="row-fluid">
                     <div class="span12">
-                        <img data-src="holder.js/295x295">
+                        <img data-src="holder.js/295x295/industrial">
                     </div>
                 </div>
+                <!-- Fin Bloque de Publicidad -->
+
+                <!-- Inicio Bloque de Portada -->
+                <div class="row-fluid ">
+                    <div class="span12 portada">
+                        <img data-src="holder.js/290x355">
+                    </div>
+                </div>
+                <!-- Fin Bloque de Portada -->
+
+            </div>
+        </div>
+    </div>
+    <!-- Fin titulares -->
+</div>
+
+<!-- publicidad -->
+<div class="container-narrow-publicidad">
+    <img data-src="holder.js/940x100/industrial">
+</div>
+<!-- Fin publicidad -->
+
+
+<!-- Inicio tricol-->
+<div class="container-narrow">
+    <div class="row-fluid tricol">
+        <div class="span4 noticia-tricol">
+            <!-- Noticia Destacada seccion-->
+            <div>
+                <h2 class="cultura-tri">Cultura</h2>
+                <img data-src="holder.js/297x154">
+                <h3>
+                    Consectetur adipisicing elit, sed do eiusmod tempor incididunt ut.
+                </h3>
             </div>
 
+            <!-- Fin Noticia Destacada -->
+
+            <!-- Noticia Secundaria  seccion-->
+            <div class="media">
+                <a class="pull-left" href="#"><img class="media-object" data-src="holder.js/110x64/industrial"></a>
+                <div class="media-body media-font">
+                    Consectetur adipisicing elit, sed do eiusmod tempor incididunt ut sed do eiusmod tempor incididunt ut.
+                </div>
+            </div>
+            <!-- Fin Noticia Secundaria seccion-->
+            <!-- Noticia Secundaria  seccion-->
+            <div class="media">
+                <a class="pull-left" href="#"><img class="media-object" data-src="holder.js/110x64/industrial"></a>
+                <div class="media-body media-font">
+                    Consectetur adipisicing elit, sed do eiusmod tempor incididunt ut sed do eiusmod tempor incididunt ut.
+                </div>
+            </div>
+            <!-- Fin Noticia Secundaria seccion-->
+            <!-- Noticia Secundaria  seccion-->
+            <div class="media">
+                <a class="pull-left" href="#"><img class="media-object" data-src="holder.js/110x64/industrial"></a>
+                <div class="media-body media-font">
+                    Consectetur adipisicing elit, sed do eiusmod tempor incididunt ut sed do eiusmod tempor incididunt ut.
+                </div>
+            </div>
+            <!-- Fin Noticia Secundaria seccion-->
 
 
 
         </div>
+        <div class="span4 noticia-tricol">
+            <div>
+                <h2 class="cuenca-tri">Cuenca</h2>
+                <img data-src="holder.js/297x154">
+                <h3>
+                    Consectetur adipisicing elit, sed do eiusmod tempor incididunt ut.
+                </h3>
+            </div>
+
+            <!-- Noticia Secundaria  seccion-->
+            <div class="media">
+                <a class="pull-left" href="#"><img class="media-object" data-src="holder.js/110x64/industrial"></a>
+                <div class="media-body media-font">
+                    Consectetur adipisicing elit, sed do eiusmod tempor incididunt ut sed do eiusmod tempor incididunt ut.
+                </div>
+            </div>
+            <!-- Fin Noticia Secundaria seccion-->
+            <!-- Noticia Secundaria  seccion-->
+            <div class="media">
+                <a class="pull-left" href="#"><img class="media-object" data-src="holder.js/110x64/industrial"></a>
+                <div class="media-body media-font">
+                    Consectetur adipisicing elit, sed do eiusmod tempor incididunt ut sed do eiusmod tempor incididunt ut.
+                </div>
+            </div>
+            <!-- Fin Noticia Secundaria seccion-->
+            <!-- Noticia Secundaria  seccion-->
+            <div class="media">
+                <a class="pull-left" href="#"><img class="media-object" data-src="holder.js/110x64/industrial"></a>
+                <div class="media-body media-font">
+                    Consectetur adipisicing elit, sed do eiusmod tempor incididunt ut sed do eiusmod tempor incididunt ut.
+                </div>
+            </div>
+            <!-- Fin Noticia Secundaria seccion-->
+        </div>
+
+        <div class="span4 noticia-tricol">
+            <div>
+                <h2 class="sucesos-tri">Sucesos</h2>
+                <img data-src="holder.js/297x154">
+                <h3>
+                    Consectetur adipisicing elit, sed do eiusmod tempor incididunt ut.
+                </h3>
+            </div>
+
+            <!-- Noticia Secundaria  seccion-->
+            <div class="media">
+                <a class="pull-left" href="#"><img class="media-object" data-src="holder.js/110x64/industrial"></a>
+                <div class="media-body media-font">
+                    Consectetur adipisicing elit, sed do eiusmod tempor incididunt ut sed do eiusmod tempor incididunt ut.
+                </div>
+            </div>
+            <!-- Fin Noticia Secundaria seccion-->
+            <!-- Noticia Secundaria  seccion-->
+            <div class="media">
+                <a class="pull-left" href="#"><img class="media-object" data-src="holder.js/110x64/industrial"></a>
+                <div class="media-body media-font">
+                    Consectetur adipisicing elit, sed do eiusmod tempor incididunt ut sed do eiusmod tempor incididunt ut.
+                </div>
+            </div>
+            <!-- Fin Noticia Secundaria seccion-->
+            <!-- Noticia Secundaria  seccion-->
+            <div class="media">
+                <a class="pull-left" href="#"><img class="media-object" data-src="holder.js/110x64/industrial"></a>
+                <div class="media-body media-font">
+                    Consectetur adipisicing elit, sed do eiusmod tempor incididunt ut sed do eiusmod tempor incididunt ut.
+                </div>
+            </div>
+            <!-- Fin Noticia Secundaria seccion-->
+        </div>
     </div>
-
-    <!-- Fin titulares -->
-
-
 </div>
+
+<!-- Fin tricol-->
+
 <?php wp_footer(); ?>
+
+
 </body>
 </html>

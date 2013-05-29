@@ -11,6 +11,16 @@ body{
     margin: 0 auto;
     max-width: 940px;
     background-color: #ffffff;
+    box-shadow:1px 1px 5px 1px #6f6f6f;
+    margin-bottom: 20px;
+}
+
+
+.container-narrow-publicidad {
+    margin: 0 auto;
+    max-width: 940px;
+    background-color: e9edf0;
+    margin-bottom: 20px;
 }
 
 /*Top items */
@@ -22,7 +32,7 @@ body{
 .top-navbar-inner{
     background-color: #ffffff;
     background-image: none;
-    border: 0px;
+    border: 0;
     border-bottom: 1px solid #006bae;
     border-radius: 0;
     box-shadow: none;
@@ -429,3 +439,88 @@ div.navbar-menu .nav > li > a.opinion:hover, div.subnav .nav > li.active > a.opi
 
 
 /*Fin Ultimas Noticias*/
+
+/*Inicio Portada*/
+
+.portada{
+    margin-top: 10px;
+    background-color: #ff6507;
+    padding: 10px;
+}
+/*Fin portada*/
+
+
+/*Tricolumna*/
+
+
+.tricol{
+    margin-left: 0px;
+}
+.noticia-tricol:first-child{
+    margin-left: 12px !important;
+    margin-top: 0px !important;
+    margin-bottom: 12px !important;
+}
+
+.noticia-tricol{
+    margin-left: 12px !important;
+    margin-top: 0px !important;
+    margin-bottom: 12px !important;
+}
+
+.noticia-tricol h2.cultura-tri{
+    border-top: 4px solid #c92727;
+    border-bottom: 1px solid #c92727;
+    color: #c92727;
+    text-align: center;
+    padding: 0;
+    display: block;
+    font-family: 'TheSerifOffice',georgia,serif;
+    font-size: 1.6em;
+    font-weight: normal;
+    line-height: 105%;
+    margin: 0 0 0.6rem;
+}
+
+.noticia-tricol h2.cuenca-tri{
+    border-top: 4px solid #ff0024;
+    border-bottom: 1px solid #ff0024;
+    color: #ff0024;
+    text-align: center;
+    padding: 0;
+    display: block;
+    font-family: 'TheSerifOffice',georgia,serif;
+    font-size: 1.6em;
+    font-weight: normal;
+    line-height: 105%;
+    margin: 0 0 0.6rem;
+}
+
+.noticia-tricol h2.sucesos-tri{
+    border-top: 4px solid #aa3c3b;
+    border-bottom: 1px solid #aa3c3b;
+    color: #aa3c3b;
+    text-align: center;
+    padding: 0;
+    display: block;
+    font-family: 'TheSerifOffice',georgia,serif;
+    font-size: 1.6em;
+    font-weight: normal;
+    line-height: 105%;
+    margin: 0 0 0.6rem;
+}
+
+.noticia-tricol > div > h3{
+
+    font-family: 'TheSerifOffice',georgia,serif;
+    font-size: 1.2em;
+    font-weight: normal;
+    line-height: 105%;
+}
+
+.media-font{
+    font-size: 0.9em;
+    font-weight: normal;
+    line-height: 105%;
+}
+/*Fin Tricolumna*/
