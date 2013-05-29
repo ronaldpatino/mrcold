@@ -56,7 +56,118 @@ function post_comments( $comment, $args, $depth ) {
 	endswitch;
 }
 
-// Custom functions 
+// Custom functions
+
+
+function get_clima()
+{
+    $opts = array(
+        'http'=>array(
+            'method'=>"GET",
+            'header'=>"Accept-language: en\r\n" .
+                "Cookie: foo=bar\r\n"
+        )
+    );
+
+    $context = stream_context_create($opts);
+
+    $html = file_get_contents('http://www.meteored.com.ec/getwid/e4085e7778f2d5fe273a9a0651f87a1e', false, $context);
+    $doc = new DOMDocument();
+    @$doc->loadHTML($html);
+
+    $tags = $doc->getElementsByTagName('img');
+
+    foreach ($tags as $tag) {
+        $items[] = $tag->getAttribute('src');
+
+    }
+
+    $tags = $doc->getElementsByTagName('font');
+
+    foreach ($tags as $tag) {
+        $temp[] = str_replace("Â", "", $tag->nodeValue);
+    }
+
+    $clima_tag = "&nbsp;&nbsp;<img title='El Mercurio - El Clima en Cuenca' alt='El Mercurio - El Clima en Cuenca' class='' src='{$items[2]}'> {$temp[0]} / {$temp[1]}";
+
+    echo $clima_tag;
+}
+
+function get_fecha()
+{
+    $dia = "";
+    switch (date("w"))
+    {
+        case 0:
+            $dia = "Domingo";
+            break;
+        case 1:
+            $dia = "Lunes";
+            break;
+        case 2:
+            $dia = "Martes";
+            break;
+        case 3:
+            $dia = "Mi&eacute;rcoles";
+            break;
+        case 4:
+            $dia = "Jueves";
+            break;
+        case 5:
+            $dia = "Viernes";
+            break;
+        case 6:
+            $dia = "S&aacute;bado";
+            break;
+    }
+
+    $mes = "";
+    switch (date("n"))
+    {
+        case 1:
+            $mes = "Enero";
+            break;
+        case 2:
+            $mes = "Febrero";
+            break;
+        case 3:
+            $mes = "Marzo";
+            break;
+        case 4:
+            $mes = "Abril";
+            break;
+        case 5:
+            $mes = "Mayo";
+            break;
+        case 6:
+            $mes = "Junio";
+            break;
+        case 7:
+            $mes = "Julio";
+            break;
+        case 8:
+            $mes = "Agosto";
+            break;
+        case 9:
+            $mes = "Septiembre";
+            break;
+        case 10:
+            $mes = "Octubre";
+            break;
+        case 11:
+            $mes = "Noviembre";
+            break;
+        case 12:
+            $mes = "Diciembre";
+            break;
+    }
+
+    $fecha =  "Cuenca  {$dia}, " . date("d") . " de {$mes} " . date("Y");
+
+    echo $fecha;
+}
+
+
 
 // Tidy up the <head> a little. Full reference of things you can show/remove is here: http://rjpargeter.com/2009/09/removing-wordpress-wp_head-elements/
 //remove_action('wp_head', 'wp_generator');// Removes the WordPress version as a layer of simple security

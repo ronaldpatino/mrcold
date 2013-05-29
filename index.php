@@ -26,8 +26,8 @@
                         </div>
                     </form>
                 </div>
-                <p class="pull-left p-top">Some interesting content</p>
-                <img class="pull-left img-top" src="https://s3.amazonaws.com/jetstrap-site/images/what_icon.png">
+                <p class="pull-left p-top"><?php echo get_fecha(); get_clima();?></p>
+
                 <a href="#"><img title="El Mercurio Noticias Ecuador Facebook" alt="El Mercurio Noticias Ecuador Facebook" class="pull-right img-top" src="<?php bloginfo('template_url'); ?>/assets/img/facebook.png"></a>
                 <a href="#"><img title="El Mercurio Noticias Ecuador Twitter"  alt="El Mercurio Noticias Ecuador Twitter" class="pull-right img-top" src="<?php bloginfo('template_url'); ?>/assets/img/twitter.png"></a>
                 <a href="#"><img title="El Mercurio Noticias Ecuador YouTube" alt="El Mercurio Noticias Ecuador YouTube" class="pull-right img-top" src="<?php bloginfo('template_url'); ?>/assets/img/youtube.png"></a>
