@@ -369,7 +369,7 @@ div.navbar-menu .nav > li > a.opinion:hover, div.subnav .nav > li.active > a.opi
     margin-left: 10px !important;
 }
 
-.widget-box {
+.custom-widget-box {
     background: none repeat scroll 0 0 #F9F9F9;
     border-left: 1px solid #CDCDCD;
     border-right: 1px solid #CDCDCD;
@@ -380,14 +380,14 @@ div.navbar-menu .nav > li > a.opinion:hover, div.subnav .nav > li.active > a.opi
     position: relative;
 }
 
-.widget-title, .modal-header, .table th, div.dataTables_wrapper .ui-widget-header, .ui-dialog .ui-dialog-titlebar {
+.custom-widget-title, .table th, div.dataTables_wrapper .ui-widget-header, .ui-dialog .ui-dialog-titlebar {
     background-color: #EFEFEF;
     background-image: -moz-linear-gradient(center top , #FDFDFD 0%, #EAEAEA 100%);
     border-bottom: 1px solid #CDCDCD;
     height: 36px;
 }
 
-.widget-content {
+.custom-widget-content {
     border-bottom: 1px solid #CDCDCD;
     padding: 12px 15px;
 }
@@ -396,7 +396,7 @@ div.navbar-menu .nav > li > a.opinion:hover, div.subnav .nav > li.active > a.opi
     padding: 0 !important;
 }
 
-.widget-title h5 {
+.custom-widget-title h5 {
     color: #666666;
     float: left;
     font-size: 12px;
@@ -537,10 +537,21 @@ div.navbar-menu .nav > li > a.opinion:hover, div.subnav .nav > li.active > a.opi
     background-color: #014E9C;
 }
 
+.sociales > h4 {
+    text-align: center;
+    color: #ffffff;
+    border-bottom: 1px solid #ffffff;
+    padding-bottom: 10px;
+    margin-bottom: 0px;
+}
+
 .sociales-derecha {
     background-color: #014E9C;
     margin-left: 1px !important;
     width: 33.9% !important;
+    height: 290px;
+    padding: 10px;
+    text-align: center;
 }
 
 .sociales-thumbnails{
@@ -563,18 +574,20 @@ div.navbar-menu .nav > li > a.opinion:hover, div.subnav .nav > li.active > a.opi
     font-size: 20px;
     font-weight: 100;
     height: 20px;
-    left: 190px;
+    left: 10px;
     line-height: 18px;
-    margin-top: -20px;
-    opacity: 0.5;
+    margin-top: 10px;
+    opacity: 0.2;
     position: absolute;
     text-align: center;
-    top: 100%;
+    top: 30%;
     width: 20px;
 }
+
+
 .sociales-carousel-control.right {
     left: auto;
-    right: 195px;
+    right: 10px;
 }
 .sociales-carousel-control:hover, .sociales-carousel-control:focus {
     color: #FFFFFF;
@@ -583,12 +596,10 @@ div.navbar-menu .nav > li > a.opinion:hover, div.subnav .nav > li.active > a.opi
 }
 
 
-.sociales-carousel-indicators {
-    list-style: none outside none;
-    margin: 0;
-    position: absolute;
-    right: 15px;
-    top: 215px;
-    z-index: 5;
+.sociales-thumbnails-item > p{
+    color: #ffffff;
+    margin-top: 5px;
+    font-size: 12px;
 }
+
 /*Fin Sociales*/

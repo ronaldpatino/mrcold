@@ -7,8 +7,6 @@
     <?php wp_head(); ?>
 
     <link rel="stylesheet" type="text/css" href="<?php bloginfo('template_url'); ?>/assets/css/style.css" />
-    <script src="assets/js/holder.js"></script>
-    <script type="text/javascript" src="<?php bloginfo('template_url'); ?>/assets/scripts/holder.js"></script>
 </head>
 <body>
 
@@ -25,7 +23,7 @@
                         </div>
                     </form>
                 </div>
-                <p class="pull-left p-top"><?php echo get_fecha(); get_clima();?></p>
+                <p class="pull-left p-top"><?php echo get_fecha(); ?></p>
                 <a href="#"><img title="El Mercurio Noticias Ecuador Facebook" alt="El Mercurio Noticias Ecuador Facebook" class="pull-right img-top" src="<?php bloginfo('template_url'); ?>/assets/img/facebook.png"></a>
                 <a href="#"><img title="El Mercurio Noticias Ecuador Twitter"  alt="El Mercurio Noticias Ecuador Twitter" class="pull-right img-top" src="<?php bloginfo('template_url'); ?>/assets/img/twitter.png"></a>
                 <a href="#"><img title="El Mercurio Noticias Ecuador YouTube" alt="El Mercurio Noticias Ecuador YouTube" class="pull-right img-top" src="<?php bloginfo('template_url'); ?>/assets/img/youtube.png"></a>
@@ -83,7 +81,7 @@
                     Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
                     labore
                 </h3>
-                <img data-src="holder.js/600x324">
+                <img data-src="holder.js/600x324/industrial">
 
                 <p>
                     Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
@@ -188,14 +186,14 @@
         <div class="span4 ultimas-noticias">
             <div class="row-fluid">
                 <!-- Inicio Bloque de Noticias -->
-                <div class="span12 widget-box">
+                <div class="span12 custom-widget-box">
 
-                    <div class="widget-title">
+                    <div class="custom-widget-title">
                         <h5>Ultimas Noticia</h5>
                     </div>
 
                     <!-- Incio Noticia -->
-                    <div class="widget-content nopadding updates">
+                    <div class="custom-widget-content nopadding updates">
                         <div class="new-update clearfix">
                             <div class="update-done">
                                 <a href="#" title="">Lorem ipsum dolor sit amet, consectetur adipisicing elit. </a>
@@ -205,94 +203,7 @@
                         </div>
                     </div>
                     <!-- Fin Noticia -->
-                    <!-- Incio Noticia -->
-                    <div class="widget-content nopadding updates">
-                        <div class="new-update clearfix">
-                            <div class="update-done">
-                                <a title="" href="#">Consectetur adipisicing elit, sed do eiusmod tempor incididunt ut. </a>
-                            </div>
-                            <div class="update-date"><span class="update-day">08:00</span></div>
 
-                        </div>
-                    </div>
-                    <!-- Fin Noticia -->
-                    <!-- Incio Noticia -->
-                    <div class="widget-content nopadding updates">
-                        <div class="new-update clearfix">
-                            <div class="update-done">
-                                <a title="" href="#">Lorem ipsum dolor sit amet, consectetur adipisicing elit. </a>
-                            </div>
-                            <div class="update-date"><span class="update-day">08:00</span></div>
-
-                        </div>
-                    </div>
-                    <!-- Fin Noticia -->
-                    <!-- Incio Noticia -->
-                    <div class="widget-content nopadding updates">
-                        <div class="new-update clearfix">
-                            <div class="update-done">
-                                <a title="" href="#">Consectetur adipisicing elit, sed do eiusmod tempor incididunt ut. </a>
-                            </div>
-                            <div class="update-date"><span class="update-day">08:00</span></div>
-
-                        </div>
-                    </div>
-                    <!-- Fin Noticia -->
-                    <!-- Incio Noticia -->
-                    <div class="widget-content nopadding updates">
-                        <div class="new-update clearfix">
-                            <div class="update-done">
-                                <a title="" href="#">Lorem ipsum dolor sit amet, consectetur adipisicing elit. </a>
-                            </div>
-                            <div class="update-date"><span class="update-day">08:00</span></div>
-
-                        </div>
-                    </div>
-                    <!-- Fin Noticia -->
-                    <!-- Incio Noticia -->
-                    <div class="widget-content nopadding updates">
-                        <div class="new-update clearfix">
-                            <div class="update-done">
-                                <a title="" href="#">Lorem ipsum dolor sit amet, consectetur adipisicing elit. </a>
-                            </div>
-                            <div class="update-date"><span class="update-day">08:00</span></div>
-
-                        </div>
-                    </div>
-                    <!-- Fin Noticia -->
-                    <!-- Incio Noticia -->
-                    <div class="widget-content nopadding updates">
-                        <div class="new-update clearfix">
-                            <div class="update-done">
-                                <a title="" href="#">Consectetur adipisicing elit, sed do eiusmod tempor incididunt ut. </a>
-                            </div>
-                            <div class="update-date"><span class="update-day">08:00</span></div>
-
-                        </div>
-                    </div>
-                    <!-- Fin Noticia -->
-                    <!-- Incio Noticia -->
-                    <div class="widget-content nopadding updates">
-                        <div class="new-update clearfix">
-                            <div class="update-done">
-                                <a title="" href="#">Lorem ipsum dolor sit amet, consectetur adipisicing elit. </a>
-                            </div>
-                            <div class="update-date"><span class="update-day">08:00</span></div>
-
-                        </div>
-                    </div>
-                    <!-- Fin Noticia -->
-                    <!-- Incio Noticia -->
-                    <div class="widget-content nopadding updates">
-                        <div class="new-update clearfix">
-                            <div class="update-done">
-                                <a title="" href="#">Lorem ipsum dolor sit amet, consectetur adipisicing elit. </a>
-                            </div>
-                            <div class="update-date"><span class="update-day">08:00</span></div>
-
-                        </div>
-                    </div>
-                    <!-- Fin Noticia -->
 
                 </div>
                 <!-- Fin Bloque de Noticias -->
@@ -444,21 +355,28 @@
 <div class="container-narrow-sociales">
     <div class="row-fluid">
         <div class="span8 sociales">
-
+                    <h4>
+                        SOCIALES
+                    </h4>
+                    <!-- Carrusel sociales -->
                     <div class="carousel slide" id="myCarousel">
                         <div class="carousel-inner">
                             <div class="item active">
                                 <ul class="thumbnails sociales-thumbnails">
                                     <li class="span4">
                                         <div class="thumbnail sociales-thumbnails-item">
-                                            <img data-src="holder.js/189x144">
+                                            <a href="#modal_sociales" data-caption="Thumbnail caption..."  data-img="<?php bloginfo('template_url'); ?>/assets/img/placeholder-sociales.jpg" data-toggle="modal">
+                                                <img data-src="holder.js/189x144">
+                                            </a>
                                             <p>Thumbnail caption...</p>
                                         </div>
                                     </li>
 
                                     <li class="span4">
                                         <div class="thumbnail sociales-thumbnails-item">
-                                            <img data-src="holder.js/189x144">
+                                            <a href="#modal_sociales" data-caption="Thumbnail caption..."  data-img="<?php bloginfo('template_url'); ?>/assets/img/placeholder-sociales.jpg" data-toggle="modal">
+                                                <img data-src="holder.js/189x144">
+                                            </a>
                                             <p>Thumbnail caption...</p>
                                         </div>
                                     </li>
@@ -466,7 +384,9 @@
 
                                     <li class="span4">
                                         <div class="thumbnail sociales-thumbnails-item">
-                                            <img data-src="holder.js/189x144">
+                                            <a href="#modal_sociales" data-caption="Thumbnail caption..."  data-img="<?php bloginfo('template_url'); ?>/assets/img/placeholder-sociales.jpg" data-toggle="modal">
+                                                <img data-src="holder.js/189x144">
+                                            </a>
                                             <p>Thumbnail caption...</p>
                                         </div>
                                     </li>
@@ -478,14 +398,18 @@
                                 <ul class="thumbnails sociales-thumbnails">
                                     <li class="span4">
                                         <div class="thumbnail sociales-thumbnails-item">
-                                            <img data-src="holder.js/189x144">
+                                            <a href="#modal_sociales" data-caption="Thumbnail caption..." data-img="<?php bloginfo('template_url'); ?>/assets/img/flechas.png" data-toggle="modal">
+                                                <img data-src="holder.js/189x144">
+                                            </a>
                                             <p>Thumbnail caption...</p>
                                         </div>
                                     </li>
 
                                     <li class="span4">
                                         <div class="thumbnail sociales-thumbnails-item">
-                                            <img data-src="holder.js/189x144">
+                                            <a href="#modal_sociales" data-caption="Thumbnail caption..."  data-img="<?php bloginfo('template_url'); ?>/assets/img/placeholder-sociales.jpg" data-toggle="modal">
+                                                <img data-src="holder.js/189x144">
+                                            </a>
                                             <p>Thumbnail caption...</p>
                                         </div>
                                     </li>
@@ -493,34 +417,23 @@
 
                                     <li class="span4">
                                         <div class="thumbnail sociales-thumbnails-item">
-                                            <img data-src="holder.js/189x144">
+                                            <a href="#modal_sociales" data-caption="Thumbnail caption..."  data-img="<?php bloginfo('template_url'); ?>/assets/img/placeholder-sociales.jpg" data-toggle="modal">
+                                                <img data-src="holder.js/189x144">
+                                            </a>
                                             <p>Thumbnail caption...</p>
                                         </div>
                                     </li>
 
                                 </ul>
                             </div>
-
-
-
-
                         </div>
-
                         <a data-slide="prev" href="#myCarousel" class="left sociales-carousel-control">‹</a>
-                        <ol class="carousel-indicators sociales-carousel-indicators">
-                            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-                            <li data-target="#myCarousel" data-slide-to="1"></li>
-                            <li data-target="#myCarousel" data-slide-to="2"></li>
-                        </ol>
                         <a data-slide="next" href="#myCarousel" class="right sociales-carousel-control">›</a>
-
                     </div>
-            
-
-
+                    <!-- Fin Carrusel sociales -->
         </div>
         <div class="span4 sociales-derecha">
-            sole
+            <img data-src="holder.js/290x270/industrial">
         </div>
     </div>
 </div>
@@ -528,6 +441,35 @@
 
 <?php wp_footer(); ?>
 
+<script type="text/javascript" src="<?php bloginfo('template_url'); ?>/assets/scripts/holder.js"></script>
+<script type="text/javascript">
+    jQuery(document).ready(function($) {
+
+        $('[data-toggle="modal"]').click(function(e) {
+            e.preventDefault();
+            var imagen_sociales = $(this).data('img');
+            var caption_sociales = $(this).data('caption');
+
+            $(".modal-body #imagen_sociales").attr('src', imagen_sociales);
+            $(".modal-footer").html('<p>'+ caption_sociales +'</p>');
+        });
+    });
+</script>
+
+
+
+<!-- Modal -->
+<div id="modal_sociales" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h3><i class="icon-eye-open icon-white"></i> </h3>
+    </div>
+    <div class="modal-body">
+        <img id="imagen_sociales" src=""/>
+    </div>
+
+    <div class="modal-footer"></div>
+</div>
 
 </body>
 </html>
