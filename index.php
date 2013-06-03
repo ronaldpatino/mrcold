@@ -351,7 +351,9 @@
         </div>
     </div>
 </div>
+<!-- Fin tricol-->
 
+<!-- inicio sociales -->
 <div class="container-narrow-sociales">
     <div class="row-fluid">
         <div class="span8 sociales">
@@ -437,7 +439,357 @@
         </div>
     </div>
 </div>
-<!-- Fin tricol-->
+<!-- Fin sociales-->
+
+
+<!-- Inicio tricol 2-->
+<div class="container-narrow">
+    <div class="row-fluid tricol">
+        <div class="span4 noticia-tricol">
+            <!-- Noticia Destacada seccion-->
+            <div>
+                <h2 class="azuay-tri">Azuay</h2>
+                <img data-src="holder.js/297x154">
+                <h3>
+                    Consectetur adipisicing elit, sed do eiusmod tempor incididunt ut.
+                </h3>
+            </div>
+
+            <!-- Fin Noticia Destacada -->
+
+            <!-- Noticia Secundaria  seccion-->
+            <div class="media">
+                <a class="pull-left" href="#"><img class="media-object" data-src="holder.js/110x64/industrial"></a>
+                <div class="media-body media-font">
+                    Consectetur adipisicing elit, sed do eiusmod tempor incididunt ut sed do eiusmod tempor incididunt ut.
+                </div>
+            </div>
+            <!-- Fin Noticia Secundaria seccion-->
+            <!-- Noticia Secundaria  seccion-->
+            <div class="media">
+                <a class="pull-left" href="#"><img class="media-object" data-src="holder.js/110x64/industrial"></a>
+                <div class="media-body media-font">
+                    Consectetur adipisicing elit, sed do eiusmod tempor incididunt ut sed do eiusmod tempor incididunt ut.
+                </div>
+            </div>
+            <!-- Fin Noticia Secundaria seccion-->
+            <!-- Noticia Secundaria  seccion-->
+            <div class="media">
+                <a class="pull-left" href="#"><img class="media-object" data-src="holder.js/110x64/industrial"></a>
+                <div class="media-body media-font">
+                    Consectetur adipisicing elit, sed do eiusmod tempor incididunt ut sed do eiusmod tempor incididunt ut.
+                </div>
+            </div>
+            <!-- Fin Noticia Secundaria seccion-->
+
+
+
+        </div>
+        <div class="span4 noticia-tricol">
+            <div>
+                <h2 class="canar-tri">Ca&ntilde;ar</h2>
+                <img data-src="holder.js/297x154">
+                <h3>
+                    Consectetur adipisicing elit, sed do eiusmod tempor incididunt ut.
+                </h3>
+            </div>
+
+            <!-- Noticia Secundaria  seccion-->
+            <div class="media">
+                <a class="pull-left" href="#"><img class="media-object" data-src="holder.js/110x64/industrial"></a>
+                <div class="media-body media-font">
+                    Consectetur adipisicing elit, sed do eiusmod tempor incididunt ut sed do eiusmod tempor incididunt ut.
+                </div>
+            </div>
+            <!-- Fin Noticia Secundaria seccion-->
+            <!-- Noticia Secundaria  seccion-->
+            <div class="media">
+                <a class="pull-left" href="#"><img class="media-object" data-src="holder.js/110x64/industrial"></a>
+                <div class="media-body media-font">
+                    Consectetur adipisicing elit, sed do eiusmod tempor incididunt ut sed do eiusmod tempor incididunt ut.
+                </div>
+            </div>
+            <!-- Fin Noticia Secundaria seccion-->
+            <!-- Noticia Secundaria  seccion-->
+            <div class="media">
+                <a class="pull-left" href="#"><img class="media-object" data-src="holder.js/110x64/industrial"></a>
+                <div class="media-body media-font">
+                    Consectetur adipisicing elit, sed do eiusmod tempor incididunt ut sed do eiusmod tempor incididunt ut.
+                </div>
+            </div>
+            <!-- Fin Noticia Secundaria seccion-->
+        </div>
+
+        <div class="span4 noticia-tricol">
+            <div>
+                <h2 class="loja-tri">Loja</h2>
+                <img data-src="holder.js/297x154">
+                <h3>
+                    Consectetur adipisicing elit, sed do eiusmod tempor incididunt ut.
+                </h3>
+            </div>
+
+            <!-- Noticia Secundaria  seccion-->
+            <div class="media">
+                <a class="pull-left" href="#"><img class="media-object" data-src="holder.js/110x64/industrial"></a>
+                <div class="media-body media-font">
+                    Consectetur adipisicing elit, sed do eiusmod tempor incididunt ut sed do eiusmod tempor incididunt ut.
+                </div>
+            </div>
+            <!-- Fin Noticia Secundaria seccion-->
+            <!-- Noticia Secundaria  seccion-->
+            <div class="media">
+                <a class="pull-left" href="#"><img class="media-object" data-src="holder.js/110x64/industrial"></a>
+                <div class="media-body media-font">
+                    Consectetur adipisicing elit, sed do eiusmod tempor incididunt ut sed do eiusmod tempor incididunt ut.
+                </div>
+            </div>
+            <!-- Fin Noticia Secundaria seccion-->
+            <!-- Noticia Secundaria  seccion-->
+            <div class="media">
+                <a class="pull-left" href="#"><img class="media-object" data-src="holder.js/110x64/industrial"></a>
+                <div class="media-body media-font">
+                    Consectetur adipisicing elit, sed do eiusmod tempor incididunt ut sed do eiusmod tempor incididunt ut.
+                </div>
+            </div>
+            <!-- Fin Noticia Secundaria seccion-->
+        </div>
+    </div>
+</div>
+<!-- Fin tricol 2-->
+
+
+<!-- publicidad -->
+<div class="container-narrow-publicidad">
+    <img data-src="holder.js/940x100/industrial">
+</div>
+<!-- Fin publicidad -->
+
+<!-- deportes -->
+<div class="container-narrow">
+    <div class="row-fluid">
+        <div class="span12 noticia-deportes">
+            <!-- Noticia Destacada seccion-->
+            <div>
+                <h2 class="deportes-box">Deportes</h2>
+            </div>
+        </div>
+    </div>
+    <div class="row-fluid">
+        <div class="span4 noticia-tricol">
+            <div>
+                <img data-src="holder.js/297x154/industrial">
+                <h3>
+                    Consectetur adipisicing elit, sed do eiusmod tempor incididunt ut.
+                </h3>
+                <p class="media-font">
+                    Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo
+                    inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.
+                    Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit.
+                </p>
+            </div>
+        </div>
+        <div class="span4 noticia-tricol">
+
+            <!-- Noticia medio  deportes-->
+            <div class="media">
+                <a class="pull-left" href="#"><img class="media-object" data-src="holder.js/110x64/industrial"></a>
+                <div class="media-body media-font">
+                    Consectetur adipisicing elit, sed do eiusmod tempor incididunt ut sed do eiusmod tempor incididunt ut.
+                </div>
+            </div>
+            <!-- fin Noticia medio  deportes-->
+            <!-- Noticia medio  deportes-->
+            <div class="media">
+                <a class="pull-left" href="#"><img class="media-object" data-src="holder.js/110x64/industrial"></a>
+                <div class="media-body media-font">
+                    Consectetur adipisicing elit, sed do eiusmod tempor incididunt ut sed do eiusmod tempor incididunt ut.
+                </div>
+            </div>
+            <!-- fin Noticia medio  deportes-->
+            <!-- Noticia medio  deportes-->
+            <div class="media">
+                <a class="pull-left" href="#"><img class="media-object" data-src="holder.js/110x64/industrial"></a>
+                <div class="media-body media-font">
+                    Consectetur adipisicing elit, sed do eiusmod tempor incididunt ut sed do eiusmod tempor incididunt ut.
+                </div>
+            </div>
+            <!-- fin Noticia medio  deportes-->
+            <!-- Noticia medio  deportes-->
+            <div class="media">
+                <a class="pull-left" href="#"><img class="media-object" data-src="holder.js/110x64/industrial"></a>
+                <div class="media-body media-font">
+                    Consectetur adipisicing elit, sed do eiusmod tempor incididunt ut sed do eiusmod tempor incididunt ut.
+                </div>
+            </div>
+            <!-- Noticia medio  deportes-->
+            <div class="media">
+                <a class="pull-left" href="#"><img class="media-object" data-src="holder.js/110x64/industrial"></a>
+                <div class="media-body media-font">
+                    Consectetur adipisicing elit, sed do eiusmod tempor incididunt ut sed do eiusmod tempor incididunt ut.
+                </div>
+            </div>
+            <!-- fin Noticia medio  deportes-->
+
+        </div>
+        <div class="span4 noticia-tricol">
+            <div class="span12 custom-widget-box ">
+
+                <div class="custom-widget-title deportes-widget">
+                    <h5>Lo &uacute;ltimo en Deportes</h5>
+                </div>
+
+                <!-- Inicio Noticia -->
+                <div class="custom-widget-content nopadding updates">
+                    <div class="new-update clearfix">
+                        <div class="update-done">
+                            <a href="#" title="">Lorem ipsum dolor sit amet, consectetur adipisicing elit. </a>
+                        </div>
+                        <div class="update-date"><span class="update-day">08:00</span></div>
+
+                    </div>
+                </div>
+                <!-- Fin Noticia -->
+
+                <!-- Inicio Noticia -->
+                <div class="custom-widget-content nopadding updates">
+                    <div class="new-update clearfix">
+                        <div class="update-done">
+                            <a href="#" title="">Lorem ipsum dolor sit amet, consectetur adipisicing elit. </a>
+                        </div>
+                        <div class="update-date"><span class="update-day">08:00</span></div>
+
+                    </div>
+                </div>
+                <!-- Fin Noticia -->
+
+
+
+
+            </div>
+            <!-- Fin Bloque de Noticias -->
+        </div>
+    </div>
+</div>
+<!-- fin deportes -->
+
+<!-- inicio deportivo-cuenca -->
+<div class="container-narrow-deportivo-cuenca">
+
+    <div class="row-fluid">
+        <div class="span8 deportivo-cuenca">
+            <h4>
+                Deportivo Cuenca
+            </h4>
+
+            <div class="row-fluid">
+                <!-- noticia principal deportivo cuenca-->
+                <div class="span6 deportivo-cuenta-bicol">
+                    <div>
+                        <img data-src="holder.js/290x140/industrial">
+                        <h3>
+                            Consectetur adipisicing elit, sed do eiusmod tempor incididunt ut. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium.
+                        </h3>
+                    </div>
+                </div>
+                <!-- fin noticia principal deportivo cuenca-->
+
+                <div class="span6 deportivo-cuenta-bicol">
+                    <!-- Noticia medio deportivo-cuenta-->
+                    <div class="media">
+                        <a class="pull-left" href="#"><img class="media-object" data-src="holder.js/110x64/industrial"></a>
+                        <div class="media-body media-font">
+                            Consectetur adipisicing elit, sed do eiusmod tempor incididunt ut sed do eiusmod tempor incididunt ut.
+                        </div>
+                    </div>
+                    <!-- fin Noticia medio deportivo-cuenta-->
+                    <!-- Noticia medio deportivo-cuenta-->
+                    <div class="media">
+                        <a class="pull-left" href="#"><img class="media-object" data-src="holder.js/110x64/industrial"></a>
+                        <div class="media-body media-font">
+                            Consectetur adipisicing elit, sed do eiusmod tempor incididunt ut sed do eiusmod tempor incididunt ut.
+                        </div>
+                    </div>
+                    <!-- fin Noticia medio deportivo-cuenta-->
+                    <!-- Noticia medio deportivo-cuenta-->
+                    <div class="media">
+                        <a class="pull-left" href="#"><img class="media-object" data-src="holder.js/110x64/industrial"></a>
+                        <div class="media-body media-font">
+                            Consectetur adipisicing elit, sed do eiusmod tempor incididunt ut sed do eiusmod tempor incididunt ut.
+                        </div>
+                    </div>
+                    <!-- fin Noticia medio deportivo-cuenta-->
+                </div>
+            </div>
+
+        </div>
+        <div class="span4 deportivo-cuenca-derecha">
+            <img data-src="holder.js/290x270">
+        </div>
+    </div>
+</div>
+<!-- Fin deportivo-cuenca-->
+
+
+<!-- Inicio tricol 3-->
+<div class="container-narrow">
+    <div class="row-fluid tricol">
+        <!-- Caricatura -->
+        <div class="span4 noticia-tricol caricatura">
+            <img data-src="holder.js/290x270">
+        </div>
+        <!-- Fin Caricatura -->
+        <div class="span4 noticia-tricol columnas">
+            <div>
+                <h2 class="loja-tri">Opinion</h2>
+                <h3>
+                    Refranes
+                </h3>
+                <p>
+                    María Rosa Crespo Dentro de la cultura popular juegan un papel importante los refranes porque conde...
+                </p>
+                <h3>
+                    Refranes
+                </h3>
+                <p>
+                    María Rosa Crespo Dentro de la cultura popular juegan un papel importante los refranes porque conde...
+                </p>
+                <h3>
+                    Refranes
+                </h3>
+                <p>
+                    María Rosa Crespo Dentro de la cultura popular juegan un papel importante los refranes porque conde...
+                </p>
+                <h3>
+                    Refranes
+                </h3>
+                <p>
+                    María Rosa Crespo Dentro de la cultura popular juegan un papel importante los refranes porque conde...
+                </p>
+                <h3>
+                    Refranes
+                </h3>
+                <p>
+                    María Rosa Crespo Dentro de la cultura popular juegan un papel importante los refranes porque conde...
+                </p>
+
+            </div>
+
+        </div>
+
+        <div class="span4 noticia-tricol">
+            <div>
+                <h2 class="loja-tri">Temas</h2>
+                <img data-src="holder.js/297x154">
+                <h3>
+                    Consectetur adipisicing elit, sed do eiusmod tempor incididunt ut.
+                </h3>
+            </div>
+
+        </div>
+    </div>
+</div>
+<!-- Fin tricol 3-->
 
 <?php wp_footer(); ?>
 
@@ -470,6 +822,8 @@
 
     <div class="modal-footer"></div>
 </div>
+
+
 
 </body>
 </html>
