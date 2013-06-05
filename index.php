@@ -23,7 +23,7 @@
                         </div>
                     </form>
                 </div>
-                <p class="pull-left p-top"><?php echo get_fecha(); ?></p>
+                <p class="pull-left p-top"><?php echo get_fecha(); echo get_clima();?></p>
                 <a href="#"><img title="El Mercurio Noticias Ecuador Facebook" alt="El Mercurio Noticias Ecuador Facebook" class="pull-right img-top" src="<?php bloginfo('template_url'); ?>/assets/img/facebook.png"></a>
                 <a href="#"><img title="El Mercurio Noticias Ecuador Twitter"  alt="El Mercurio Noticias Ecuador Twitter" class="pull-right img-top" src="<?php bloginfo('template_url'); ?>/assets/img/twitter.png"></a>
                 <a href="#"><img title="El Mercurio Noticias Ecuador YouTube" alt="El Mercurio Noticias Ecuador YouTube" class="pull-right img-top" src="<?php bloginfo('template_url'); ?>/assets/img/youtube.png"></a>
@@ -791,6 +791,99 @@
 </div>
 <!-- Fin tricol 3-->
 
+
+<!-- inicio multimedia -->
+<div class="container-narrow-multimedia">
+    <div class="row-fluid">
+        <div class="span8 multimedia">
+            <h4>
+                Multimedia
+            </h4>
+            <!-- Carrusel multimedia -->
+            <div class="carousel slide" id="myCarouselMultimedia">
+                <div class="carousel-inner">
+                    <div class="item active">
+                        <ul class="thumbnails multimedia-thumbnails">
+                            <li class="span4">
+                                <div class="thumbnail multimedia-thumbnails-item">
+                                    <a href="#modal_multimedia" data-caption="Thumbnail caption..."  data-img="<?php bloginfo('template_url'); ?>/assets/img/placeholder-multimedia.jpg" data-toggle="modal">
+                                        <img data-src="holder.js/189x144">
+                                    </a>
+                                    <p>Thumbnail caption...</p>
+                                </div>
+                            </li>
+
+                            <li class="span4">
+                                <div class="thumbnail multimedia-thumbnails-item">
+                                    <a href="#modal_multimedia" data-caption="Thumbnail caption..."  data-img="<?php bloginfo('template_url'); ?>/assets/img/placeholder-multimedia.jpg" data-toggle="modal">
+                                        <img data-src="holder.js/189x144">
+                                    </a>
+                                    <p>Thumbnail caption...</p>
+                                </div>
+                            </li>
+
+
+                            <li class="span4">
+                                <div class="thumbnail multimedia-thumbnails-item">
+                                    <a href="#modal_multimedia" data-caption="Thumbnail caption..."  data-img="<?php bloginfo('template_url'); ?>/assets/img/placeholder-multimedia.jpg" data-toggle="modal">
+                                        <img data-src="holder.js/189x144">
+                                    </a>
+                                    <p>Thumbnail caption...</p>
+                                </div>
+                            </li>
+
+                        </ul>
+                    </div>
+
+                    <div class="item">
+                        <ul class="thumbnails multimedia-thumbnails">
+                            <li class="span4">
+                                <div class="thumbnail multimedia-thumbnails-item">
+                                    <a href="#modal_multimedia" data-caption="Thumbnail caption..." data-img="<?php bloginfo('template_url'); ?>/assets/img/flechas.png" data-toggle="modal">
+                                        <img data-src="holder.js/189x144">
+                                    </a>
+                                    <p>Thumbnail caption...</p>
+                                </div>
+                            </li>
+
+                            <li class="span4">
+                                <div class="thumbnail multimedia-thumbnails-item">
+                                    <a href="#modal_multimedia" data-caption="Thumbnail caption..."  data-img="<?php bloginfo('template_url'); ?>/assets/img/placeholder-multimedia.jpg" data-toggle="modal">
+                                        <img data-src="holder.js/189x144">
+                                    </a>
+                                    <p>Thumbnail caption...</p>
+                                </div>
+                            </li>
+
+
+                            <li class="span4">
+                                <div class="thumbnail multimedia-thumbnails-item">
+                                    <a href="#modal_multimedia" data-caption="Thumbnail caption..."  data-img="<?php bloginfo('template_url'); ?>/assets/img/placeholder-multimedia.jpg" data-toggle="modal">
+                                        <img data-src="holder.js/189x144">
+                                    </a>
+                                    <p>Thumbnail caption...</p>
+                                </div>
+                            </li>
+
+                        </ul>
+                    </div>
+                </div>
+                <a data-slide="prev" href="#myCarouselMultimedia" class="left multimedia-carousel-control">‹</a>
+                <a data-slide="next" href="#myCarouselMultimedia" class="right multimedia-carousel-control">›</a>
+            </div>
+            <!-- Fin Carrusel multimedia -->
+        </div>
+        <div class="span4 multimedia-derecha">
+            <h4>
+                Farandula
+            </h4>
+
+        </div>
+    </div>
+</div>
+<!-- Fin multimedia-->
+
+
 <?php wp_footer(); ?>
 
 <script type="text/javascript" src="<?php bloginfo('template_url'); ?>/assets/scripts/holder.js"></script>
@@ -805,12 +898,21 @@
             $(".modal-body #imagen_sociales").attr('src', imagen_sociales);
             $(".modal-footer").html('<p>'+ caption_sociales +'</p>');
         });
+
+        $('[data-toggle="modal"]').click(function(e) {
+            e.preventDefault();
+            var imagen_multimedia = $(this).data('img');
+            var caption_multimedia = $(this).data('caption');
+
+            $(".modal-body #imagen_multimedia").attr('src', imagen_multimedia);
+            $(".modal-footer").html('<p>'+ caption_multimedia +'</p>');
+        });
     });
 </script>
 
 
 
-<!-- Modal -->
+<!-- Modal Sociales-->
 <div id="modal_sociales" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
@@ -823,6 +925,18 @@
     <div class="modal-footer"></div>
 </div>
 
+<!-- Modal Multimedia-->
+<div id="modal_multimedia" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h3><i class="icon-eye-open icon-white"></i> </h3>
+    </div>
+    <div class="modal-body">
+        <img id="imagen_multimedia" src=""/>
+    </div>
+
+    <div class="modal-footer"></div>
+</div>
 
 
 </body>
