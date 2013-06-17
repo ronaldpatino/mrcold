@@ -1,0 +1,232 @@
+a{
+    color: #006BAE;
+}
+
+.top-navbar{
+    font-family: arial,sans-serif;
+    font-weight: bold;
+    font-size: 13px;
+}
+
+.navbar .nav > li > a {
+    color: #000000;
+    text-shadow: none;
+}
+
+.navbar .nav > li > a:focus,
+.navbar .nav > li > a:hover {
+    color: #fff !important;
+    text-decoration: none;
+    text-shadow: black 0.1em 0.1em 0.2em;
+}
+
+.cuenca:hover{
+    background-color: #b91d1e !important;
+    color: #fff !important;
+}
+
+.deportes:hover{
+    background-color: #7200AC !important;
+}
+
+.sucesos:hover{
+    background-color: #ae113e !important;
+}
+
+.nacionales:hover{
+    background-color: #FF981D !important;
+}
+
+.austro:hover{
+    background-color: #15992A !important;
+}
+
+.cultura:hover{
+    background-color: #632F00 !important;
+}
+
+.farandula:hover{
+    background-color: #FF1D77 !important;
+}
+
+
+.mundo:hover{
+    background-color: #006AC1 !important;
+}
+
+.opinion:hover{
+    background-color: #7F6E94 !important;
+}
+
+.breadcrumb > li:first-child {
+    font-size: 14px;
+    text-shadow: black 0.1em 0.1em 0.2em;
+}
+
+.breadcrumb > li > a {
+    color: #FFFFFF;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    text-decoration: none;
+}
+
+.main > h2{
+    font-family: Georgia, Times, "Times New Roman", serif;
+    font-size: 2rem;
+    font-weight: normal;
+    line-height: 105%
+}
+
+.main > h2 > a{
+    text-decoration: none;
+}
+
+.main > p {
+    font-size: 0.9rem;
+    line-height: 120%;
+    text-align: justify;
+}
+
+.thumbnail-custom h3{
+    font-family: Georgia, Times, "Times New Roman", serif;
+    font-size: 1.2rem;
+    font-weight: normal;
+    line-height: 105%;
+}
+
+.thumbnail-custom h3 > a{
+    text-decoration: none;
+}
+
+.thumbnail-custom > p{
+    font-size: 0.8rem;
+    line-height: 120%;
+    text-align: justify;
+}
+
+
+.sidebar > h2 {
+    font-family: Georgia, Times, "Times New Roman", serif;
+    font-size: 1.2rem;
+    font-weight: normal;
+    line-height: 105%;
+    color: #fff;
+}
+
+
+.sidebar  .nav-stacked > li > a {
+    font-size: 0.8rem !important;
+}
+
+
+.portada > h3{
+    font-family: Georgia, Times, "Times New Roman", serif;
+    font-size: 1.2rem;
+    font-weight: normal;
+    line-height: 105%;
+    color: #fff;
+}
+
+.noticia-tricol > h2 {
+    font-family: Georgia, Times, "Times New Roman", serif;
+    font-size: 1.5rem;
+    font-weight: normal;
+
+    color: #ffffff;
+}
+
+.media-body-tricol{
+    font-size: 0.7rem;
+    font-weight: normal;
+    line-height: 105%;
+    text-align: justify;
+}
+
+#tricoldeportes > h2{
+    font-family: Georgia, Times, "Times New Roman", serif;
+    font-size: 1.5rem;
+    font-weight: normal;
+
+    color: #ffffff;
+}
+
+#deportivocuenca h2{
+    font-family: Georgia, Times, "Times New Roman", serif;
+    font-size: 1.5rem;
+    font-weight: normal;
+
+    color: #ffffff;
+}
+
+#sociales h2{
+    font-family: Georgia, Times, "Times New Roman", serif;
+    font-size: 1.5rem;
+    font-weight: normal;
+
+    color: #ffffff;
+}
+
+
+#opinion h2{
+    font-family: Georgia, Times, "Times New Roman", serif;
+    font-size: 1.5rem;
+    font-weight: normal;
+
+    color: #ffffff;
+}
+
+#opinion h3{
+    font-family: Georgia,Times,"Times New Roman",serif;
+    font-size: 1rem;
+    font-weight: bold;
+    line-height: 105%;
+    margin: 0 0 3px 0;
+
+
+}
+#opinion p{
+
+    font-size: 0.7rem;
+    font-weight: normal;
+    line-height: 105%;
+}
+
+#opinion h3 > a:hover{
+    text-decoration: none;
+}
+
+#multimedia h2{
+    font-family: Georgia, Times, "Times New Roman", serif;
+    font-size: 1.5rem;
+    font-weight: normal;
+
+    color: #ffffff;
+}
+
+#suplementos h2{
+    font-family: Georgia, Times, "Times New Roman", serif;
+    font-size: 1.5rem;
+    font-weight: normal;
+
+    color: #ffffff;
+}
+
+
+.sociales-thumbnails-item > p {
+    color: #ffffff !important;
+    font-size: 0.8rem;
+}
+
+.multimedia-thumbnails-item > p {
+    color: #ffffff !important;
+    font-size: 0.8rem;
+}
+
+.suplementos-thumbnails-item >p {
+    color: #ffffff !important;
+    font-size: 0.8rem;
+}
+
+.direccion {
+    color: #ffffff !important;
+    font-size: 0.8rem;
+}

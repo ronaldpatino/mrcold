@@ -1,9 +1,6 @@
-<!-- Inicio Menu -->
-<div class="navbar">
-    <div class="navbar-inner navbar-menu">
-        <div class="container">
+<div class='navbar top-navbar'>
+        <div class='navbar-inner top-navbar-inner  nopadding-top nav-collapse' style="height: auto;">
             <ul class="nav">
-
                 <li class="active"><a href="#"><i class="icon-home"></i></a></li>
                 <li><a href="#" class="cuenca">CUENCA</a></li>
                 <li><a href="#" class="deportes">DEPORTES</a></li>
@@ -16,6 +13,4 @@
                 <li><a href="#" class="opinion">OPINION</a></li>
             </ul>
         </div>
-    </div>
 </div>
-<!-- Fin menu -->

@@ -1,115 +1,172 @@
-<!-- Inicio tricol-->
-<div class="container-narrow">
-    <div class="row-fluid tricol">
+<!-- Cultura Cuenca Sucesos -->
+<div class='container'>
+    <div id='tricolccs' class='row-fluid'>
         <div class="span4 noticia-tricol">
-            <!-- Noticia Destacada seccion-->
-            <div>
-                <h2 class="cultura-tri">Cultura</h2>
-                <img data-src="holder.js/297x154">
-                <h3>
-                    Consectetur adipisicing elit, sed do eiusmod tempor incididunt ut.
-                </h3>
-            </div>
+            <h2 class="cultura">Cultura</h2>
+            <!-- -->
 
-            <!-- Fin Noticia Destacada -->
+            <ul class="thumbnails">
+                <li class="span12">
+                    <div class="thumbnail thumbnail-custom">
+                        <h3><a href="#">Consectetur adipisicing elit, sed do eiusmod tempor incididunt ut.</a></h3>
+                        <img data-src="holder.js/300x200" alt="">
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
+                            labore et dolore magna aliqua.
+                        </p>
+                    </div>
+                </li>
+            </ul>
 
-            <!-- Noticia Secundaria  seccion-->
-            <div class="media">
-                <a class="pull-left" href="#"><img class="media-object" data-src="holder.js/110x64/industrial"></a>
-                <div class="media-body media-font">
-                    Consectetur adipisicing elit, sed do eiusmod tempor incididunt ut sed do eiusmod tempor incididunt ut.
+
+            <!-- -->
+            <div class="media ml2p">
+                <a class="pull-left" href="#">
+                    <img class="media-object" data-src="holder.js/120x74">
+                </a>
+
+                <div class="media-body media-body-tricol">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore
+                    et dolore magna aliqua
                 </div>
             </div>
-            <!-- Fin Noticia Secundaria seccion-->
-            <!-- Noticia Secundaria  seccion-->
-            <div class="media">
-                <a class="pull-left" href="#"><img class="media-object" data-src="holder.js/110x64/industrial"></a>
-                <div class="media-body media-font">
-                    Consectetur adipisicing elit, sed do eiusmod tempor incididunt ut sed do eiusmod tempor incididunt ut.
-                </div>
-            </div>
-            <!-- Fin Noticia Secundaria seccion-->
-            <!-- Noticia Secundaria  seccion-->
-            <div class="media">
-                <a class="pull-left" href="#"><img class="media-object" data-src="holder.js/110x64/industrial"></a>
-                <div class="media-body media-font">
-                    Consectetur adipisicing elit, sed do eiusmod tempor incididunt ut sed do eiusmod tempor incididunt ut.
-                </div>
-            </div>
-            <!-- Fin Noticia Secundaria seccion-->
 
+            <!-- -->
+            <div class="media ml2p">
+                <a class="pull-left" href="#">
+                    <img class="media-object" data-src="holder.js/120x74">
+                </a>
+
+                <div class="media-body media-body-tricol">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore
+                    et dolore magna aliqua
+                </div>
+            </div>
+
+            <!-- -->
+            <div class="media ml2p">
+                <a class="pull-left" href="#">
+                    <img class="media-object" data-src="holder.js/120x74">
+                </a>
+
+                <div class="media-body media-body-tricol">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore
+                    et dolore magna aliqua
+                </div>
+            </div>
+            <br/>
+
+        </div>
+        <div class="span4 noticia-tricol">
+            <h2 class="cuenca">Cuenca</h2>
+
+            <ul class="thumbnails">
+                <li class="span12">
+                    <div class="thumbnail thumbnail-custom">
+                        <h3><a href="#">Consectetur adipisicing elit, sed do eiusmod tempor incididunt ut.</a></h3>
+                        <img data-src="holder.js/300x200" alt="">
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
+                            labore et dolore magna aliqua.
+                        </p>
+                    </div>
+                </li>
+            </ul>
+
+
+            <!-- -->
+            <div class="media ml2p">
+                <a class="pull-left" href="#">
+                    <img class="media-object" data-src="holder.js/120x74">
+                </a>
+
+                <div class="media-body media-body-tricol">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore
+                    et dolore magna aliqua
+                </div>
+            </div>
+
+            <!-- -->
+            <div class="media ml2p">
+                <a class="pull-left" href="#">
+                    <img class="media-object" data-src="holder.js/120x74">
+                </a>
+
+                <div class="media-body media-body-tricol">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore
+                    et dolore magna aliqua
+                </div>
+            </div>
+
+            <!-- -->
+            <div class="media ml2p">
+                <a class="pull-left" href="#">
+                    <img class="media-object" data-src="holder.js/120x74">
+                </a>
+
+                <div class="media-body media-body-tricol">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore
+                    et dolore magna aliqua
+                </div>
+            </div>
+
+            <br/>
 
 
         </div>
         <div class="span4 noticia-tricol">
-            <div>
-                <h2 class="cuenca-tri">Cuenca</h2>
-                <img data-src="holder.js/297x154">
-                <h3>
-                    Consectetur adipisicing elit, sed do eiusmod tempor incididunt ut.
-                </h3>
+            <h2 class="sucesos">Sucesos</h2>
+
+            <ul class="thumbnails">
+                <li class="span12">
+                    <div class="thumbnail thumbnail-custom">
+                        <h3><a href="#">Consectetur adipisicing elit, sed do eiusmod tempor incididunt ut.</a></h3>
+                        <img data-src="holder.js/300x200" alt="">
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
+                            labore et dolore magna aliqua.
+                        </p>
+                    </div>
+                </li>
+            </ul>
+
+            <!-- -->
+            <div class="media ml2p">
+                <a class="pull-left" href="#">
+                    <img class="media-object" data-src="holder.js/120x74">
+                </a>
+
+                <div class="media-body media-body-tricol">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore
+                    et dolore magna aliqua
+                </div>
             </div>
 
-            <!-- Noticia Secundaria  seccion-->
-            <div class="media">
-                <a class="pull-left" href="#"><img class="media-object" data-src="holder.js/110x64/industrial"></a>
-                <div class="media-body media-font">
-                    Consectetur adipisicing elit, sed do eiusmod tempor incididunt ut sed do eiusmod tempor incididunt ut.
-                </div>
-            </div>
-            <!-- Fin Noticia Secundaria seccion-->
-            <!-- Noticia Secundaria  seccion-->
-            <div class="media">
-                <a class="pull-left" href="#"><img class="media-object" data-src="holder.js/110x64/industrial"></a>
-                <div class="media-body media-font">
-                    Consectetur adipisicing elit, sed do eiusmod tempor incididunt ut sed do eiusmod tempor incididunt ut.
-                </div>
-            </div>
-            <!-- Fin Noticia Secundaria seccion-->
-            <!-- Noticia Secundaria  seccion-->
-            <div class="media">
-                <a class="pull-left" href="#"><img class="media-object" data-src="holder.js/110x64/industrial"></a>
-                <div class="media-body media-font">
-                    Consectetur adipisicing elit, sed do eiusmod tempor incididunt ut sed do eiusmod tempor incididunt ut.
-                </div>
-            </div>
-            <!-- Fin Noticia Secundaria seccion-->
-        </div>
+            <!-- -->
+            <div class="media ml2p">
+                <a class="pull-left" href="#">
+                    <img class="media-object" data-src="holder.js/120x74">
+                </a>
 
-        <div class="span4 noticia-tricol">
-            <div>
-                <h2 class="sucesos-tri">Sucesos</h2>
-                <img data-src="holder.js/297x154">
-                <h3>
-                    Consectetur adipisicing elit, sed do eiusmod tempor incididunt ut.
-                </h3>
+                <div class="media-body media-body-tricol">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore
+                    et dolore magna aliqua
+                </div>
             </div>
 
-            <!-- Noticia Secundaria  seccion-->
-            <div class="media">
-                <a class="pull-left" href="#"><img class="media-object" data-src="holder.js/110x64/industrial"></a>
-                <div class="media-body media-font">
-                    Consectetur adipisicing elit, sed do eiusmod tempor incididunt ut sed do eiusmod tempor incididunt ut.
+            <!-- -->
+            <div class="media ml2p">
+                <a class="pull-left" href="#">
+                    <img class="media-object" data-src="holder.js/120x74">
+                </a>
+
+                <div class="media-body media-body-tricol">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore
+                    et dolore magna aliqua
                 </div>
             </div>
-            <!-- Fin Noticia Secundaria seccion-->
-            <!-- Noticia Secundaria  seccion-->
-            <div class="media">
-                <a class="pull-left" href="#"><img class="media-object" data-src="holder.js/110x64/industrial"></a>
-                <div class="media-body media-font">
-                    Consectetur adipisicing elit, sed do eiusmod tempor incididunt ut sed do eiusmod tempor incididunt ut.
-                </div>
-            </div>
-            <!-- Fin Noticia Secundaria seccion-->
-            <!-- Noticia Secundaria  seccion-->
-            <div class="media">
-                <a class="pull-left" href="#"><img class="media-object" data-src="holder.js/110x64/industrial"></a>
-                <div class="media-body media-font">
-                    Consectetur adipisicing elit, sed do eiusmod tempor incididunt ut sed do eiusmod tempor incididunt ut.
-                </div>
-            </div>
-            <!-- Fin Noticia Secundaria seccion-->
+            <br/>
         </div>
     </div>
 </div>
-<!-- Fin tricol-->
+<!-- Fin Cultura Cuenca Sucesos -->

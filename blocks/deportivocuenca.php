@@ -1,56 +1,73 @@
-<!-- inicio deportivo-cuenca -->
-<div class="container-narrow-deportivo-cuenca">
+<!-- Deportivo Cuenca -->
+<div class='container margen-container'>
+    <div id='deportivocuenca' class='row-fluid'>
+        <div class="span8">
+            <h2>Deportivo Cuenca</h2>
+            <div class="row-fluid noticia-bicol">
+                <div class="span6 ">
+                    <ul class="thumbnails">
+                        <li class="span12 nomargen-abajo">
+                            <div class="thumbnail thumbnail-custom">
+                                <h3>Consectetur adipisicing elit, sed do eiusmod tempor incididunt ut. </h3>
+                                <img data-src="holder.js/330x154" alt="">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
+                                    labore et dolore magna aliqua.
+                                </p>
+                            </div>
+                        </li>
+                    </ul>
 
-    <div class="row-fluid">
-        <div class="span8 deportivo-cuenca">
-            <h4>
-                Deportivo Cuenca
-            </h4>
-
-            <div class="row-fluid">
-                <!-- noticia principal deportivo cuenca-->
-                <div class="span6 deportivo-cuenta-bicol">
-                    <div>
-                        <img data-src="holder.js/290x140/industrial">
-                        <h3>
-                            Consectetur adipisicing elit, sed do eiusmod tempor incididunt ut. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium.
-                        </h3>
-                    </div>
                 </div>
-                <!-- fin noticia principal deportivo cuenca-->
+                <div class="span6">
+                    <!-- -->
+                    <div class="media ml2p">
+                        <a class="pull-left" href="#">
+                            <img class="media-object" data-src="holder.js/120x74">
+                        </a>
 
-                <div class="span6 deportivo-cuenta-bicol">
-                    <!-- Noticia medio deportivo-cuenta-->
-                    <div class="media">
-                        <a class="pull-left" href="#"><img class="media-object" data-src="holder.js/110x64/industrial"></a>
-                        <div class="media-body media-font">
-                            Consectetur adipisicing elit, sed do eiusmod tempor incididunt ut sed do eiusmod tempor incididunt ut.
+                        <div class="media-body media-body-tricol">
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore
+                            et dolore magna aliqua
                         </div>
                     </div>
-                    <!-- fin Noticia medio deportivo-cuenta-->
-                    <!-- Noticia medio deportivo-cuenta-->
-                    <div class="media">
-                        <a class="pull-left" href="#"><img class="media-object" data-src="holder.js/110x64/industrial"></a>
-                        <div class="media-body media-font">
-                            Consectetur adipisicing elit, sed do eiusmod tempor incididunt ut sed do eiusmod tempor incididunt ut.
+
+                    <!-- -->
+                    <div class="media ml2p">
+                        <a class="pull-left" href="#">
+                            <img class="media-object" data-src="holder.js/120x74">
+                        </a>
+
+                        <div class="media-body media-body-tricol">
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore
+                            et dolore magna aliqua
                         </div>
                     </div>
-                    <!-- fin Noticia medio deportivo-cuenta-->
-                    <!-- Noticia medio deportivo-cuenta-->
-                    <div class="media">
-                        <a class="pull-left" href="#"><img class="media-object" data-src="holder.js/110x64/industrial"></a>
-                        <div class="media-body media-font">
-                            Consectetur adipisicing elit, sed do eiusmod tempor incididunt ut sed do eiusmod tempor incididunt ut.
+
+                    <!-- -->
+                    <div class="media ml2p">
+                        <a class="pull-left" href="#">
+                            <img class="media-object" data-src="holder.js/120x74">
+                        </a>
+
+                        <div class="media-body media-body-tricol">
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore
+                            et dolore magna aliqua
                         </div>
                     </div>
-                    <!-- fin Noticia medio deportivo-cuenta-->
+                    <br/>
                 </div>
             </div>
-
         </div>
-        <div class="span4 deportivo-cuenca-derecha">
-            <img data-src="holder.js/290x270">
+        <div class="span4 ">
+            <ul class="thumbnails publicidad-thumbnails">
+                <li class="span12">
+                    <div class="thumbnail publicidad">
+                        <img data-src="holder.js/300x300">
+                    </div>
+                </li>
+            </ul>
         </div>
     </div>
 </div>
-<!-- Fin deportivo-cuenca-->
+<!-- Fin Deportivo Cuenca -->
