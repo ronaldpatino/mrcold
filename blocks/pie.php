@@ -1,5 +1,5 @@
 <!--footer-->
-<div class='container margen-container'>
+<div class='container margen-container-pie'>
     <div id='footer' class='row-fluid'>
         <div class="span6">
             <div class='navbar-pie nomargen-abajo'>
@@ -32,5 +32,3 @@
     </div>
 </div>
 <!-- Fin footer-->
-<div class='container margen-container'>
-</div>

@@ -1,7 +1,18 @@
+.container{
+    box-shadow:1px 1px 6px 1px #6f6f6f;
+}
+.nosh{
+    box-shadow:none !important;
+}
+
+
 body {
     background-color: #CCC;
 }
 
+.logo{
+    background-color: white;
+}
 #content {
     background-color: #FFF;
 }
@@ -67,6 +78,12 @@ body {
 }
 .margen-container{
     margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.margen-container-pie{
+    margin-top: 20px;
+    margin-bottom: 50px;
 }
 
 /*Fin Noticias Secundarias*/
@@ -236,6 +253,9 @@ body {
     text-decoration: none;
 }
 
+.thumbnails, .thumbnails>li{
+    margin-bottom: 0;
+}
 .publicidad-thumbnails{
     margin: 7px 0 0 0  !important;
 }
@@ -537,10 +557,10 @@ body {
 /*Top items */
 
 .search-bar{
-    border-bottom: 0 !important;
+    border-bottom: 1px solid #006bae !important;
     border-top: 1px solid #006bae !important;
-    border-left: 1px solid #FF6E17 !important;
-    border-right: 1px solid #006bae !important;
+    border-left: 0px solid #FF6E17 !important;
+    border-right: 0px solid #006bae !important;
 }
 .top-navbar{
     margin-bottom: 0 !important;
@@ -551,8 +571,8 @@ body {
     background-image: none;
     border: 0;
     border-bottom: 5px solid #006bae;
-    border-left: 1px solid #006bae;
-    border-right: 1px solid #006bae;
+    border-left: 0px solid #006bae;
+    border-right: 0px solid #006bae;
     border-radius: 0;
     box-shadow: none;
     min-height: 20px;
@@ -569,8 +589,18 @@ body {
 }
 
 
+.img-bottom{
+    margin: 3px 5px 3px 0;
+    width: 25px;
+    height: 25px;
+}
+
 .p-top{
     margin: 0 0 0 0;
+}
+
+.p-bottom{
+    margin: 4px 0 0 0;
 }
 
 form.navbar-search {
@@ -848,3 +878,65 @@ form.navbar-search .input-append {
     border-top-left-radius: 0;
     border-top-right-radius: 0;
 }
+
+/*twitter**/
+
+.navbar-twitter-fixed-bottom {
+    bottom: 0;
+}
+.navbar-twitter-fixed-top, .navbar-twitter-fixed-bottom {
+    left: 0;
+    margin-bottom: 0;
+    position: fixed;
+    right: 0;
+    z-index: 1030;
+}
+.navbar {
+    margin-bottom: 20px;
+    overflow: visible;
+}
+
+
+.navbar-twitter-inner:before, .navbar-twitter-inner:after {
+    content: "";
+    display: table;
+    line-height: 0;
+}
+.navbar-twitter-inner:after {
+    clear: both;
+}
+.navbar-twitter-inner:before, .navbar-twitter-inner:after {
+    content: "";
+    display: table;
+    line-height: 0;
+}
+.navbar-twitter-inverse .navbar-twitter-inner {
+    background-color: #1B1B1B;
+    background-image: linear-gradient(to bottom, #222222, #111111);
+    background-repeat: repeat-x;
+    border-color: #252525;
+}
+.navbar-twitter-fixed-bottom .navbar-twitter-inner {
+    box-shadow: 0 -1px 10px rgba(0, 0, 0, 0.1);
+}
+.navbar-twitter-fixed-top .navbar-twitter-inner, .navbar-twitter-fixed-bottom .navbar-twitter-inner {
+    border-radius: 0 0 0 0;
+    padding-left: 0;
+    padding-right: 0;
+}
+.navbar-twitter-fixed-bottom .navbar-twitter-inner {
+    border-width: 1px 0 0;
+}
+.navbar-twitter-inner {
+    background-color: #FAFAFA;
+    background-image: linear-gradient(to bottom, #FFFFFF, #F2F2F2);
+    background-repeat: repeat-x;
+    border: 1px solid #D4D4D4;
+    border-radius: 4px 4px 4px 4px;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.067);
+    min-height: 31px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+/*Fin twitter**/

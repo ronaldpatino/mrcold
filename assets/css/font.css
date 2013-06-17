@@ -230,3 +230,14 @@ a{
     color: #ffffff !important;
     font-size: 0.8rem;
 }
+
+.p-bottom{
+    color: white;
+    font-family: Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;
+    font-size: 0.9rem;
+    font-weight: bold;
+}
+
+.p-top{
+    font-weight: normal;
+}
