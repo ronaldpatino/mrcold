@@ -605,6 +605,11 @@ body {
     margin: 0 0 0 0;
 }
 
+.p-top > img {
+    width: 27px;
+    height: auto;
+    margin-top: -4px;
+}
 .p-bottom{
     margin: 4px 0 0 0;
 }
