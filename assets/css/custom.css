@@ -271,6 +271,12 @@ body {
     text-align: center;
 }
 
+.twitem {
+    list-style: none;
+    margin-left:5px;
+    margin-bottom: 0;
+}
+
 #tricolacl h2{
     background-color: #FFF;
     padding: 0;
@@ -549,7 +555,7 @@ body {
 
 
 .breadcrumb > li:first-child {
-    background: url("http://localhost/wp/wp-content/themes/mrc/assets/img/flechas.png") no-repeat scroll right -490px transparent;
+    background: url('../../assets/img/flechas.png') no-repeat scroll right -490px transparent;
     padding: 0 13px 0 5px;
 }
 
@@ -940,3 +946,16 @@ form.navbar-search .input-append {
 }
 
 /*Fin twitter**/
+
+
+
+/*Ticker*/
+#ticker {
+    height: 25px;
+    overflow: hidden;
+}
+#ticker li {
+    height: 25px;
+}
+
+/*Fin ticker*/

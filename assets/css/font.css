@@ -232,12 +232,16 @@ a{
 }
 
 .p-bottom{
-    color: white;
+    color: white !important;
     font-family: Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;
     font-size: 0.9rem;
-    font-weight: bold;
+    font-weight: 100;
 }
 
+.p-bottom a{
+    color: #2BAAE1;
+}
 .p-top{
     font-weight: normal;
 }
+
