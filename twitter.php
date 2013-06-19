@@ -21,7 +21,7 @@ $valor = $twitter->setGetfield($getfield)
 		 
 foreach($valor as $v)
 {
-    $html_links = preg_replace('"\b(http://\S+)"', '<a href="$1">$1</a>', $v['text']);
+    $html_links = preg_replace('"\b(http://\S+)"', '<a href="$1" target="_blank">$1</a>', $v['text']);
 	$json[] = array('created_at'=>$v['created_at'],'text'=>$html_links);
 }
 

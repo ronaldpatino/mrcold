@@ -17,7 +17,7 @@
                                 function tick(){
                                     $('#ticker li:first').slideUp( function () { $(this).appendTo($('#ticker')).slideDown(); });
                                 }
-                                setInterval(function(){ tick () }, 5000);
+                                setInterval(function(){ tick () }, 10000);
         })
         .fail(function() { });
         /*Fin Twitter*/
