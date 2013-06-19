@@ -1,19 +1,67 @@
 <div id='content' class='row-fluid'>
         <div class='span8 main'>
-            <h2>
-                <a href="#">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
-                labore
-                </a>
-            </h2>
-            <img data-src="holder.js/730x344/industrial">
 
-            <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
-                labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                laboris nisi ut aliquip ex ea commodo consequat.
-            </p>
+            <?php
 
+                function filter_where($where = '') {
+                    $where .= " AND post_date >= '" . date('Y-m-d') . "'";
+                    return $where;
+                }
+                add_filter('posts_where', 'filter_where');
+
+                $args = array(
+                    'category_name' => 'Portada,Principal',
+                    'post_status' => 'publish',
+                    'posts_per_page' => 1
+                );
+
+                $principal = query_posts($args);
+                remove_filter('posts_where', 'filter_where');
+
+
+            ?>
+
+            <?php while (have_posts()) : the_post(); ?>
+
+                <h2>
+                    <a href="<?php the_permalink(); ?>">
+                        <?php the_title(); ?>
+                    </a>
+                </h2>
+
+                <?php
+
+                    $args = array(
+                        'post_type' => 'attachment',
+                        'numberposts' => -1,
+                        'post_status' => null,
+                        'post_parent' => $post->ID,
+                        'alt' => get_post_meta( $attachment->ID, '_wp_attachment_image_alt', true ),
+                        'caption' => $attachment->post_excerpt,
+                        'title' => $attachment->post_title
+                    );
+
+                    $attachments = get_posts( $args );
+
+                    if ( $attachments ) {
+                        $imagen =  wp_get_attachment_image_src( $attachments[0]->ID, array(730,344) );
+                        $attachment_meta = wp_get_attachment($attachments[0]->ID);
+                    }
+                    else
+                    {
+                        $imagen =  '';
+                    }
+
+                ?>
+
+                <img src="<?php echo $imagen[0];?>" width="730" height="344" alt="<?php echo $attachment_meta['alt'];?>" title="<?php echo $attachment_meta['title'];?>">
+
+                <p><?php echo substr(get_the_content(), 0,450)."[...]"; ?></p>
+            <?php endwhile; ?>
+            <?php wp_reset_query();?>
+            <!-- Noticia princpal -->
+
+            <!-- Fin Noticia princpal -->
             <div class='row-fluid'>
                 <div class="span6 noticia-secundaria">
 

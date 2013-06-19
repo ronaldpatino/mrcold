@@ -19,6 +19,11 @@ body {
 #content .main {
     padding: 2%;
 }
+
+#content .main > img{
+    width: 730px;
+    height: 344px;
+}
 #content .sidebar {
     padding: 2%;
 }
