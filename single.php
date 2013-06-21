@@ -30,5 +30,5 @@
     
             <?php endwhile; // end of the loop. ?>
         </article>
-
+<?php wpb_set_post_views(get_the_ID());?>
 <?php get_footer(); ?>

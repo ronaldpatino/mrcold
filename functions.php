@@ -283,7 +283,8 @@ function get_noticias_portada() {
         if ($izquierda <= 5)
         {
             $noticia_col_izq .= '<li class="span12 nomargen-abajo"><div class="thumbnail thumbnail-custom">';
-            $noticia_col_izq .= '<img class="img-cultura" style="width:295px;height:154px;" src="' . $imagen['imagen'][0].'" ' . 'alt="' . $imagen['attachment_meta']['alt'] . '" title="' . $imagen['attachment_meta']['title']. '" >';
+
+            $noticia_col_izq .= '<a href="' . get_permalink() . '">' . '<img class="img-cultura" style="width:295px;height:154px;" src="' . $imagen['imagen'][0].'" ' . 'alt="' . get_the_title() . '" title="' . get_the_title() . '" >' . '</a>';
             $noticia_col_izq .= '<h3 style="height:65px;"><a href="' . get_permalink() . '">' . get_the_title() . '</a></h3>';
             //$noticia_col_izq .= '<p>' . substr(get_the_content('',false), 0,450) . '</p>';
             $noticia_col_izq .= '</div></li>';
@@ -292,7 +293,7 @@ function get_noticias_portada() {
         else if ($derecha<=5 && $izquierda == 6)
         {
             $noticia_col_der .= '<li class="span12 nomargen-abajo"><div class="thumbnail thumbnail-custom">';
-            $noticia_col_der .= '<img class="img-cultura" style="width:295px;height:154px;" src="' . $imagen['imagen'][0].'" ' . 'alt="' . $imagen['attachment_meta']['alt'] . '" title="' . $imagen['attachment_meta']['title']. '" >';
+            $noticia_col_der .= '<a href="' . get_permalink() . '">' . '<img class="img-cultura" style="width:295px;height:154px;" src="' . $imagen['imagen'][0].'" ' . 'alt="' . get_the_title() . '" title="' . get_the_title() . '" >' . '</a>';
             $noticia_col_der .= '<h3 style="height:65px;"><a href="' . get_permalink() . '">' . get_the_title() . '</a></h3>';
             //$noticia_col_der .= '<p>' . substr(get_the_content('',false), 0,450) . '</p>';
             $noticia_col_der .= '</div></li>';
@@ -310,26 +311,124 @@ function get_noticias_portada() {
 
 function get_ultimas_noticias(){
 
-	$args = array( 'numberposts' => '15', 'tax_query' => array(
-        array(
-            'taxonomy' => 'category',
-            'field' => 'slug',
-            'terms' => array( 'portada','principal'),
-            'operator' => 'NOT IN'
-        ),
-        array(
-            'taxonomy' => 'category',
-            'field' => 'slug',
-            'terms' => array( 'lo-ultimo' )
-        )
-    ) );
+	$args = array(  'numberposts' => '15',
+                    'orderby' => 'post_date',
+                    'order' => 'DESC',
+                    'tax_query' => array(
+                            array(
+                                'taxonomy' => 'category',
+                                'field' => 'slug',
+                                'terms' => array( 'portada','principal'),
+                                'operator' => 'NOT IN'
+                            ),
+                            array(
+                                'taxonomy' => 'category',
+                                'field' => 'slug',
+                                'terms' => array( 'lo-ultimo' )
+                            )
+                    ));
+
 	$recent_posts = wp_get_recent_posts( $args );
-    $ultimas_noticias = '';
+    $ultimas_noticias = '<ul class="nav nav-tabs nav-stacked">';
 	foreach( $recent_posts as $recent ){
-        $ultimas_noticias .= '<li><a href="' . get_permalink($recent["ID"]) . '" title="'.esc_attr($recent["post_title"]).'" >' .   $recent["post_title"].'</a> </li> ';
+        $ultimas_noticias .= '<li><a href="' . get_permalink($recent["ID"]) . '" title="'.esc_attr($recent["post_title"]).'" ><span class="label label-inverse">' .  mysql2date('H:i', $recent["post_date"]) . '</span> ' .  $recent["post_title"].'</a> </li> ';
     }
+    $ultimas_noticias .= '</ul>';
     return $ultimas_noticias;
 }
+
+/**
+ * Registramos en la metadata del post un contador de visitas
+ * @param $postID
+ */
+function wpb_set_post_views($postID) {
+    $count_key = 'wpb_post_views_count';
+    $count = get_post_meta($postID, $count_key, true);
+    if($count==''){
+        $count = 0;
+        delete_post_meta($postID, $count_key);
+        add_post_meta($postID, $count_key, '0');
+    }else{
+        $count++;
+        update_post_meta($postID, $count_key, $count);
+    }
+}
+//To keep the count accurate, lets get rid of prefetching
+remove_action( 'wp_head', 'adjacent_posts_rel_link_wp_head', 10, 0);
+
+/**
+ * Sacamos el numero de vecs que el post ha sido visto
+ * @param $postID
+ * @return string
+ */
+function wpb_get_post_views($postID){
+    $count_key = 'wpb_post_views_count';
+    $count = get_post_meta($postID, $count_key, true);
+    if($count==''){
+        delete_post_meta($postID, $count_key);
+        add_post_meta($postID, $count_key, '0');
+        return "0";
+    }
+    return $count;
+}
+
+/**
+ * Genera un string de las noticias mas leidas
+ * @return string
+ */
+function get_mas_leidas(){
+    $popularpost = new WP_Query(
+                                array(  'posts_per_page' => 10,
+                                        'meta_key' => 'wpb_post_views_count',
+                                        'orderby' => 'meta_value_num',
+                                        'order' => 'DESC',
+                                        'meta_query' => array(
+                                            array(
+                                                'key' => 'wpb_post_views_count',
+                                                'value' => '0',
+                                                'compare' => '!=',
+                                            )
+                                        )
+                                    )
+                                );
+
+    $mas_leidas = '<ul class="nav nav-tabs nav-stacked">';
+
+    while ( $popularpost->have_posts() ) {
+        $popularpost->the_post();
+        $mas_leidas .= '<li><a href="' . get_permalink(get_the_ID()) . '" title="'.esc_attr(get_the_title()).'" >' .   get_the_title() .' <span class="label label-warning">' . wpb_get_post_views(get_the_ID()) . '</span></a> </li> ';
+    }
+
+    $mas_leidas .= '</ul>';
+
+    return $mas_leidas;
+}
+
+function get_portada_impresa()
+{
+    $args = array(
+        'category_name' => 'impreso',
+        'post_status' => 'publish',
+        'posts_per_page' => 1
+    );
+
+    $portada_impresa = query_posts($args);
+    $impreso = '';
+    while ( have_posts() ){
+
+        the_post();
+
+        $impreso = '<ul class="thumbnails" style="margin-top: 20px;">';
+        $impreso .= '<li class="span12 thumbnail portada" style="text-align: center;"><h3>Portada</h3>';
+        $impreso .=  preg_replace( '|\[(.+?)\](.+?\[/\\1\])?|s', '', get_the_content() );
+        //$impreso .= apply_filters('the_content', get_the_content());
+        $impreso .= '</li></ul>';
+    }
+
+    return $impreso;
+}
+
+
 
 // Tidy up the <head> a little. Full reference of things you can show/remove is here: http://rjpargeter.com/2009/09/removing-wordpress-wp_head-elements/
 //remove_action('wp_head', 'wp_generator');// Removes the WordPress version as a layer of simple security

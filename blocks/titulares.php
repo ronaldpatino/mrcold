@@ -14,10 +14,10 @@
         </div>
         <div class='span4 sidebar'>
             <h2>&Uacute;ltimas Noticias</h2>
+            <?php echo get_ultimas_noticias()?>
 
-            <ul class="nav nav-tabs nav-stacked">
-                <?php echo get_ultimas_noticias()?>
-            </ul>
+            <h2>M&aacute;s Le&iacute;das</h2>
+            <?php echo get_mas_leidas()?>
 
             <ul class="thumbnails">
                 <li class="span12">
@@ -27,15 +27,7 @@
                 </li>
             </ul>
 
-
-            <ul class="thumbnails">
-                <li class="span12">
-                    <div class="thumbnail portada">
-                        <h3>Portada</h3>
-                        <img data-src="holder.js/350x390" alt="">
-                    </div>
-                </li>
-            </ul>
+            <?php echo get_portada_impresa();?>
 
         </div>
     </div>
