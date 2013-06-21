@@ -180,6 +180,58 @@ function wp_get_attachment( $attachment_id ) {
     );
 }
 
+/*Noticia principal*/
+function filter_where($where = '') {
+    $where .= " AND post_date >= '" . date('Y-m-d') . "'";
+    return $where;
+}
+add_filter('posts_where', 'filter_where');
+
+function get_noticia_principal() {
+    $args = array(
+        'category_name' => 'Principal',
+        'post_status' => 'publish',
+        'posts_per_page' => 1
+    );
+
+    $principal = query_posts($args);
+
+    remove_filter('posts_where', 'filter_where');
+
+    $noticia = '';
+
+    while ( have_posts() ): the_post();
+
+        $noticia .= '<h2><a href="' . get_permalink() . '">' . get_the_title() . '</a></h2>';
+
+        $args = array(
+            'post_type' => 'attachment',
+            'numberposts' => -1,
+            'post_status' => null,
+            'post_parent' =>  get_the_ID()
+        );
+
+        $attachments = get_posts( $args );
+
+        if ( $attachments ) {
+            $imagen =  wp_get_attachment_image_src( $attachments[0]->ID, array(730,344) );
+            $attachment_meta = wp_get_attachment($attachments[0]->ID);
+        }
+        else
+        {
+            $imagen =  array();
+        }
+        $noticia .= '<img src="' . $imagen[0] . '" width="730" height="344" alt="' . $attachment_meta['alt'] . '" title="' . $attachment_meta['title'] . '">';
+        $noticia .= '<p>' . substr(get_the_content(), 0,450)  . '</p>';
+
+    endwhile;
+
+    wp_reset_query();
+    return $noticia;
+}
+
+
+
 
 
 // Tidy up the <head> a little. Full reference of things you can show/remove is here: http://rjpargeter.com/2009/09/removing-wordpress-wp_head-elements/
