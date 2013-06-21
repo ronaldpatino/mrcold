@@ -180,7 +180,40 @@ function wp_get_attachment( $attachment_id ) {
     );
 }
 
+
+/***
+ * @param $id
+ * @return array()
+ */
+function get_attachment_images($id) {
+    $args = array(
+        'post_type' => 'attachment',
+        'numberposts' => -1,
+        'post_status' => null,
+        'post_parent' =>  $id
+    );
+
+    $attachments = get_posts( $args );
+
+    if ( $attachments ) {
+        $attachment_images['imagen'] =  wp_get_attachment_image_src( $attachments[0]->ID, array(730,344) );
+        $attachment_images['attachment_meta'] = wp_get_attachment($attachments[0]->ID);
+
+    }
+    else
+    {
+        $attachment_images['imagen'] = null;
+        $attachment_images['attachment_meta'] = null;
+    }
+
+    return $attachment_images;
+}
+
+
+
+
 /*Noticia principal*/
+
 function filter_where($where = '') {
     $where .= " AND post_date >= '" . date('Y-m-d') . "'";
     return $where;
@@ -189,48 +222,79 @@ add_filter('posts_where', 'filter_where');
 
 function get_noticia_principal() {
     $args = array(
-        'category_name' => 'Principal',
+        'category_name' => 'principal',
         'post_status' => 'publish',
         'posts_per_page' => 1
     );
 
     $principal = query_posts($args);
 
-    remove_filter('posts_where', 'filter_where');
+    //remove_filter('posts_where', 'filter_where');
 
     $noticia = '';
 
-    while ( have_posts() ): the_post();
-
+    while ( have_posts() ){
+        the_post();
         $noticia .= '<h2><a href="' . get_permalink() . '">' . get_the_title() . '</a></h2>';
-
-        $args = array(
-            'post_type' => 'attachment',
-            'numberposts' => -1,
-            'post_status' => null,
-            'post_parent' =>  get_the_ID()
-        );
-
-        $attachments = get_posts( $args );
-
-        if ( $attachments ) {
-            $imagen =  wp_get_attachment_image_src( $attachments[0]->ID, array(730,344) );
-            $attachment_meta = wp_get_attachment($attachments[0]->ID);
-        }
-        else
-        {
-            $imagen =  array();
-        }
-        $noticia .= '<img src="' . $imagen[0] . '" width="730" height="344" alt="' . $attachment_meta['alt'] . '" title="' . $attachment_meta['title'] . '">';
+        $imagen = get_attachment_images(get_the_ID());
+        $noticia .= '<img src="' . $imagen['imagen'][0] . '" width="730" height="344" alt="' . $imagen['attachment_meta']['alt'] . '" title="' . $imagen['attachment_meta']['title'] . '">';
         $noticia .= '<p>' . substr(get_the_content(), 0,450)  . '</p>';
 
-    endwhile;
-
+    }
     wp_reset_query();
+
     return $noticia;
 }
 
+function get_noticias_portada() {
 
+    $args = array(
+        'category_name' => 'portada',
+        'post_status' => 'publish',
+        'posts_per_page' => 12
+
+    );
+
+    $portada = query_posts($args);
+
+    $noticia_col_izq = '<div class="span6 noticia-secundaria"><ul class="thumbnails">';
+    $noticia_col_der = '<div class="span6 noticia-secundaria"><ul class="thumbnails">';
+
+    $izquierda = 0;
+    $derecha = 0;
+
+    while ( have_posts() ){
+
+        the_post();
+        $imagen = get_attachment_images(get_the_ID());
+
+        if ($izquierda <= 5)
+        {
+            $noticia_col_izq .= '<li class="span12 nomargen-abajo"><div class="thumbnail thumbnail-custom">';
+            $noticia_col_izq .= '<h3><a href="' . get_permalink() . '">' . get_the_title() . '</a></h3>';
+            $noticia_col_izq .= '<img class="img-cultura" style="width:295px;height:154px;" src="' . $imagen['imagen'][0].'" ' . 'alt="' . $imagen['attachment_meta']['alt'] . '" title="' . $imagen['attachment_meta']['title']. '" >';
+            $noticia_col_izq .= '<p>' . substr(get_the_content('',false), 0,450) . '</p>';
+            $noticia_col_izq .= '</div></li>';
+            $izquierda++;
+        }
+        else if ($derecha<=5 && $izquierda == 6)
+        {
+            $noticia_col_der .= '<li class="span12 nomargen-abajo"><div class="thumbnail thumbnail-custom">';
+            $noticia_col_der .= '<h3><a href="' . get_permalink() . '">' . get_the_title() . '</a></h3>';
+            $noticia_col_der .= '<img class="img-cultura" style="width:295px;height:154px;" src="' . $imagen['imagen'][0].'" ' . 'alt="' . $imagen['attachment_meta']['alt'] . '" title="' . $imagen['attachment_meta']['title']. '" >';
+            $noticia_col_der .= '<p>' . substr(get_the_content('',false), 0,450) . '</p>';
+            $noticia_col_der .= '</div></li>';
+            $derecha++;
+        }
+
+
+    }
+    $noticia_col_izq .= '</ul></div>';
+    $noticia_col_der .= '</ul></div>';
+    wp_reset_query();
+
+    return $noticia_col_izq . $noticia_col_der;
+}
 
 
 

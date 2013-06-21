@@ -3,87 +3,13 @@
 
 
             <!-- Noticia princpal -->
-                <?echo
-                    get_noticia_principal();
-                ?>
+                <?php echo get_noticia_principal();?>
             <!-- Fin Noticia princpal -->
+            <!-- Noticias de Portada-->
             <div class='row-fluid'>
-                <div class="span6 noticia-secundaria">
-
-                    <ul class="thumbnails">
-                        <li class="span12 nomargen-abajo">
-                            <div class="thumbnail thumbnail-custom">
-                                <h3><a href="#">Consectetur adipisicing elit, sed do eiusmod tempor incididunt ut. </a></h3>
-                                <img class="img-cultura" data-src="holder.js/356x154">
-                                <p>
-                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
-                                    labore et dolore magna aliqua.
-                                </p>
-                            </div>
-                        </li>
-                        <li class="span12 nomargen-abajo">
-                            <div class="thumbnail thumbnail-custom">
-                                <h3><a href="#">Consectetur adipisicing elit, sed do eiusmod tempor incididunt ut. </a></h3>
-                                <img class="img-cultura" data-src="holder.js/356x154">
-                                <p>
-                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
-                                    labore et dolore magna aliqua.
-                                </p>
-                            </div>
-                        </li>
-
-                        <li class="span12 nomargen-abajo">
-                            <div class="thumbnail thumbnail-custom">
-                                <h3><a href="#">Consectetur adipisicing elit, sed do eiusmod tempor incididunt ut. </a></h3>
-                                <img class="img-cultura" data-src="holder.js/356x154">
-                                <p>
-                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
-                                    labore et dolore magna aliqua.
-                                </p>
-                            </div>
-                        </li>
-                    </ul>
-
-
-
-                </div>
-                <div class="span6 noticia-secundaria">
-
-                    <ul class="thumbnails">
-                        <li class="span12 nomargen-abajo">
-                            <div class="thumbnail thumbnail-custom">
-                                <h3><a href="#">Consectetur adipisicing elit, sed do eiusmod tempor incididunt ut. </a></h3>
-                                <img class="img-cultura" data-src="holder.js/356x154">
-                                <p>
-                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
-                                    labore et dolore magna aliqua.
-                                </p>
-                            </div>
-                        </li>
-                        <li class="span12 nomargen-abajo">
-                            <div class="thumbnail thumbnail-custom">
-                                <h3><a href="#">Consectetur adipisicing elit, sed do eiusmod tempor incididunt ut. </a></h3>
-                                <img class="img-cultura" data-src="holder.js/356x154">
-                                <p>
-                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
-                                    labore et dolore magna aliqua.
-                                </p>
-                            </div>
-                        </li>
-
-                        <li class="span12 nomargen-abajo">
-                            <div class="thumbnail thumbnail-custom">
-                                <h3><a href="#">Consectetur adipisicing elit, sed do eiusmod tempor incididunt ut. </a></h3>
-                                <img class="img-cultura" data-src="holder.js/356x154">
-                                <p>
-                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
-                                    labore et dolore magna aliqua.
-                                </p>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-            </div>
+                <?php echo get_noticias_portada();?>
+           </div>
+            <!-- fin Noticias de Portada-->
 
         </div>
         <div class='span4 sidebar'>
