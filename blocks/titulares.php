@@ -13,19 +13,10 @@
 
         </div>
         <div class='span4 sidebar'>
-            <h2>Sidebar</h2>
+            <h2>&Uacute;ltimas Noticias</h2>
+
             <ul class="nav nav-tabs nav-stacked">
-                <li><a href='#'>Another Link 1</a></li>
-                <li><a href='#'>Another Link 2</a></li>
-                <li><a href='#'>Another Link 3</a></li>
-                <li><a href='#'>Another Link 3</a></li>
-                <li><a href='#'>Another Link 3</a></li>
-                <li><a href='#'>Another Link 3</a></li>
-                <li><a href='#'>Another Link 3</a></li>
-                <li><a href='#'>Another Link 3</a></li>
-                <li><a href='#'>Another Link 3</a></li>
-                <li><a href='#'>Another Link 3</a></li>
-                <li><a href='#'>Another Link 3</a></li>
+                <?php echo get_ultimas_noticias()?>
             </ul>
 
             <ul class="thumbnails">

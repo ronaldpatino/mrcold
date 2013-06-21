@@ -220,6 +220,10 @@ function filter_where($where = '') {
 }
 add_filter('posts_where', 'filter_where');
 
+/**
+ * Retorna una cadena con la noticia principal
+ * @return string
+ */
 function get_noticia_principal() {
     $args = array(
         'category_name' => 'principal',
@@ -238,7 +242,7 @@ function get_noticia_principal() {
         $noticia .= '<h2><a href="' . get_permalink() . '">' . get_the_title() . '</a></h2>';
         $imagen = get_attachment_images(get_the_ID());
         $noticia .= '<img src="' . $imagen['imagen'][0] . '" width="730" height="344" alt="' . $imagen['attachment_meta']['alt'] . '" title="' . $imagen['attachment_meta']['title'] . '">';
-        $noticia .= '<p>' . substr(get_the_content(), 0,450)  . '</p>';
+        $noticia .= '<p>' . substr(get_the_content('',false), 0,450)  . '</p>';
 
     }
     wp_reset_query();
@@ -246,6 +250,14 @@ function get_noticia_principal() {
     return $noticia;
 }
 
+/**
+ * @return string
+ */
+
+/**
+ * * Retorna una cadena con 12 noticias de porstada
+ * @return string
+ */
 function get_noticias_portada() {
 
     $args = array(
@@ -271,18 +283,18 @@ function get_noticias_portada() {
         if ($izquierda <= 5)
         {
             $noticia_col_izq .= '<li class="span12 nomargen-abajo"><div class="thumbnail thumbnail-custom">';
-            $noticia_col_izq .= '<h3><a href="' . get_permalink() . '">' . get_the_title() . '</a></h3>';
             $noticia_col_izq .= '<img class="img-cultura" style="width:295px;height:154px;" src="' . $imagen['imagen'][0].'" ' . 'alt="' . $imagen['attachment_meta']['alt'] . '" title="' . $imagen['attachment_meta']['title']. '" >';
-            $noticia_col_izq .= '<p>' . substr(get_the_content('',false), 0,450) . '</p>';
+            $noticia_col_izq .= '<h3 style="height:65px;"><a href="' . get_permalink() . '">' . get_the_title() . '</a></h3>';
+            //$noticia_col_izq .= '<p>' . substr(get_the_content('',false), 0,450) . '</p>';
             $noticia_col_izq .= '</div></li>';
             $izquierda++;
         }
         else if ($derecha<=5 && $izquierda == 6)
         {
             $noticia_col_der .= '<li class="span12 nomargen-abajo"><div class="thumbnail thumbnail-custom">';
-            $noticia_col_der .= '<h3><a href="' . get_permalink() . '">' . get_the_title() . '</a></h3>';
             $noticia_col_der .= '<img class="img-cultura" style="width:295px;height:154px;" src="' . $imagen['imagen'][0].'" ' . 'alt="' . $imagen['attachment_meta']['alt'] . '" title="' . $imagen['attachment_meta']['title']. '" >';
-            $noticia_col_der .= '<p>' . substr(get_the_content('',false), 0,450) . '</p>';
+            $noticia_col_der .= '<h3 style="height:65px;"><a href="' . get_permalink() . '">' . get_the_title() . '</a></h3>';
+            //$noticia_col_der .= '<p>' . substr(get_the_content('',false), 0,450) . '</p>';
             $noticia_col_der .= '</div></li>';
             $derecha++;
         }
@@ -296,7 +308,28 @@ function get_noticias_portada() {
     return $noticia_col_izq . $noticia_col_der;
 }
 
+function get_ultimas_noticias(){
 
+	$args = array( 'numberposts' => '15', 'tax_query' => array(
+        array(
+            'taxonomy' => 'category',
+            'field' => 'slug',
+            'terms' => array( 'portada','principal'),
+            'operator' => 'NOT IN'
+        ),
+        array(
+            'taxonomy' => 'category',
+            'field' => 'slug',
+            'terms' => array( 'lo-ultimo' )
+        )
+    ) );
+	$recent_posts = wp_get_recent_posts( $args );
+    $ultimas_noticias = '';
+	foreach( $recent_posts as $recent ){
+        $ultimas_noticias .= '<li><a href="' . get_permalink($recent["ID"]) . '" title="'.esc_attr($recent["post_title"]).'" >' .   $recent["post_title"].'</a> </li> ';
+    }
+    return $ultimas_noticias;
+}
 
 // Tidy up the <head> a little. Full reference of things you can show/remove is here: http://rjpargeter.com/2009/09/removing-wordpress-wp_head-elements/
 //remove_action('wp_head', 'wp_generator');// Removes the WordPress version as a layer of simple security
