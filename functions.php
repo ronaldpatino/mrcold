@@ -1,14 +1,23 @@
 <?php
 
+require_once('widgets/Cultura_Widget.php');
+
 add_theme_support('menus');
 
 if (function_exists('register_sidebar'))
-    register_sidebar(array(
-        'before_widget' => '<aside>',
-        'after_widget' => '</aside>',
-        'before_title' => '<h3>',
+{
+    register_sidebar( array (
+        'name' => __( 'Cultura Cuenca Sucesos', 'cultura-cuenca-sucesos' ),
+        'id' => 'tricolccs',
+        'description' => __( 'Cultura Cuenca Sucesos', 'dir' ),
+        'before_widget' => '<div class="widget">',
+        'after_widget' => "</div>",
+        'before_title' => '<h3 class="widget-title">',
         'after_title' => '</h3>',
-    ));
+    ) );
+}
+
+
 
 add_post_type_support('page', 'excerpt');
 
@@ -183,7 +192,7 @@ function get_attachment_images($id)
 
 function filter_where($where = '')
 {
-    $where .= " AND post_date >= '" . date('Y-m-d') . "'";
+    $where .= " AND post_date <= '" . date('Y-m-d') . "'";
     return $where;
 }
 
@@ -220,9 +229,6 @@ function get_noticia_principal()
     return $noticia;
 }
 
-/**
- * @return string
- */
 
 /**
  * * Retorna una cadena con 12 noticias de porstada
@@ -400,6 +406,7 @@ function get_portada_impresa()
 
     return $impreso;
 }
+
 
 
 // Tidy up the <head> a little. Full reference of things you can show/remove is here: http://rjpargeter.com/2009/09/removing-wordpress-wp_head-elements/
