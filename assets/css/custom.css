@@ -524,6 +524,11 @@ body {
     margin-left: 2%;
 }
 
+.ml2p > a >img {
+    width: 120px !important;
+    height: 74px !important;
+}
+
 .thumbnail-custom{
     border: 0;
     border-radius: 0;
@@ -532,6 +537,23 @@ body {
     line-height: 20px;
     padding: 2% !important;
     transition: all 0.2s ease-in-out 0s;
+}
+
+.thumbnail-custom  > img{
+    width: 300px !important;
+    height: 200px !important;
+}
+
+.thumbnail-custom  > p{
+    height: 80px !important;
+    overflow: hidden;
+
+}
+
+.thumbnail-custom  > h3{
+    height: 65px !important;
+    overflow: hidden;
+
 }
 
 

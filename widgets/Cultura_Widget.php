@@ -42,7 +42,7 @@ class Seccion_Widget extends WP_Widget {
                 $post_imprimir .= '<li class="span12"><div class="thumbnail thumbnail-custom"><h3>';
                 $post_imprimir .= '<a href="' . get_permalink() .'">' . get_the_title() . '</a></h3>';
                 $imagen = get_attachment_images(get_the_ID());
-                $post_imprimir  .= '<img src="' . $imagen['imagen'][0] . '" width="320" height="200" alt="' . get_the_title() . '" title="' . get_the_title() . '">';
+                $post_imprimir  .= '<img src="' . $imagen['imagen'][0] . '" alt="' . get_the_title() . '" title="' . get_the_title() . '">';
                 $post_imprimir .= '<p>' . substr(get_the_content('', false), 0, 450) . '</p>';
                 $post_imprimir .= '</div></li></ul>';
                 $primera_noticia = 1;
@@ -52,7 +52,7 @@ class Seccion_Widget extends WP_Widget {
                 $post_imprimir .= '<div class="media ml2p">';
                 $post_imprimir .= '<a class="pull-left" href="'. get_permalink() .'">';
                 $imagen = get_attachment_images(get_the_ID());
-                $post_imprimir  .= '<img src="' . $imagen['imagen'][0] . '" width="120" height="74" alt="' . get_the_title() . '" title="' . get_the_title() . '">';
+                $post_imprimir  .= '<img src="' . $imagen['imagen'][0] . '" alt="' . get_the_title() . '" title="' . get_the_title() . '">';
                 $post_imprimir .= '</a>';
                 $post_imprimir .= '<div class="media-body media-body-tricol">' . get_the_title() . '</div>';
                 $post_imprimir .= '</div>';
