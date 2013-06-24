@@ -1,6 +1,6 @@
 <?php
 
-require_once('widgets/Cultura_Widget.php');
+require_once('widgets/Seccion_Widget.php');
 
 add_theme_support('menus');
 
