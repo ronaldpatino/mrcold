@@ -15,6 +15,16 @@ if (function_exists('register_sidebar'))
         'before_title' => '<h3 class="widget-title">',
         'after_title' => '</h3>',
     ) );
+
+    register_sidebar( array (
+        'name' => __( 'Azuay Cañar Loja', 'azuay-canar-loja' ),
+        'id' => 'tricolacl',
+        'description' => __( 'Azuay Cañar Loja', 'dir' ),
+        'before_widget' => '<div class="widget">',
+        'after_widget' => "</div>",
+        'before_title' => '<h3 class="widget-title">',
+        'after_title' => '</h3>',
+    ) );
 }
 
 

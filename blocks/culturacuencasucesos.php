@@ -1,7 +1,3 @@
-
-
-
-
 <!-- Cultura Cuenca Sucesos -->
 <div class='container'>
     <div id='tricolccs' class='row-fluid'>

@@ -66,7 +66,7 @@ class Seccion_Widget extends WP_Widget {
 
     public function form( $instance )
     {
-        $selected =  ($instance['categoria'] != -1)?$instance['categoria']:-1;
+        $selected =  (isset($instance['categoria']) && $instance['categoria'] != -1)?$instance['categoria']:-1;
 
         $form  = '<p>';
         $form .= '<label for="' . $this->get_field_id( 'categoria' ) . '">'  . _e( 'Seccion:' ) . '</label>';
