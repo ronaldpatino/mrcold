@@ -180,7 +180,7 @@ function get_attachment_images($id)
         $attachment_images['attachment_meta'] = wp_get_attachment($attachments[0]->ID);
 
     } else {
-        $attachment_images['imagen'] = null;
+        $attachment_images['imagen'] = array( get_bloginfo('template_url') . '/assets/img/placeholder.png');
         $attachment_images['attachment_meta'] = null;
     }
 

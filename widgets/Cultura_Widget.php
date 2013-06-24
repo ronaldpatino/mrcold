@@ -1,7 +1,5 @@
 <?php
 
-
-
 class Seccion_Widget extends WP_Widget {
 
     public function __construct() {
