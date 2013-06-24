@@ -4,6 +4,7 @@ require_once('widgets/Seccion_Widget.php');
 require_once('widgets/NotPrincipal_Widget.php');
 require_once('widgets/NotSecundaria_Widget.php');
 require_once('widgets/NotSecundariaLista_Widget.php');
+require_once('widgets/OtrasNotListado_Widget.php');
 
 add_theme_support('menus');
 

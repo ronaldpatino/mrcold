@@ -1,12 +1,12 @@
 <?php
 
-class NotSecundariaLista extends WP_Widget {
+class OtrasNotListado_Widget extends WP_Widget {
 
     public function __construct() {
         parent::__construct(
-            'notsecundarialista_widget', // Base ID
-            'Noticia Secundaria Lista Imagenes', // Name
-            array( 'description' => __( 'Noticia Secundaria Seccion Listado Vertical Imagenes', 'text_domain' ), ) // Args
+            'otrasnotlistado_widget', // Base ID
+            'Otras Noticias Listado', // Name
+            array( 'description' => __( 'Otras Noticias listado', 'text_domain' ), ) // Args
         );
     }
 
@@ -18,7 +18,7 @@ class NotSecundariaLista extends WP_Widget {
 
         extract( $args );
 
-        $args = array( 'posts_per_page' => 4,
+        $args = array( 'posts_per_page' => 6,
                         'offset'=> 1,
                         'category' => $instance['categoria'],
                         'post_status' => 'publish',
@@ -28,25 +28,18 @@ class NotSecundariaLista extends WP_Widget {
 
         $category = get_the_category_by_ID($instance['categoria']);
 
-        $noticia_secundaria_lista_seccion = '<div class="span4 noticia-tricol">';
+
+        $primera_noticia = 0;
+
+        $otras_noticia_listado = '<div class="span4 noticia-tricol sidebar"><ul class="nav nav-tabs nav-stacked">';
 
         foreach( $posts_categoria as $post ) {
             setup_postdata($post);
-
-            $noticia_secundaria_lista_seccion .= '<div class="media ml2p">';
-            $noticia_secundaria_lista_seccion .= '<a class="pull-left" href="' . get_permalink() .'">';
-            $imagen = get_attachment_images(get_the_ID());
-            $noticia_secundaria_lista_seccion .= '<img src="' . $imagen['imagen'][0] . '" alt="' . get_the_title() . '" title="' . get_the_title() . '">';
-            /*120*74*/
-            $noticia_secundaria_lista_seccion .= '</a>';
-            $noticia_secundaria_lista_seccion .= '<div class="media-body media-body-tricol">' . get_the_title() . '</div>';
-            $noticia_secundaria_lista_seccion .= '</div>';
-
+            $otras_noticia_listado .= '<li><a href="' . get_permalink() . '">' . get_the_title() . '</a></li>';
         }
-        $noticia_secundaria_lista_seccion .= '</div>';
 
-        echo $noticia_secundaria_lista_seccion;
-
+        $otras_noticia_listado .= '</ul></div>';
+        echo $otras_noticia_listado;
     }
 
     public function form( $instance )
@@ -68,6 +61,6 @@ class NotSecundariaLista extends WP_Widget {
     }
 }
 
-register_widget('NotSecundariaLista');
+register_widget('OtrasNotListado_Widget');
 
 ?>
