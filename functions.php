@@ -1,6 +1,9 @@
 <?php
 
 require_once('widgets/Seccion_Widget.php');
+require_once('widgets/NotPrincipal_Widget.php');
+require_once('widgets/NotSecundaria_Widget.php');
+require_once('widgets/NotSecundariaLista_Widget.php');
 
 add_theme_support('menus');
 
@@ -15,8 +18,12 @@ if (function_exists('register_sidebar'))
         'before_title' => '<h3 class="widget-title">',
         'after_title' => '</h3>',
     ) );
+}
 
-    register_sidebar( array (
+if (function_exists('register_sidebar'))
+{
+
+        register_sidebar( array (
         'name' => __( 'Azuay Cañar Loja', 'azuay-canar-loja' ),
         'id' => 'tricolacl',
         'description' => __( 'Azuay Cañar Loja', 'dir' ),
@@ -27,6 +34,18 @@ if (function_exists('register_sidebar'))
     ) );
 }
 
+if (function_exists('register_sidebar'))
+{
+    register_sidebar( array (
+        'name' => __( 'Deportes', 'deportes' ),
+        'id' => 'tricoldeportes',
+        'description' => __( 'Deportes', 'dir' ),
+        'before_widget' => '<div class="widget">',
+        'after_widget' => "</div>",
+        'before_title' => '<h3 class="widget-title">',
+        'after_title' => '</h3>',
+    ) );
+}
 
 
 add_post_type_support('page', 'excerpt');

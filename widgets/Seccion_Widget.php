@@ -4,8 +4,8 @@ class Seccion_Widget extends WP_Widget {
 
     public function __construct() {
         parent::__construct(
-            'cultura_widget', // Base ID
-            'Seccion Widget', // Name
+            'seccion_widget', // Base ID
+            'Seccion Noticias', // Name
             array( 'description' => __( 'Seccion que vamos a mostrar en el sidebar', 'text_domain' ), ) // Args
         );
     }
