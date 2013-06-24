@@ -14,43 +14,56 @@ class Seccion_Widget extends WP_Widget {
 
     public function widget( $args, $instance ) {
 
+        if ($instance['categoria'] == -1) {return;}
+
+        global $post;
+
         extract( $args );
 
-        print_r($instance);
-        ?>
-        <div class="span4 noticia-tricol">
-            <h2 class="cultura"><?php echo $instance['categoria'];?></h2>
-            <!-- -->
+        $args = array( 'posts_per_page' => 4,
+                        'offset'=> 1,
+                        'category' => $instance['categoria'],
+                        'post_status' => 'publish',
+        );
 
-            <ul class="thumbnails">
-                <li class="span12">
-                    <div class="thumbnail thumbnail-custom">
-                        <h3><a href="#">Consectetur adipisicing elit, sed do eiusmod tempor incididunt ut.</a></h3>
-                        <img data-src="holder.js/300x200" alt="">
-                        <p>
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
-                            labore et dolore magna aliqua.
-                        </p>
-                    </div>
-                </li>
-            </ul>
+        $posts_categoria = get_posts( $args );
 
-            <!-- -->
-            <div class="media ml2p">
-                <a class="pull-left" href="#">
-                    <img class="media-object" data-src="holder.js/120x74">
-                </a>
+        $category = get_the_category_by_ID($instance['categoria']);
 
-                <div class="media-body media-body-tricol">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore
-                    et dolore magna aliqua
-                </div>
-            </div>
-            <br/>
+        $post_imprimir  = '<div class="span4 noticia-tricol">';
+        $post_imprimir .= '<h2 class="cultura">' . $category . '</h2>';
+        $primera_noticia = 0;
 
-        </div>
 
-        <?php
+        foreach( $posts_categoria as $post ) {
+            setup_postdata($post);
+
+            if (!$primera_noticia)
+            {
+                $post_imprimir .= '<ul class="thumbnails">';
+                $post_imprimir .= '<li class="span12"><div class="thumbnail thumbnail-custom"><h3>';
+                $post_imprimir .= '<a href="' . get_permalink() .'">' . get_the_title() . '</a></h3>';
+                $imagen = get_attachment_images(get_the_ID());
+                $post_imprimir  .= '<img src="' . $imagen['imagen'][0] . '" width="320" height="200" alt="' . get_the_title() . '" title="' . get_the_title() . '">';
+                $post_imprimir .= '<p>' . substr(get_the_content('', false), 0, 450) . '</p>';
+                $post_imprimir .= '</div></li></ul>';
+                $primera_noticia = 1;
+            }
+            else
+            {
+                $post_imprimir .= '<div class="media ml2p">';
+                $post_imprimir .= '<a class="pull-left" href="'. get_permalink() .'">';
+                $imagen = get_attachment_images(get_the_ID());
+                $post_imprimir  .= '<img src="' . $imagen['imagen'][0] . '" width="120" height="74" alt="' . get_the_title() . '" title="' . get_the_title() . '">';
+                $post_imprimir .= '</a>';
+                $post_imprimir .= '<div class="media-body media-body-tricol">' . get_the_title() . '</div>';
+                $post_imprimir .= '</div>';
+            }
+        }
+
+        $post_imprimir .= '<br/></div>';
+        echo $post_imprimir;
+
     }
 
     public function form( $instance )
