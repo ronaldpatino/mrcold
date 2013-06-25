@@ -35,10 +35,11 @@ class Carrusel_Widget extends WP_Widget
         $carrusel_modal = 'modal' . $category;
         $imagen_modal = 'imagen' . $category;
 
-        $carrusel  = '<div class="carousel slide" id="'. $carussel_id .'">';
-        $carrusel .= '<div class="carousel-inner">';
         $counter = 1;
         $activo = 1;
+
+        $carrusel  = '<div class="carousel slide" id="'. $carussel_id .'">';
+        $carrusel .= '<div class="carousel-inner">';
 
         foreach ($posts_categoria as $post) {
             setup_postdata($post);
@@ -79,7 +80,14 @@ class Carrusel_Widget extends WP_Widget
 
         }
 
+        if (count($posts_categoria) % 3 != 0) {
+            $carrusel .= '</ul>';
+            $carrusel .= '</div>';
+        }
+
         $carrusel .= '</div>';
+
+
         $carrusel .= '<a data-slide="prev" href="#' . $carussel_id . '" class="left sociales-carousel-control">&lt;</a>';
         $carrusel .= '<a data-slide="next" href="#' . $carussel_id . '" class="right sociales-carousel-control">&gt;</a>';
         $carrusel .= '</div>';
