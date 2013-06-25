@@ -5,7 +5,7 @@
             <h2>Sociales</h2>
             <?php if ( dynamic_sidebar('sociales') ) : else : endif; ?>
         </div>
-        <div class="span8">
+        <div class="span4">
         </div>
     </div>
 </div>
