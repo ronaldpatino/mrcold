@@ -22,18 +22,6 @@
         .fail(function() { });
         /*Fin Twitter*/
 
-
-        $('[data-toggle="modal"]').click(function(e) {
-            e.preventDefault();
-            var imagen_multimedia = $(this).data('img');
-            var caption_multimedia = $(this).data('caption');
-
-            $(".modal-body #imagen_multimedia").attr('src', imagen_multimedia);
-            $(".modal-footer").html('<p>'+ caption_multimedia +'</p>');
-        });
     });
 </script>
 
-
-
-<?php get_template_part( 'blocks/modalmultimedia'); ?>
