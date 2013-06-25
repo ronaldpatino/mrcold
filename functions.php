@@ -5,6 +5,7 @@ require_once('widgets/NotPrincipal_Widget.php');
 require_once('widgets/NotSecundaria_Widget.php');
 require_once('widgets/NotSecundariaLista_Widget.php');
 require_once('widgets/OtrasNotListado_Widget.php');
+require_once('widgets/Carrusel_Widget.php');
 
 add_theme_support('menus');
 
@@ -41,6 +42,34 @@ if (function_exists('register_sidebar'))
         'name' => __( 'Deportes', 'deportes' ),
         'id' => 'tricoldeportes',
         'description' => __( 'Deportes', 'dir' ),
+        'before_widget' => '<div class="widget">',
+        'after_widget' => "</div>",
+        'before_title' => '<h3 class="widget-title">',
+        'after_title' => '</h3>',
+    ) );
+}
+
+
+if (function_exists('register_sidebar'))
+{
+    register_sidebar( array (
+        'name' => __( 'Deportivo Cuenca', 'deportivocuenca' ),
+        'id' => 'deportivocuenca',
+        'description' => __( 'Deportivo Cuenca', 'dir' ),
+        'before_widget' => '<div class="widget">',
+        'after_widget' => "</div>",
+        'before_title' => '<h3 class="widget-title">',
+        'after_title' => '</h3>',
+    ) );
+}
+
+
+if (function_exists('register_sidebar'))
+{
+    register_sidebar( array (
+        'name' => __( 'Sociales', 'sociales' ),
+        'id' => 'sociales',
+        'description' => __( 'Sociales', 'dir' ),
         'before_widget' => '<div class="widget">',
         'after_widget' => "</div>",
         'before_title' => '<h3 class="widget-title">',

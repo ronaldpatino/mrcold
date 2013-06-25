@@ -235,6 +235,12 @@ body {
 }
 
 
+.sociales-thumbnails-item > a > img{
+    width: 230px !important;
+    height: 164px !important;
+}
+
+
 .sociales-carousel-control {
     background: none repeat scroll 0 0 #222222;
     border: 3px solid #FFFFFF;
@@ -300,9 +306,7 @@ body {
 #tricolacl .noticia-tricol {
     padding: 0;
 }
-#tricolacl .sidebar {
-    padding: 2%;
-}
+
 #tricolacl p {
 
     padding: 0 2% 0 2%;
@@ -332,8 +336,8 @@ body {
 #tricoldeportes .noticia-tricol {
     padding: 0;
 }
-#tricoldeportes .sidebar {
-    padding: 0 2% 2% 2%;
+.sidebar{
+    padding: 0 2% 2% 2% !important;
 }
 
 #tricoldeportes h3 {
@@ -357,7 +361,7 @@ body {
     padding: 0;
     text-align: center;
     margin-top: 0;
-    margin-bottom: 0;
+    margin-bottom: 10px;
 }
 
 
