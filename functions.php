@@ -5,6 +5,8 @@ require_once('widgets/NotPrincipal_Widget.php');
 require_once('widgets/NotSecundariaLista_Widget.php');
 require_once('widgets/OtrasNotListado_Widget.php');
 require_once('widgets/Carrusel_Widget.php');
+require_once('widgets/UltimasNoticias_Widget.php');
+require_once('widgets/MasLeidas_Widget.php');
 
 add_theme_support('menus');
 
