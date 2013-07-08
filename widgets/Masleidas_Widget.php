@@ -37,7 +37,8 @@ class Masleidas extends WP_Widget {
             )
         );
 
-        $mas_leidas = '<ul class="nav nav-tabs nav-stacked">';
+        $mas_leidas = '<h2>M&aacute;s Le&iacute;das</h2>';
+        $mas_leidas .= '<ul class="nav nav-tabs nav-stacked">';
 
         while ($popularpost->have_posts()) {
             $popularpost->the_post();

@@ -5,7 +5,7 @@ class NoticiasPortada extends WP_Widget {
     private $max_noticias;
     public function __construct() {
         parent::__construct(
-            'ultimasnoticias_widget', // Base ID
+            'noticiasportada_widget', // Base ID
             'M_Noticias: Noticias de Portada', // Name
             array( 'description' => __( 'Listado de dos coluna de Noticias de Portada con foto tamaño mediano, las noticias de este listado son pares ya que se muestran en dos columnas', 'text_domain' ), ) // Args
         );
@@ -64,7 +64,7 @@ class NoticiasPortada extends WP_Widget {
         $noticia_col_der .= '</ul></div>';
         wp_reset_query();
 
-        echo $noticia_col_izq . $noticia_col_der;
+        echo '<div class="row-fluid">' . $noticia_col_izq . $noticia_col_der . '</div>';
 
     }
 

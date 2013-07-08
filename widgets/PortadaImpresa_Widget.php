@@ -5,7 +5,7 @@ class PortadaImpresa extends WP_Widget {
     private $max_noticias;
     public function __construct() {
         parent::__construct(
-            'ultimasnoticias_widget', // Base ID
+            'portadaimpresa_widget', // Base ID
             'M_Noticias: Portada Impresa', // Name
             array( 'description' => __( 'Imagen de la portada del día', 'text_domain' ), ) // Args
         );

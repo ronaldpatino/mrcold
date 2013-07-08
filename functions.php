@@ -12,6 +12,32 @@ require_once('widgets/NoticiaPrincipal_Widget.php');
 require_once('widgets/PortadaImpresa_Widget.php');
 
 
+if (function_exists('register_sidebar'))
+{
+    register_sidebar( array (
+        'name' => __( 'Noticia Principal y  Titulares', 'portada_titulares' ),
+        'id' => 'portada_titulares',
+        'description' => __( 'Noticia Principal y Titulares', 'dir' ),
+        'before_widget' => '<div class="widget">',
+        'after_widget' => "</div>",
+        'before_title' => '<h3 class="widget-title">',
+        'after_title' => '</h3>',
+    ) );
+}
+
+if (function_exists('register_sidebar'))
+{
+    register_sidebar( array (
+        'name' => __( 'Ultimas Noticias, Mas Leidas, Portada Impresa', 'ultimas_masleidas_portada' ),
+        'id' => 'ultimas_masleidas_portada',
+        'description' => __( 'Ultimas Noticias, Mas Leidas, Portada Imrpesa', 'dir' ),
+        'before_widget' => '<div class="widget">',
+        'after_widget' => "</div>",
+        'before_title' => '<h3 class="widget-title">',
+        'after_title' => '</h3>',
+    ) );
+}
+
 
 if (function_exists('register_sidebar'))
 {

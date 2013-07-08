@@ -40,7 +40,9 @@ class UltimasNoticias extends WP_Widget {
             ));
 
         $recent_posts = wp_get_recent_posts($args);
-        $ultimas_noticias = '<ul class="nav nav-tabs nav-stacked">';
+
+        $ultimas_noticias = '<h2>&Uacute;ltimas Noticias</h2>';
+        $ultimas_noticias .= '<ul class="nav nav-tabs nav-stacked">';
 
         foreach ($recent_posts as $recent) {
             $ultimas_noticias .= '<li><a href="' . get_permalink($recent["ID"]) . '" title="' . esc_attr($recent["post_title"]) . '" ><span class="label label-inverse">' . mysql2date('H:i', $recent["post_date"]) . '</span> ' . $recent["post_title"] . '</a> </li> ';
