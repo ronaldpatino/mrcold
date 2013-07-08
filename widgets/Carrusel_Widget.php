@@ -30,7 +30,7 @@ class Carrusel_Widget extends WP_Widget
         );
 
         $posts_categoria = get_posts($args);
-        $category = get_the_category_by_ID($instance['categoria']);
+        $category = str_replace(" ", "_", get_the_category_by_ID($instance['categoria']));
         $carussel_id = 'carrusel' . $category;
         $carrusel_modal = 'modal' . $category;
         $imagen_modal = 'imagen' . $category;
