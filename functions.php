@@ -12,7 +12,6 @@ require_once('widgets/NoticiaPrincipal_Widget.php');
 require_once('widgets/PortadaImpresa_Widget.php');
 
 
-add_theme_support('menus');
 
 if (function_exists('register_sidebar'))
 {
