@@ -9,6 +9,7 @@ require_once('widgets/UltimasNoticias_Widget.php');
 require_once('widgets/MasLeidas_Widget.php');
 require_once('widgets/NoticiasPortada_Widget.php');
 require_once('widgets/NoticiaPrincipal_Widget.php');
+require_once('widgets/PortadaImpresa_Widget.php');
 
 
 add_theme_support('menus');
