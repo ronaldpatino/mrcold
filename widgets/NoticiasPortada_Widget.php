@@ -7,7 +7,7 @@ class NoticiasPortada extends WP_Widget {
         parent::__construct(
             'ultimasnoticias_widget', // Base ID
             'M_Noticias: Noticias de Portada', // Name
-            array( 'description' => __( 'Listado de Noticias de portada con foto tamaño mediano', 'text_domain' ), ) // Args
+            array( 'description' => __( 'Listado de dos coluna de Noticias de Portada con foto tamaño mediano, las noticias de este listado son pares ya que se muestran en dos columnas', 'text_domain' ), ) // Args
         );
 
         $this->max_noticias = 12;
