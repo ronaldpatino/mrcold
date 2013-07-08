@@ -5,8 +5,8 @@ class NotPrincipal_Widget extends WP_Widget {
     public function __construct() {
         parent::__construct(
             'notprincipal_widget', // Base ID
-            'Noticia Principal Seccion', // Name
-            array( 'description' => __( 'Noticia Principal de una Seccion que vamos a mostrar en el sidebar', 'text_domain' ), ) // Args
+            'M_Noticia: Principal de Seccion', // Name
+            array( 'description' => __( 'Contiene una cabecera, una imagen grande y un extracto de la noticia', 'text_domain' ), ) // Args
         );
     }
 

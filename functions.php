@@ -6,6 +6,8 @@ require_once('widgets/NotSecundaria_Widget.php');
 require_once('widgets/NotSecundariaLista_Widget.php');
 require_once('widgets/OtrasNotListado_Widget.php');
 require_once('widgets/Carrusel_Widget.php');
+//require_once('widgets/HTMLAdd_Widget.php');
+//require_once('widgets/IMGAdd_Widget.php');
 
 add_theme_support('menus');
 

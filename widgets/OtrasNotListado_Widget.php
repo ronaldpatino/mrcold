@@ -5,8 +5,8 @@ class OtrasNotListado_Widget extends WP_Widget {
     public function __construct() {
         parent::__construct(
             'otrasnotlistado_widget', // Base ID
-            'Otras Noticias Listado', // Name
-            array( 'description' => __( 'Otras Noticias listado', 'text_domain' ), ) // Args
+            'M_Noticias: Secundarias Listado', // Name
+            array( 'description' => __( 'Listado vertical de noticias sin imagenes', 'text_domain' ), ) // Args
         );
     }
 

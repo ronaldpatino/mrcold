@@ -7,8 +7,8 @@ class Carrusel_Widget extends WP_Widget
     {
         parent::__construct(
             'carrusel_widget', // Base ID
-            'Carrusel de Imagenes', // Name
-            array('description' => __('Carrusel de imagenes con un texto abajo', 'text_domain'),) // Args
+            'M_Carrusel: Imagenes', // Name
+            array('description' => __('Carrusel de imagenes con un texto en la parte inferior', 'text_domain'),)
         );
     }
 

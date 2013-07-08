@@ -5,8 +5,8 @@ class NotSecundariaLista extends WP_Widget {
     public function __construct() {
         parent::__construct(
             'notsecundarialista_widget', // Base ID
-            'Noticia Secundaria Lista Imagenes', // Name
-            array( 'description' => __( 'Noticia Secundaria Seccion Listado Vertical Imagenes', 'text_domain' ), ) // Args
+            'M_Noticia: Secundaria Lista Imagenes', // Name
+            array( 'description' => __( 'Listado Vertical de noticias con una imagenes pequeña a la izquierda y texto a la derecha', 'text_domain' ), ) // Args
         );
     }
 

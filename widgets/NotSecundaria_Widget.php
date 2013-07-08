@@ -5,7 +5,7 @@ class NotSecundaria_Widget extends WP_Widget {
     public function __construct() {
         parent::__construct(
             'notsecundaria_widget', // Base ID
-            'Noticia Secundaria Seccion Widget', // Name
+            'M_Noticia: Secundaria de Seccion ', // Name
             array( 'description' => __( 'Noticia Secundaria de una Seccion', 'text_domain' ), ) // Args
         );
     }

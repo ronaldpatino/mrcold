@@ -5,8 +5,8 @@ class Seccion_Widget extends WP_Widget {
     public function __construct() {
         parent::__construct(
             'seccion_widget', // Base ID
-            'Seccion Noticias', // Name
-            array( 'description' => __( 'Seccion que vamos a mostrar en el sidebar', 'text_domain' ), ) // Args
+            'M_Noticias: Seccion Noticias', // Name
+            array( 'description' => __( 'Una noticia con una imagen grande y tres noticias alineadas a la derecha con una imagen pequeña cada una alineada a la izquierda, en sentido vertical', 'text_domain' ), ) // Args
         );
     }
 
