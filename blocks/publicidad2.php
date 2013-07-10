@@ -1,13 +1,7 @@
 <!-- Publicidad -->
 <div class='container margen-container'>
     <div class='row-fluid'>
-        <ul class="thumbnails">
-            <li class="span12">
-                <div class="thumbnail publicidad">
-                    <img data-src="holder.js/986x150">
-                </div>
-            </li>
-        </ul>
+        <?php if ( dynamic_sidebar('publicidad2') ) : else : endif; ?>
     </div>
 </div>
 <!-- Fin Publicidad -->

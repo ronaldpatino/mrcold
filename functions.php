@@ -133,6 +133,45 @@ if (function_exists('register_sidebar'))
     ) );
 }
 
+if (function_exists('register_sidebar'))
+{
+    register_sidebar( array (
+        'name' => __( 'Publicidad 2', 'publicidad2' ),
+        'id' => 'publicidad2',
+        'description' => __( 'Bloque de publicidad 2', 'dir' ),
+        'before_widget' => '<div class="widget">',
+        'after_widget' => "</div>",
+        'before_title' => '<h3 class="widget-title">',
+        'after_title' => '</h3>',
+    ) );
+}
+
+
+if (function_exists('register_sidebar'))
+{
+    register_sidebar( array (
+        'name' => __( 'Publicidad 3', 'publicidad3' ),
+        'id' => 'publicidad3',
+        'description' => __( 'Bloque de publicidad 3', 'dir' ),
+        'before_widget' => '<div class="widget">',
+        'after_widget' => "</div>",
+        'before_title' => '<h3 class="widget-title">',
+        'after_title' => '</h3>',
+    ) );
+}
+
+if (function_exists('register_sidebar'))
+{
+    register_sidebar( array (
+        'name' => __( 'Publicidad 4', 'publicidad3' ),
+        'id' => 'publicidad4',
+        'description' => __( 'Bloque de publicidad 4', 'dir' ),
+        'before_widget' => '<div class="widget">',
+        'after_widget' => "</div>",
+        'before_title' => '<h3 class="widget-title">',
+        'after_title' => '</h3>',
+    ) );
+}
 
 add_post_type_support('page', 'excerpt');
 

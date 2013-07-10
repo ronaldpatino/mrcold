@@ -27,7 +27,7 @@
 </div>
 <!-- Fin cabecera, titulares -->
 
-<?php get_template_part( 'blocks/publicidad1' ); ?>
+<?php get_template_part( 'blocks/publicidad3' ); ?>
 
 <?php get_template_part( 'blocks/culturacuencasucesos' ); ?>
 
@@ -35,7 +35,7 @@
 
 <?php get_template_part( 'blocks/azuaycanarloja' ); ?>
 
-<?php get_template_part( 'blocks/publicidad2' ); ?>
+<?php get_template_part( 'blocks/publicidad4' ); ?>
 
 <?php get_template_part( 'blocks/deportes' ); ?>
 

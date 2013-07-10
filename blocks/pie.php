@@ -21,13 +21,7 @@
             </p>
         </div>
         <div class="span6">
-            <ul class="thumbnails nomargen-abajo">
-                <li class="span12 nomargen-abajo">
-                    <div class="thumbnail publicidad">
-                        <img data-src="holder.js/480x135/industrial">
-                    </div>
-                </li>
-            </ul>
+            <?php if ( dynamic_sidebar('publicidad3') ) : else : endif; ?>
         </div>
     </div>
 </div>
