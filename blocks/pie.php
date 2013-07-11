@@ -21,7 +21,7 @@
             </p>
         </div>
         <div class="span6">
-            <?php if ( dynamic_sidebar('publicidad3') ) : else : endif; ?>
+            <?php if ( dynamic_sidebar('publicidadpie') ) : else : endif; ?>
         </div>
     </div>
 </div>

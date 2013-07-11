@@ -1,8 +1,8 @@
     <div class="navbar top-navbar">
         <div class="navbar-inner top-navbar-inner search-bar">
             <div class="control-group">
-                <div class="controls">
-                    <form class="navbar-search pull-right hidden-phone">
+                <div class="controls hidden-phone">
+                    <form class="navbar-search pull-right">
                         <div class="input-append">
                             <input  class="search-query" placeholder="Buscar en El Mercurio" type="text" class="span2"><span class="add-on"><i class="icon-search"> </i></span>
                         </div>

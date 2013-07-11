@@ -6,6 +6,7 @@
             <?php if ( dynamic_sidebar('multimedia') ) : else : endif; ?>
         </div>
         <div class="span4">
+            <?php get_template_part( 'blocks/publicidadmultimedia' ); ?>
         </div>
     </div>
 

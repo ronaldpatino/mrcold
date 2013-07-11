@@ -22,12 +22,13 @@
     <?php get_template_part( 'blocks/menutop' ); ?>
     <?php get_template_part( 'blocks/logo' ); ?>
     <?php get_template_part( 'blocks/navbartop' ); ?>
+    <?php get_template_part( 'blocks/publicidadcabecera' ); ?>
     <?php get_template_part( 'blocks/masleido' ); ?>
     <?php get_template_part( 'blocks/titulares' ); ?>
 </div>
 <!-- Fin cabecera, titulares -->
 
-<?php get_template_part( 'blocks/publicidad3' ); ?>
+<?php get_template_part( 'blocks/publicidadtitulares' ); ?>
 
 <?php get_template_part( 'blocks/culturacuencasucesos' ); ?>
 
@@ -35,7 +36,7 @@
 
 <?php get_template_part( 'blocks/azuaycanarloja' ); ?>
 
-<?php get_template_part( 'blocks/publicidad4' ); ?>
+
 
 <?php get_template_part( 'blocks/deportes' ); ?>
 

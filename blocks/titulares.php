@@ -6,5 +6,7 @@
 
         <?php if ( dynamic_sidebar('ultimas_masleidas_portada') ) : else : endif; ?>
 
+        <?php get_template_part( 'blocks/publicidadmasleidas' ); ?>
+
         </div>
     </div>

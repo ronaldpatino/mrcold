@@ -2,13 +2,7 @@
 <div class='container margen-container'>
     <div id='suplementos' class='row-fluid'>
         <div class="span4">
-            <ul class="thumbnails publicidad-thumbnails">
-                <li class="span12">
-                    <div class="thumbnail publicidad">
-                        <img data-src="holder.js/300x300">
-                    </div>
-                </li>
-            </ul>
+            <?php get_template_part( 'blocks/publicidadsuplementos' ); ?>
         </div>
         <div class="span8">
             <h2>

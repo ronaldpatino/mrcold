@@ -17,11 +17,7 @@ if (function_exists('register_sidebar'))
     register_sidebar( array (
         'name' => __( 'Noticia Principal y  Titulares', 'portada_titulares' ),
         'id' => 'portada_titulares',
-        'description' => __( 'Noticia Principal y Titulares', 'dir' ),
-        'before_widget' => '<div class="widget">',
-        'after_widget' => "</div>",
-        'before_title' => '<h3 class="widget-title">',
-        'after_title' => '</h3>',
+        'description' => __( 'Noticia Principal y Titulares', 'dir' )
     ) );
 }
 
@@ -30,11 +26,7 @@ if (function_exists('register_sidebar'))
     register_sidebar( array (
         'name' => __( 'Ultimas Noticias, Mas Leidas, Portada Impresa', 'ultimas_masleidas_portada' ),
         'id' => 'ultimas_masleidas_portada',
-        'description' => __( 'Ultimas Noticias, Mas Leidas, Portada Imrpesa', 'dir' ),
-        'before_widget' => '<div class="widget">',
-        'after_widget' => "</div>",
-        'before_title' => '<h3 class="widget-title">',
-        'after_title' => '</h3>',
+        'description' => __( 'Ultimas Noticias, Mas Leidas, Portada Impresa', 'dir' )
     ) );
 }
 
@@ -44,11 +36,7 @@ if (function_exists('register_sidebar'))
     register_sidebar( array (
         'name' => __( 'Cultura Cuenca Sucesos', 'cultura-cuenca-sucesos' ),
         'id' => 'tricolccs',
-        'description' => __( 'Cultura Cuenca Sucesos', 'dir' ),
-        'before_widget' => '<div class="widget">',
-        'after_widget' => "</div>",
-        'before_title' => '<h3 class="widget-title">',
-        'after_title' => '</h3>',
+        'description' => __( 'Cultura Cuenca Sucesos', 'dir' )
     ) );
 }
 
@@ -58,11 +46,7 @@ if (function_exists('register_sidebar'))
         register_sidebar( array (
         'name' => __( 'Azuay Cañar Loja', 'azuay-canar-loja' ),
         'id' => 'tricolacl',
-        'description' => __( 'Azuay Cañar Loja', 'dir' ),
-        'before_widget' => '<div class="widget">',
-        'after_widget' => "</div>",
-        'before_title' => '<h3 class="widget-title">',
-        'after_title' => '</h3>',
+        'description' => __( 'Azuay Cañar Loja', 'dir' )
     ) );
 }
 
@@ -71,11 +55,7 @@ if (function_exists('register_sidebar'))
     register_sidebar( array (
         'name' => __( 'Deportes', 'deportes' ),
         'id' => 'tricoldeportes',
-        'description' => __( 'Deportes', 'dir' ),
-        'before_widget' => '<div class="widget">',
-        'after_widget' => "</div>",
-        'before_title' => '<h3 class="widget-title">',
-        'after_title' => '</h3>',
+        'description' => __( 'Deportes', 'dir' )
     ) );
 }
 
@@ -85,11 +65,7 @@ if (function_exists('register_sidebar'))
     register_sidebar( array (
         'name' => __( 'Deportivo Cuenca', 'deportivocuenca' ),
         'id' => 'deportivocuenca',
-        'description' => __( 'Deportivo Cuenca', 'dir' ),
-        'before_widget' => '<div class="widget">',
-        'after_widget' => "</div>",
-        'before_title' => '<h3 class="widget-title">',
-        'after_title' => '</h3>',
+        'description' => __( 'Deportivo Cuenca', 'dir' )
     ) );
 }
 
@@ -99,11 +75,7 @@ if (function_exists('register_sidebar'))
     register_sidebar( array (
         'name' => __( 'Sociales', 'sociales' ),
         'id' => 'sociales',
-        'description' => __( 'Sociales', 'dir' ),
-        'before_widget' => '<div class="widget">',
-        'after_widget' => "</div>",
-        'before_title' => '<h3 class="widget-title">',
-        'after_title' => '</h3>',
+        'description' => __( 'Sociales', 'dir' )
     ) );
 }
 
@@ -112,11 +84,7 @@ if (function_exists('register_sidebar'))
     register_sidebar( array (
         'name' => __( 'Multimedia', 'multimedia' ),
         'id' => 'multimedia',
-        'description' => __( 'Multimedia', 'dir' ),
-        'before_widget' => '<div class="widget">',
-        'after_widget' => "</div>",
-        'before_title' => '<h3 class="widget-title">',
-        'after_title' => '</h3>',
+        'description' => __( 'Multimedia', 'dir' )
     ) );
 }
 
@@ -125,24 +93,25 @@ if (function_exists('register_sidebar'))
     register_sidebar( array (
         'name' => __( 'Suplementos', 'suplemementos' ),
         'id' => 'suplementos',
-        'description' => __( 'Suplementos', 'dir' ),
-        'before_widget' => '<div class="widget">',
-        'after_widget' => "</div>",
-        'before_title' => '<h3 class="widget-title">',
-        'after_title' => '</h3>',
+        'description' => __( 'Suplementos', 'dir' )
     ) );
 }
 
 if (function_exists('register_sidebar'))
 {
     register_sidebar( array (
-        'name' => __( 'Publicidad 2', 'publicidad2' ),
-        'id' => 'publicidad2',
-        'description' => __( 'Bloque de publicidad 2', 'dir' ),
-        'before_widget' => '<div class="widget">',
-        'after_widget' => "</div>",
-        'before_title' => '<h3 class="widget-title">',
-        'after_title' => '</h3>',
+        'name' => __( 'Publicidad Cabecera', 'publicidadcabecera' ),
+        'id' => 'publicidadcabecera',
+        'description' => __( 'Bloque Cabecera', 'dir' )
+    ) );
+}
+
+if (function_exists('register_sidebar'))
+{
+    register_sidebar( array (
+        'name' => __( 'Publicidad Mas Leidas', 'publicidadmasleidas' ),
+        'id' => 'publicidadmasleidas',
+        'description' => __( 'Publicidad Mas Leidas', 'dir' )
     ) );
 }
 
@@ -150,26 +119,58 @@ if (function_exists('register_sidebar'))
 if (function_exists('register_sidebar'))
 {
     register_sidebar( array (
-        'name' => __( 'Publicidad 3', 'publicidad3' ),
-        'id' => 'publicidad3',
-        'description' => __( 'Bloque de publicidad 3', 'dir' ),
-        'before_widget' => '<div class="widget">',
-        'after_widget' => "</div>",
-        'before_title' => '<h3 class="widget-title">',
-        'after_title' => '</h3>',
+        'name' => __( 'Publicidad Titulares', 'publicidadtitulares' ),
+        'id' => 'publicidadtitulares',
+        'description' => __( 'Publicidad Titulares', 'dir' )
     ) );
 }
 
 if (function_exists('register_sidebar'))
 {
     register_sidebar( array (
-        'name' => __( 'Publicidad 4', 'publicidad3' ),
-        'id' => 'publicidad4',
-        'description' => __( 'Bloque de publicidad 4', 'dir' ),
-        'before_widget' => '<div class="widget">',
-        'after_widget' => "</div>",
-        'before_title' => '<h3 class="widget-title">',
-        'after_title' => '</h3>',
+        'name' => __( 'Publicidad Sociales', 'publicidadsociales' ),
+        'id' => 'publicidadsociales',
+        'description' => __( 'Publicidad Sociales', 'dir' )
+    ) );
+}
+
+
+if (function_exists('register_sidebar'))
+{
+    register_sidebar( array (
+        'name' => __( 'Publicidad Deportivo Cuenca', 'publicidad_deportivo_cuenca' ),
+        'id' => 'publicidad_deportivo_cuenca',
+        'description' => __( 'Publicidad Deportivo Cuenca', 'dir' )
+    ) );
+}
+
+
+if (function_exists('register_sidebar'))
+{
+    register_sidebar( array (
+        'name' => __( 'Publicidad Multimedia', 'publicidad_multimedia' ),
+        'id' => 'publicidad_multimedia',
+        'description' => __( 'Publicidad Multimedia', 'dir' )
+    ) );
+}
+
+
+if (function_exists('register_sidebar'))
+{
+    register_sidebar( array (
+        'name' => __( 'Publicidad Suplementos', 'publicidad_suplementos' ),
+        'id' => 'publicidad_suplementos',
+        'description' => __( 'Publicidad Suplementos', 'dir' )
+    ) );
+}
+
+
+if (function_exists('register_sidebar'))
+{
+    register_sidebar( array (
+        'name' => __( 'Publicidad Pie de Pagina', 'publicidadpie' ),
+        'id' => 'publicidadpie',
+        'description' => __( 'Publicidad Pie', 'dir' )
     ) );
 }
 
