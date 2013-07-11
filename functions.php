@@ -59,7 +59,6 @@ if (function_exists('register_sidebar'))
     ) );
 }
 
-
 if (function_exists('register_sidebar'))
 {
     register_sidebar( array (
@@ -68,7 +67,6 @@ if (function_exists('register_sidebar'))
         'description' => __( 'Deportivo Cuenca', 'dir' )
     ) );
 }
-
 
 if (function_exists('register_sidebar'))
 {
@@ -115,7 +113,6 @@ if (function_exists('register_sidebar'))
     ) );
 }
 
-
 if (function_exists('register_sidebar'))
 {
     register_sidebar( array (
@@ -134,7 +131,6 @@ if (function_exists('register_sidebar'))
     ) );
 }
 
-
 if (function_exists('register_sidebar'))
 {
     register_sidebar( array (
@@ -143,7 +139,6 @@ if (function_exists('register_sidebar'))
         'description' => __( 'Publicidad Deportivo Cuenca', 'dir' )
     ) );
 }
-
 
 if (function_exists('register_sidebar'))
 {
@@ -154,7 +149,6 @@ if (function_exists('register_sidebar'))
     ) );
 }
 
-
 if (function_exists('register_sidebar'))
 {
     register_sidebar( array (
@@ -164,7 +158,6 @@ if (function_exists('register_sidebar'))
     ) );
 }
 
-
 if (function_exists('register_sidebar'))
 {
     register_sidebar( array (
@@ -173,55 +166,6 @@ if (function_exists('register_sidebar'))
         'description' => __( 'Publicidad Pie', 'dir' )
     ) );
 }
-
-add_post_type_support('page', 'excerpt');
-
-function post_comments($comment, $args, $depth)
-{
-    $GLOBALS['comment'] = $comment;
-    switch ($comment->comment_type) :
-        case '' :
-            ?>
-            <li <?php comment_class(); ?> id="li-comment-<?php comment_ID(); ?>">
-            <div id="comment-<?php comment_ID(); ?>">
-                <div class="comment-author vcard">
-                    <?php echo get_avatar($comment, 40); ?>
-
-                    <p class="comment-meta">
-                        <?php printf(__('%s'), sprintf('%s', get_comment_author_link())); ?>
-
-                        <a class="comment-date" href="<?php echo esc_url(get_comment_link($comment->comment_ID)); ?>">
-                            <?php printf(__('%1$s'), get_comment_date()); ?>
-                        </a>
-
-                        <?php if ($comment->comment_approved == '0') : ?>
-                            <em class="comment-awaiting-moderation"><?php _e('Your comment is awaiting moderation.'); ?></em>
-                        <?php endif; ?>
-                    </p>
-                </div>
-
-                <div class="comment-body"><?php comment_text(); ?></div>
-
-                <div class="reply">
-                    <?php comment_reply_link(array_merge($args, array('depth' => $depth, 'max_depth' => $args['max_depth']))); ?>
-                </div>
-            </div>
-
-            <?php
-            break;
-        case 'pingback'  :
-        case 'trackback' :
-            ?>
-
-            <li class="post pingback">
-            <p><?php _e('Pingback:'); ?> <?php comment_author_link(); ?><?php edit_comment_link(__('(Edit)'), ' '); ?></p>
-            <?php
-
-            break;
-    endswitch;
-}
-
-// Custom functions
 
 
 /***
@@ -300,6 +244,11 @@ function get_fecha()
     return $fecha;
 }
 
+/**
+ * Retorna un array con los attachments del post
+ * @param $attachment_id
+ * @return array
+ */
 function wp_get_attachment($attachment_id)
 {
 
@@ -316,6 +265,7 @@ function wp_get_attachment($attachment_id)
 
 
 /***
+ * Retorna un arrar con la imagen adjunta al post
  * @param $id
  * @return array()
  */
@@ -344,7 +294,11 @@ function get_attachment_images($id)
 
 
 /*Noticia principal*/
-
+/**
+ * Filtro para fecha en los posts
+ * @param string $where
+ * @return string
+ */
 function filter_where($where = '')
 {
     $where .= " AND post_date <= '" . date('Y-m-d') . "'";
@@ -353,119 +307,6 @@ function filter_where($where = '')
 
 add_filter('posts_where', 'filter_where');
 
-/**
- * Retorna una cadena con la noticia principal
- * @return string
- */
-function get_noticia_principal()
-{
-    $args = array(
-        'category_name' => 'principal',
-        'post_status' => 'publish',
-        'posts_per_page' => 1
-    );
-
-    $principal = query_posts($args);
-
-    //remove_filter('posts_where', 'filter_where');
-
-    $noticia = '';
-
-    while (have_posts()) {
-        the_post();
-        $noticia .= '<h2><a href="' . get_permalink() . '">' . get_the_title() . '</a></h2>';
-        $imagen = get_attachment_images(get_the_ID());
-        $noticia .= '<img src="' . $imagen['imagen'][0] . '" width="730" height="344" alt="' . $imagen['attachment_meta']['alt'] . '" title="' . $imagen['attachment_meta']['title'] . '">';
-        $noticia .= '<p>' . substr(get_the_content('', false), 0, 450) . '</p>';
-
-    }
-    wp_reset_query();
-
-    return $noticia;
-}
-
-
-/**
- * * Retorna una cadena con 12 noticias de porstada
- * @return string
- */
-function get_noticias_portada()
-{
-
-    $args = array(
-        'category_name' => 'portada',
-        'post_status' => 'publish',
-        'posts_per_page' => 12
-
-    );
-
-    $portada = query_posts($args);
-
-    $noticia_col_izq = '<div class="span6 noticia-secundaria"><ul class="thumbnails">';
-    $noticia_col_der = '<div class="span6 noticia-secundaria"><ul class="thumbnails">';
-
-    $izquierda = 0;
-    $derecha = 0;
-
-    while (have_posts()) {
-
-        the_post();
-        $imagen = get_attachment_images(get_the_ID());
-
-        if ($izquierda <= 5) {
-            $noticia_col_izq .= '<li class="span12 nomargen-abajo"><div class="thumbnail thumbnail-custom">';
-
-            $noticia_col_izq .= '<a href="' . get_permalink() . '">' . '<img class="img-cultura" style="width:295px;height:154px;" src="' . $imagen['imagen'][0] . '" ' . 'alt="' . get_the_title() . '" title="' . get_the_title() . '" >' . '</a>';
-            $noticia_col_izq .= '<h3 style="height:65px;"><a href="' . get_permalink() . '">' . get_the_title() . '</a></h3>';
-            //$noticia_col_izq .= '<p>' . substr(get_the_content('',false), 0,450) . '</p>';
-            $noticia_col_izq .= '</div></li>';
-            $izquierda++;
-        } else if ($derecha <= 5 && $izquierda == 6) {
-            $noticia_col_der .= '<li class="span12 nomargen-abajo"><div class="thumbnail thumbnail-custom">';
-            $noticia_col_der .= '<a href="' . get_permalink() . '">' . '<img class="img-cultura" style="width:295px;height:154px;" src="' . $imagen['imagen'][0] . '" ' . 'alt="' . get_the_title() . '" title="' . get_the_title() . '" >' . '</a>';
-            $noticia_col_der .= '<h3 style="height:65px;"><a href="' . get_permalink() . '">' . get_the_title() . '</a></h3>';
-            //$noticia_col_der .= '<p>' . substr(get_the_content('',false), 0,450) . '</p>';
-            $noticia_col_der .= '</div></li>';
-            $derecha++;
-        }
-
-
-    }
-    $noticia_col_izq .= '</ul></div>';
-    $noticia_col_der .= '</ul></div>';
-    wp_reset_query();
-
-    return $noticia_col_izq . $noticia_col_der;
-}
-
-function get_ultimas_noticias()
-{
-
-    $args = array('numberposts' => '15',
-        'orderby' => 'post_date',
-        'order' => 'DESC',
-        'tax_query' => array(
-            array(
-                'taxonomy' => 'category',
-                'field' => 'slug',
-                'terms' => array('portada', 'principal'),
-                'operator' => 'NOT IN'
-            ),
-            array(
-                'taxonomy' => 'category',
-                'field' => 'slug',
-                'terms' => array('lo-ultimo')
-            )
-        ));
-
-    $recent_posts = wp_get_recent_posts($args);
-    $ultimas_noticias = '<ul class="nav nav-tabs nav-stacked">';
-    foreach ($recent_posts as $recent) {
-        $ultimas_noticias .= '<li><a href="' . get_permalink($recent["ID"]) . '" title="' . esc_attr($recent["post_title"]) . '" ><span class="label label-inverse">' . mysql2date('H:i', $recent["post_date"]) . '</span> ' . $recent["post_title"] . '</a> </li> ';
-    }
-    $ultimas_noticias .= '</ul>';
-    return $ultimas_noticias;
-}
 
 /**
  * Registramos en la metadata del post un contador de visitas
@@ -489,7 +330,7 @@ function wpb_set_post_views($postID)
 remove_action('wp_head', 'adjacent_posts_rel_link_wp_head', 10, 0);
 
 /**
- * Sacamos el numero de vecs que el post ha sido visto
+ * Sacamos el numero de veces que el post ha sido visto
  * @param $postID
  * @return string
  */
@@ -505,67 +346,9 @@ function wpb_get_post_views($postID)
     return $count;
 }
 
-/**
- * Genera un string de las noticias mas leidas
- * @return string
- */
-function get_mas_leidas()
-{
-    $popularpost = new WP_Query(
-        array('posts_per_page' => 10,
-            'meta_key' => 'wpb_post_views_count',
-            'orderby' => 'meta_value_num',
-            'order' => 'DESC',
-            'meta_query' => array(
-                array(
-                    'key' => 'wpb_post_views_count',
-                    'value' => '0',
-                    'compare' => '!=',
-                )
-            )
-        )
-    );
-
-    $mas_leidas = '<ul class="nav nav-tabs nav-stacked">';
-
-    while ($popularpost->have_posts()) {
-        $popularpost->the_post();
-        $mas_leidas .= '<li><a href="' . get_permalink(get_the_ID()) . '" title="' . esc_attr(get_the_title()) . '" >' . get_the_title() . ' <span class="label label-warning">' . wpb_get_post_views(get_the_ID()) . '</span></a> </li> ';
-    }
-
-    $mas_leidas .= '</ul>';
-
-    return $mas_leidas;
-}
-
-function get_portada_impresa()
-{
-    $args = array(
-        'category_name' => 'impreso',
-        'post_status' => 'publish',
-        'posts_per_page' => 1
-    );
-
-    $portada_impresa = query_posts($args);
-    $impreso = '';
-    while (have_posts()) {
-
-        the_post();
-
-        $impreso = '<ul class="thumbnails" style="margin-top: 20px;">';
-        $impreso .= '<li class="span12 thumbnail portada" style="text-align: center;"><h3>Portada</h3>';
-        $impreso .= preg_replace('|\[(.+?)\](.+?\[/\\1\])?|s', '', get_the_content());
-        //$impreso .= apply_filters('the_content', get_the_content());
-        $impreso .= '</li></ul>';
-    }
-
-    return $impreso;
-}
-
-
 
 // Tidy up the <head> a little. Full reference of things you can show/remove is here: http://rjpargeter.com/2009/09/removing-wordpress-wp_head-elements/
-//remove_action('wp_head', 'wp_generator');// Removes the WordPress version as a layer of simple security
+remove_action('wp_head', 'wp_generator');// Removes the WordPress version as a layer of simple security
 
 add_theme_support('post-thumbnails');
 ?>
