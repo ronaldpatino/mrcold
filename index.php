@@ -22,7 +22,11 @@
     <?php get_template_part( 'blocks/menutop' ); ?>
     <?php get_template_part( 'blocks/logo' ); ?>
     <?php get_template_part( 'blocks/navbartop' ); ?>
-    <?php get_template_part( 'blocks/publicidadcabecera' ); ?>
+</div>
+
+<?php get_template_part( 'blocks/publicidadcabecera' ); ?>
+
+<div class='container'>
     <?php get_template_part( 'blocks/masleido' ); ?>
     <?php get_template_part( 'blocks/titulares' ); ?>
 </div>

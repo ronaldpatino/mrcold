@@ -94,32 +94,18 @@ body {
 /*Fin Noticias Secundarias*/
 /*publicidad*/
 
-.publicidad{
-    border: 0;
-    padding: 0;
-    margin: 0;
-    box-shadow:none;
+
+
+
+.publicidad > img{
+    padding: 10px 0 10px 0 !important;
+}
+
+.publicidad > a:hover{
+    color: #000000 !important;
 }
 
 
-.publicidad-top{
-    border: 0;
-    padding: 0;
-    margin: 0;
-}
-
-.publicidad-top > li{
-    margin: 0;
-}
-
-.publicidad-top > li > .thumbnail{
-
-    border: 0;
-    padding: 0;
-    margin: 0;
-    box-shadow:none;
-
-}
 /*fin publicidad*/
 
 /*portada*/
@@ -268,16 +254,6 @@ body {
     text-decoration: none;
 }
 
-.thumbnails, .thumbnails>li{
-    margin-bottom: 0;
-}
-.publicidad-thumbnails{
-    margin: 7px 0 0 0  !important;
-}
-
-.publicidad-thumbnails >li {
-    margin: 0 !important;
-}
 
 
 #tricolacl-titulo {
@@ -539,14 +515,10 @@ body {
     box-shadow: none;
     display: block;
     line-height: 20px;
-    padding: 2% !important;
-    transition: all 0.2s ease-in-out 0s;
+    padding: 5px !important;
+    transition: none;
 }
 
-.thumbnail-custom  > img{
-    width: 300px !important;
-    height: 200px !important;
-}
 
 .thumbnail-custom  > p{
     height: 80px !important;
@@ -558,6 +530,10 @@ body {
     height: 65px !important;
     overflow: hidden;
 
+}
+
+.thumbnails, .thumbnails>li{
+    margin-bottom: 0;
 }
 
 
@@ -702,7 +678,7 @@ form.navbar-search .input-append {
     border-radius: 0;
     box-shadow: 0 1px 4px rgba(0, 0, 0, 0.067);
     min-height: 40px;
-    padding-left: 60px;
+    padding-left: 50px;
     padding-right: 0;
 }
 
@@ -988,7 +964,6 @@ form.navbar-search .input-append {
 /*Fin twitter**/
 
 
-
 /*Ticker*/
 #ticker {
     height: 25px;
@@ -999,3 +974,13 @@ form.navbar-search .input-append {
 }
 
 /*Fin ticker*/
+
+/*Padding para secciones*/
+
+.seccion-left{
+    padding-left: 4px !important;
+}
+
+.seccion-right{
+    padding-right: 4px !important;
+}

@@ -1,5 +1,5 @@
 <!-- Publicidad -->
-<div class='container margen-container'>
+<div class='container'>
     <div class='row-fluid'>
         <?php if ( dynamic_sidebar('publicidadtitulares') ) : else : endif; ?>
     </div>

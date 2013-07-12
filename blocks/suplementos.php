@@ -4,7 +4,7 @@
         <div class="span4">
             <?php get_template_part( 'blocks/publicidadsuplementos' ); ?>
         </div>
-        <div class="span8">
+        <div class="span8 seccion-right">
             <h2>
                 Suplementos
             </h2>
