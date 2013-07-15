@@ -236,7 +236,7 @@ body {
     left: 10px;
     line-height: 18px;
     margin-top: 10px;
-    opacity: 0.2;
+    
     position: absolute;
     text-align: center;
     top: 30%;
@@ -402,7 +402,7 @@ body {
     left: 10px;
     line-height: 18px;
     margin-top: 10px;
-    opacity: 0.2;
+    opacity: 0.5;
     position: absolute;
     text-align: center;
     top: 30%;
@@ -449,7 +449,7 @@ body {
     left: 10px;
     line-height: 18px;
     margin-top: 10px;
-    opacity: 0.2;
+    opacity: 0.5;
     position: absolute;
     text-align: center;
     top: 30%;
@@ -984,3 +984,46 @@ form.navbar-search .input-append {
 .seccion-right{
     padding-right: 4px !important;
 }
+
+#caricaturamain {
+    padding: 5px;
+}
+.caricatura {
+    border: 1px solid #000000;
+}
+
+
+.caricatura-carousel-control {
+    background: none repeat scroll 0 0 #222222;
+    border: 3px solid #FFFFFF;
+    border-radius: 23px 23px 23px 23px;
+    color: #FFFFFF;
+    height: 20px;
+    left: 10px;
+    line-height: 18px;
+    margin-top: 10px;
+    opacity: 0.5;
+    position: absolute;
+    text-align: center;
+    top: 40%;
+    width: 20px;
+}
+
+
+.caricatura-carousel-control.right {
+    left: auto;
+    right: 10px;
+}
+.caricatura-carousel-control:hover, .caricatura-carousel-control:focus {
+    color: #FFFFFF;
+    opacity: 0.9;
+    text-decoration: none;
+}
+
+.carousel{
+    margin-bottom: 0px !important;
+}
+
+.carousel .caricatura-carousel-control { visibility: hidden !important; }
+.carousel:hover .caricatura-carousel-control { visibility: visible !important; }
+

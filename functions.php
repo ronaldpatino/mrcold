@@ -10,6 +10,7 @@ require_once('widgets/MasLeidas_Widget.php');
 require_once('widgets/NoticiasPortada_Widget.php');
 require_once('widgets/NoticiaPrincipal_Widget.php');
 require_once('widgets/PortadaImpresa_Widget.php');
+require_once('widgets/Caricatura_Widget.php');
 
 
 if (function_exists('register_sidebar'))
@@ -98,6 +99,15 @@ if (function_exists('register_sidebar'))
 if (function_exists('register_sidebar'))
 {
     register_sidebar( array (
+        'name' => __( 'Caricatura', 'caricatura' ),
+        'id' => 'caricatura',
+        'description' => __( 'Caricatura', 'dir' )
+    ) );
+}
+
+if (function_exists('register_sidebar'))
+{
+    register_sidebar( array (
         'name' => __( 'Publicidad Cabecera', 'publicidadcabecera' ),
         'id' => 'publicidadcabecera',
         'description' => __( 'Bloque Cabecera', 'dir' )
@@ -166,6 +176,7 @@ if (function_exists('register_sidebar'))
         'description' => __( 'Publicidad Pie', 'dir' )
     ) );
 }
+
 
 
 /***
