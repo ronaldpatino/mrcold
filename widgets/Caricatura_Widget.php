@@ -25,7 +25,7 @@ class Caricatura_Widget extends WP_Widget
 
         $args = array('posts_per_page' => 12,
             'offset' => 1,
-            'category' => $instance['categoria'],
+            'category' => 'caricaturas',
             'post_status' => 'publish',
         );
 
@@ -57,7 +57,8 @@ class Caricatura_Widget extends WP_Widget
 
             $caricatura .= "<li class='span12'>";
 
-            $caricatura .= "<img alt='' class='caricatura' src='<?php bloginfo('template_url'); ?>/assets/img/1.jpg'>";
+
+            $caricatura .= "<img alt='' class='caricatura' src='". get_bloginfo('template_url') . "/assets/img/1.jpg'>";
             $caricatura .= "</li>";
 
             //Fin Loop 3
@@ -72,14 +73,14 @@ class Caricatura_Widget extends WP_Widget
 
         }
 
-        echo("<strong>HOLA</strong>");
+
 
         $caricatura .= '</div>';
-        $caricatura .= '<a data-slide="prev" href="#"  id="caricaturamain"  class="left sociales-carousel-control">&lt;</a>';
-        $caricatura .= '<a data-slide="next" href="#" id="caricaturamain" class="right sociales-carousel-control">&gt;</a>';
+        $caricatura .= '<a data-slide="prev" href="#caricaturamain"  class="left sociales-carousel-control">&lt;</a>';
+        $caricatura .= '<a data-slide="next" href="#caricaturamain"  class="right sociales-carousel-control">&gt;</a>';
         $caricatura .= '</div>';
 
-        //echo $caricatura;
+        echo $caricatura;
 
     }
 
