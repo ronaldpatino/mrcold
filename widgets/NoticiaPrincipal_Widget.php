@@ -39,7 +39,7 @@ class NoticiaPrincipal extends WP_Widget {
             $noticia .= '<h2><a href="' . get_permalink() . '">' . get_the_title() . '</a></h2>';
             $imagen = get_attachment_images(get_the_ID());
             $noticia .= '<img src="' . $imagen['imagen'][0] . '" width="730" height="344" alt="' . $imagen['attachment_meta']['alt'] . '" title="' . $imagen['attachment_meta']['title'] . '">';
-            $noticia .= '<p>' . substr(get_the_content('', false), 0, 450) . '</p>';
+            $noticia .= '<p>' . substr(limpia_contenido(get_the_content('', false)), 0, 450) . '</p>';
 
         }
         wp_reset_query();

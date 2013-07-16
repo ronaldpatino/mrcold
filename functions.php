@@ -357,6 +357,19 @@ function wpb_get_post_views($postID)
     return $count;
 }
 
+/**
+ * Limpiamos el contendido del post de html y codigo markup de wp
+ * @param $texto
+ */
+function limpia_contenido($texto){
+
+    $retorno = strip_tags($texto);
+    $retorno =  strip_shortcodes($retorno);
+
+    return $retorno;
+}
+
+
 
 // Tidy up the <head> a little. Full reference of things you can show/remove is here: http://rjpargeter.com/2009/09/removing-wordpress-wp_head-elements/
 remove_action('wp_head', 'wp_generator');// Removes the WordPress version as a layer of simple security

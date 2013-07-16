@@ -43,7 +43,7 @@ class Seccion_Widget extends WP_Widget {
                 $post_imprimir .= '<a href="' . get_permalink() .'">' . get_the_title() . '</a></h3>';
                 $imagen = get_attachment_images(get_the_ID());
                 $post_imprimir  .= '<img src="' . $imagen['imagen'][0] . '" alt="' . get_the_title() . '" title="' . get_the_title() . '">';
-                $post_imprimir .= '<p>' . substr(get_the_content('', false), 0, 450) . '</p>';
+                $post_imprimir .= '<p>' . substr(limpia_contenido(get_the_content('', false)), 0, 450) . '</p>';
                 $post_imprimir .= '</div></li></ul>';
                 $primera_noticia = 1;
             }

@@ -10,7 +10,7 @@ class Masleidas extends WP_Widget {
             array( 'description' => __( 'Listado de Noticias mas leidas', 'text_domain' ), ) // Args
         );
 
-        $this->max_noticias = 10;
+        $this->max_noticias = 7;
     }
 
     public function widget( $args, $instance ) {
@@ -27,6 +27,7 @@ class Masleidas extends WP_Widget {
                 'meta_key' => 'wpb_post_views_count',
                 'orderby' => 'meta_value_num',
                 'order' => 'DESC',
+                'posts_per_page' => $this->max_noticias,
                 'meta_query' => array(
                     array(
                         'key' => 'wpb_post_views_count',

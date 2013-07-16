@@ -44,7 +44,7 @@ class NotSecundaria_Widget extends WP_Widget {
             $imagen = get_attachment_images(get_the_ID());
             $noticia_principal_seccion .= '<img src="' . $imagen['imagen'][0] . '" alt="' . get_the_title() . '" title="' . get_the_title() . '">';
             /*330 * 154*/
-            $noticia_principal_seccion .= '<p>' . substr(get_the_content('', false), 0, 450) . '</p>';
+            $noticia_principal_seccion .= '<p>' . substr(limpia_contenido(get_the_content('', false)), 0, 450) . '</p>';
             $noticia_principal_seccion .= '</div></li></ul></div>';
 
         }
