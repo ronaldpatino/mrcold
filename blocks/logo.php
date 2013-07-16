@@ -3,7 +3,7 @@
             <ul class="thumbnails  publicidad-top">
                 <li class="span12">
                     <div class="thumbnail">
-                        <img data-src="holder.js/534x90" >
+                        <img src="<?php bloginfo('template_url'); ?>/assets/img/logo.png" >
                     </div>
                 </li>
             </ul>
