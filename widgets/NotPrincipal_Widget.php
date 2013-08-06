@@ -1,5 +1,10 @@
 <?php
 
+/**
+ * Class NotPrincipal_Widget
+ * Todas las notas marcadas como 16 (destacadas) serán motradas en este contexto
+ */
+
 class NotPrincipal_Widget extends WP_Widget {
 
     public function __construct() {
@@ -18,9 +23,10 @@ class NotPrincipal_Widget extends WP_Widget {
 
         extract( $args );
 
+        //Categoria 16 destacados
         $args = array( 'posts_per_page' => 1,
                         'offset'=> 1,
-                        'category' => $instance['categoria'],
+                        'category__and' => array($instance['categoria'],16),
                         'post_status' => 'publish',
         );
 
@@ -29,7 +35,7 @@ class NotPrincipal_Widget extends WP_Widget {
         $category = get_the_category_by_ID($instance['categoria']);
 
 
-        $primera_noticia = 0;
+
 
         $noticia_principal_seccion = '';
 

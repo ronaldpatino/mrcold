@@ -1,5 +1,8 @@
 <?php
-
+/**
+ * Class NotSecundariaLista
+ * Las noticias marcadas como destacadas (16) no seran mostradas
+ */
 class NotSecundariaLista extends WP_Widget {
 
     public function __construct() {
@@ -21,6 +24,7 @@ class NotSecundariaLista extends WP_Widget {
         $args = array( 'posts_per_page' => 4,
                         'offset'=> 1,
                         'category' => $instance['categoria'],
+                        'category__not_in' => array( 16 ),
                         'post_status' => 'publish',
         );
 
