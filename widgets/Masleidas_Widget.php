@@ -23,7 +23,8 @@ class Masleidas extends WP_Widget {
 
 
         $popularpost = new WP_Query(
-            array('posts_per_page' => $instance['numberposts'],
+            array(
+                //'posts_per_page' => $instance['numberposts'],
                 'meta_key' => 'wpb_post_views_count',
                 'orderby' => 'meta_value_num',
                 'order' => 'DESC',
