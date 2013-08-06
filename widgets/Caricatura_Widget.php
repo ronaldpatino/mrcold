@@ -10,6 +10,8 @@ class Caricatura_Widget extends WP_Widget
             'M_Caricatura: Caricatura', // Name
             array('description' => __('Caricaturas', 'text_domain'),)
         );
+
+        $this->max_noticias = 7;
     }
 
     public function widget($args, $instance)
@@ -23,7 +25,8 @@ class Caricatura_Widget extends WP_Widget
 
         extract($args);
 
-        $args = array('posts_per_page' => 12,
+        $args = array(
+            'posts_per_page' => $this->max_noticias,
             'offset' => 1,
             'category' => 'caricaturas',
             'post_status' => 'publish',
