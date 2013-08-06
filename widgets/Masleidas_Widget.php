@@ -1,5 +1,7 @@
 <?php
-
+/**
+ * Class Masleidas
+ */
 class Masleidas extends WP_Widget {
 
     private $max_noticias;
