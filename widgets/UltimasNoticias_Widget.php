@@ -10,7 +10,7 @@ class UltimasNoticias extends WP_Widget {
             array( 'description' => __( 'Listado de Ultima Noticias', 'text_domain' ), ) // Args
         );
 
-        $this->max_noticias = 15;
+        $this->max_noticias = 10;
     }
 
     public function widget( $args, $instance ) {
@@ -25,6 +25,7 @@ class UltimasNoticias extends WP_Widget {
         $args = array('numberposts' => $instance['numberposts'],
             'orderby' => 'post_date',
             'order' => 'DESC',
+            'posts_per_page' => $this->max_noticias,
             'tax_query' => array(
                 array(
                     'taxonomy' => 'category',
@@ -35,7 +36,7 @@ class UltimasNoticias extends WP_Widget {
                 array(
                     'taxonomy' => 'category',
                     'field' => 'slug',
-                    'terms' => array('lo-ultimo')
+                    'terms' => array('ultima-hora')
                 )
             ));
 
