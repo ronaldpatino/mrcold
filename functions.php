@@ -375,4 +375,41 @@ function limpia_contenido($texto){
 remove_action('wp_head', 'wp_generator');// Removes the WordPress version as a layer of simple security
 
 add_theme_support('post-thumbnails');
-?>
+
+
+add_filter('get_avatar','change_avatar_css');
+
+function change_avatar_css($class) {
+    $class = str_replace("class='avatar", "class='pull-left media-object", $class) ;
+    return $class;
+}
+
+
+add_filter('comment_reply_link', 'replace_reply_link_class');
+
+function replace_reply_link_class($class){
+    $class = str_replace("class='comment-reply-link", "class='btn btn-mini btn-primary", $class);
+    return $class;
+}
+
+function mrc_comments($comment, $args, $depth) {
+    ?>
+    <div class="media">
+
+        <a class="pull-left" href="#"><?php echo get_avatar( $comment, '32' );?></a>
+
+        <?php if ( '0' == $comment->comment_approved ) : ?>
+            <em class="comment-awaiting-moderation"><?php _e( 'Your comment is awaiting moderation.' ) ?></em>
+            <br />
+        <?php endif; ?>
+        <div class="media-body">
+            <h4 class="media-heading">
+                <?php printf( __( '%s dijo el %1s - %2s:' ), get_comment_author_link(), get_comment_date('Y/m/d'), get_comment_time()) ?>
+            </h4>
+            <?php comment_text() ?>
+            <?php comment_reply_link( array_merge( $args, array('depth' => $depth, 'max_depth' => $args['max_depth'] ) ) ); ?>
+
+    <?php
+}
+
+
