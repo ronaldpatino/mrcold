@@ -41,7 +41,7 @@
         </div>
         <div class='span4 sidebar'>
 
-            HOLA
+            <?php if ( dynamic_sidebar('detallenoticia') ) : else : endif; ?>
 
         </div>
     </div>

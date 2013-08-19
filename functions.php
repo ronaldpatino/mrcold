@@ -24,163 +24,160 @@ if (function_exists('register_sidebar'))
         'id' => 'portada_titulares',
         'description' => __( 'Noticia Principal y Titulares', 'dir' )
     ) );
-}
 
-if (function_exists('register_sidebar'))
-{
+
+
     register_sidebar( array (
         'name' => __( 'Ultimas Noticias, Mas Leidas, Portada Impresa', 'ultimas_masleidas_portada' ),
         'id' => 'ultimas_masleidas_portada',
         'description' => __( 'Ultimas Noticias, Mas Leidas, Portada Impresa', 'dir' )
     ) );
-}
 
 
-if (function_exists('register_sidebar'))
-{
+
+
     register_sidebar( array (
         'name' => __( 'Cultura Cuenca Sucesos', 'cultura-cuenca-sucesos' ),
         'id' => 'tricolccs',
         'description' => __( 'Cultura Cuenca Sucesos', 'dir' )
     ) );
-}
 
-if (function_exists('register_sidebar'))
-{
 
-        register_sidebar( array (
+
+
+    register_sidebar( array (
         'name' => __( 'Azuay Cañar Loja', 'azuay-canar-loja' ),
         'id' => 'tricolacl',
         'description' => __( 'Azuay Cañar Loja', 'dir' )
     ) );
-}
 
-if (function_exists('register_sidebar'))
-{
+
+
     register_sidebar( array (
         'name' => __( 'Deportes', 'deportes' ),
         'id' => 'tricoldeportes',
         'description' => __( 'Deportes', 'dir' )
     ) );
-}
 
-if (function_exists('register_sidebar'))
-{
+
+
     register_sidebar( array (
         'name' => __( 'Deportivo Cuenca', 'deportivocuenca' ),
         'id' => 'deportivocuenca',
         'description' => __( 'Deportivo Cuenca', 'dir' )
     ) );
-}
 
-if (function_exists('register_sidebar'))
-{
+
+
     register_sidebar( array (
         'name' => __( 'Sociales', 'sociales' ),
         'id' => 'sociales',
         'description' => __( 'Sociales', 'dir' )
     ) );
-}
 
-if (function_exists('register_sidebar'))
-{
+
+
     register_sidebar( array (
         'name' => __( 'Multimedia', 'multimedia' ),
         'id' => 'multimedia',
         'description' => __( 'Multimedia', 'dir' )
     ) );
-}
 
-if (function_exists('register_sidebar'))
-{
+
+
     register_sidebar( array (
         'name' => __( 'Suplementos', 'suplemementos' ),
         'id' => 'suplementos',
         'description' => __( 'Suplementos', 'dir' )
     ) );
-}
 
-if (function_exists('register_sidebar'))
-{
+
+
     register_sidebar( array (
         'name' => __( 'Caricatura', 'caricatura' ),
         'id' => 'caricatura',
         'description' => __( 'Caricatura', 'dir' )
     ) );
-}
 
-if (function_exists('register_sidebar'))
-{
+
+
     register_sidebar( array (
         'name' => __( 'Publicidad Cabecera', 'publicidadcabecera' ),
         'id' => 'publicidadcabecera',
         'description' => __( 'Bloque Cabecera', 'dir' )
     ) );
-}
 
-if (function_exists('register_sidebar'))
-{
+
+
     register_sidebar( array (
         'name' => __( 'Publicidad Mas Leidas', 'publicidadmasleidas' ),
         'id' => 'publicidadmasleidas',
         'description' => __( 'Publicidad Mas Leidas', 'dir' )
     ) );
-}
 
-if (function_exists('register_sidebar'))
-{
+
+
     register_sidebar( array (
         'name' => __( 'Publicidad Titulares', 'publicidadtitulares' ),
         'id' => 'publicidadtitulares',
         'description' => __( 'Publicidad Titulares', 'dir' )
     ) );
-}
 
-if (function_exists('register_sidebar'))
-{
+
+
     register_sidebar( array (
         'name' => __( 'Publicidad Sociales', 'publicidadsociales' ),
         'id' => 'publicidadsociales',
         'description' => __( 'Publicidad Sociales', 'dir' )
     ) );
-}
 
-if (function_exists('register_sidebar'))
-{
+
+
     register_sidebar( array (
         'name' => __( 'Publicidad Deportivo Cuenca', 'publicidad_deportivo_cuenca' ),
         'id' => 'publicidad_deportivo_cuenca',
         'description' => __( 'Publicidad Deportivo Cuenca', 'dir' )
     ) );
-}
 
-if (function_exists('register_sidebar'))
-{
+
+
     register_sidebar( array (
         'name' => __( 'Publicidad Multimedia', 'publicidad_multimedia' ),
         'id' => 'publicidad_multimedia',
         'description' => __( 'Publicidad Multimedia', 'dir' )
     ) );
-}
 
-if (function_exists('register_sidebar'))
-{
+
+
     register_sidebar( array (
         'name' => __( 'Publicidad Suplementos', 'publicidad_suplementos' ),
         'id' => 'publicidad_suplementos',
         'description' => __( 'Publicidad Suplementos', 'dir' )
     ) );
-}
 
-if (function_exists('register_sidebar'))
-{
+
+
     register_sidebar( array (
         'name' => __( 'Publicidad Pie de Pagina', 'publicidadpie' ),
         'id' => 'publicidadpie',
         'description' => __( 'Publicidad Pie', 'dir' )
     ) );
-}
 
+
+
+    register_sidebar( array (
+        'name' => __( 'Publicidad Pie de Pagina', 'publicidadpie' ),
+        'id' => 'publicidadpie',
+        'description' => __( 'Publicidad Pie', 'dir' )
+    ) );
+
+
+    register_sidebar( array (
+        'name' => __( 'Side Bar Pagina Noticias', 'detallenoticia' ),
+        'id' => 'detallenoticia',
+        'description' => __( 'Side Bar Pagina Noticia', 'dir' )
+    ) );
+}
 
 
 /***
@@ -372,7 +369,6 @@ function limpia_contenido($texto){
 
     return $retorno;
 }
-
 
 
 // Tidy up the <head> a little. Full reference of things you can show/remove is here: http://rjpargeter.com/2009/09/removing-wordpress-wp_head-elements/
