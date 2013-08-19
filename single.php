@@ -22,7 +22,7 @@
                 <article role="main" class="primary-content" id="post-<?php the_ID(); ?>">
                     <header>
                         <h1><?php the_title(); ?></h1>
-                        <p>Posted <strong><?php echo human_time_diff(get_the_time('U'), current_time('timestamp')) . ' ago'; ?></strong> on <time datetime="<?php the_time('l, F jS, Y') ?>" pubdate><?php the_time('l, F jS, Y') ?></time> &middot; <a href="<?php the_permalink(); ?>">Permalink</a></p>
+                        <p>Publicado el <?php the_time('Y/m/d') ?> por  <?php echo get_the_author();?>
                     </header>
 
                     <?php the_post_thumbnail('full');?>
@@ -30,9 +30,9 @@
                     <?php the_content(); ?>
 
 
-                        <p>Posted <strong><?php echo human_time_diff(get_the_time('U'), current_time('timestamp')) . ' ago'; ?></strong> on <time datetime="<?php the_time('l, F jS, Y') ?>" pubdate><?php the_time('l, F jS, Y') ?></time> &middot; <a href="<?php the_permalink(); ?>">Permalink</a></p>
-                        <hr/>
-                        <?php comments_template('',true); ?>
+
+                     <hr/>
+                     <?php comments_template('',true); ?>
 
                 <!-- fin detalle de la noticia -->
 

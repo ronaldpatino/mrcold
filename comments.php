@@ -17,16 +17,6 @@ if ( post_password_required() ){
     return;
 }
 
-
-    if ( have_comments() ) :
-         wp_list_comments(array(
-                                'style'             => 'div',
-                                'callback'          => 'mrc_comments',
-                                'reply_text'        => 'Respoder',
-                                'avatar_size'       => 32,
-                                ));
-    endif;
-
     $commenter = wp_get_current_commenter();
     $req = get_option( 'require_name_email' );
     $aria_req = ( $req ? " aria-required='true'" : '' );
@@ -41,35 +31,30 @@ if ( post_password_required() ){
         'label_submit'      => __( 'Enviar Comentario' ),
 
         'comment_field' =>  '<p class="comment-form-comment"><label for="comment">' . _x( 'Comentario', 'noun' ) .
-        '</label><textarea id="comment" name="comment" cols="50" rows="8" aria-required="true">' .
+        '</label><textarea  class="input-block-level" id="comment" name="comment"  rows="3" aria-required="true">' .
         '</textarea></p>',
 
         'must_log_in' => '<p class="must-log-in">' .
         sprintf(
-            __( 'You must be <a href="%s">logged in</a> to post a comment.' ),
+            __( 'Ingrese a <a href="%s">El Mercurio</a> para comentar.' ),
             wp_login_url( apply_filters( 'the_permalink', get_permalink() ) )
         ) . '</p>',
 
         'logged_in_as' => '<p class="logged-in-as">' .
         sprintf(
-            __( 'Bienvenido <a href="%1$s">%2$s</a> deje su comentario. <a href="%3$s" title="Log out of this account">Salir?</a>' ),
+            __( 'Bienvenido <a href="%1$s">%2$s</a> deje su comentario. <a href="%3$s" title="Salir de El Mercurio">Salir?</a>' ),
             admin_url( 'profile.php' ),
             $user_identity,
             wp_logout_url( apply_filters( 'the_permalink', get_permalink( ) ) )
         ) . '</p>',
 
         'comment_notes_before' => '<p class="comment-notes">' .
-        __( 'Your email address will not be published.' ) . ( $req ? $required_text : '' ) .
+        __( 'Su correo no ser&aacute;.' ) . ( $req ? $required_text : '' ) .
         '</p>',
 
-        'comment_notes_after' => '<p class="form-allowed-tags">' .
-        sprintf(
-            __( 'You may use these <abbr title="HyperText Markup Language">HTML</abbr> tags and attributes: %s' ),
-            ' <code>' . allowed_tags() . '</code>'
-        ) . '</p>',
+        'comment_notes_after' => 'DISABLE USE OF HTNML HERE',
 
         'fields' => apply_filters( 'comment_form_default_fields', array(
-
                 'author' =>
                 '<p class="comment-form-author">' .
                 '<label for="author">' . __( 'Name', 'domainreference' ) . '</label> ' .
@@ -92,4 +77,20 @@ if ( post_password_required() ){
         ),
     );
 
-    comment_form($args);
+    if ( have_comments() ) {
+        wp_list_comments(array(
+                                'style'             => 'div',
+                                'callback'          => 'mrc_comments',
+                                'end-callback'      => 'mrc_comments_end',
+                                'reply_text'        => 'Respoder',
+                                'avatar_size'       => 32,
+                                ));
+
+        if ( ! comments_open() && get_comments_number() ) {
+            echo '<p class="no-comments">' . _e( 'Comentarios cerrados.'  ) . '</p>';
+        }
+    }
+
+    mrc_comment_form($args);
+
+

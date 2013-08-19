@@ -4,7 +4,7 @@
                 <div class="controls hidden-phone">
                     <form class="navbar-search pull-right">
                         <div class="input-append">
-                            <input  class="search-query" placeholder="Buscar en El Mercurio" type="text" class="span2"><span class="add-on"><i class="icon-search"> </i></span>
+                            <input  class="search-query span2" placeholder="Buscar en El Mercurio" type="text" ><span class="add-on"><i class="icon-search"> </i></span>
                         </div>
                     </form>
                 </div>

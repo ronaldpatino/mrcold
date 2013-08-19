@@ -3,7 +3,7 @@
             <ul class="thumbnails  publicidad-top">
                 <li class="span12">
                     <div class="thumbnail">
-                        <img src="<?php bloginfo('template_url'); ?>/assets/img/logo.png" >
+                        <img src="<?php bloginfo('template_url'); ?>/assets/img/logo.png" alt="<?php  bloginfo('name');?>" >
                     </div>
                 </li>
             </ul>
