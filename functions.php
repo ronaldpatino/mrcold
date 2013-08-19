@@ -13,6 +13,10 @@ require_once('widgets/PortadaImpresa_Widget.php');
 require_once('widgets/Caricatura_Widget.php');
 
 
+add_filter( 'comment_text', 'wp_filter_nohtml_kses' );
+add_filter( 'comment_text_rss', 'wp_filter_nohtml_kses' );
+add_filter( 'comment_excerpt', 'wp_filter_nohtml_kses' );
+
 if (function_exists('register_sidebar'))
 {
     register_sidebar( array (
@@ -404,6 +408,7 @@ function mrc_comments($comment, $args, $depth) {
     $GLOBALS['comment'] = $comment;
     extract($args, EXTR_SKIP);
     ?>
+    <hr/>
     <div class="media">
 
         <a class="pull-left" href="#"><?php echo get_avatar( $comment, '32' );?></a>
