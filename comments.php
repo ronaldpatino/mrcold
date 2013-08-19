@@ -30,8 +30,7 @@ if ( post_password_required() ){
         'cancel_reply_link' => __( 'Cancelar Respuesta' ),
         'label_submit'      => __( 'Enviar Comentario' ),
 
-        'comment_field' =>  '<p class="comment-form-comment"><label for="comment">' . _x( 'Comentario', 'noun' ) .
-        '</label><textarea  class="input-block-level" id="comment" name="comment"  rows="3" aria-required="true">' .
+        'comment_field' =>  '<p class="comment-form-comment"><textarea  class="input-block-level" id="comment" name="comment"  rows="3" aria-required="true">' .
         '</textarea></p>',
 
         'must_log_in' => '<p class="must-log-in">' .
@@ -52,7 +51,7 @@ if ( post_password_required() ){
         __( 'Su correo no ser&aacute;.' ) . ( $req ? $required_text : '' ) .
         '</p>',
 
-        'comment_notes_after' => 'DISABLE USE OF HTNML HERE',
+        'comment_notes_after' => '',
 
         'fields' => apply_filters( 'comment_form_default_fields', array(
                 'author' =>
@@ -86,11 +85,11 @@ if ( post_password_required() ){
                                 'avatar_size'       => 32,
                                 ));
 
-        if ( ! comments_open() && get_comments_number() ) {
-            echo '<p class="no-comments">' . _e( 'Comentarios cerrados.'  ) . '</p>';
-        }
     }
 
+    if ( ! comments_open() ) {
+        echo '<p class="no-comments">' . _e( 'Comentarios cerrados para esta noticia.'  ) . '</p>';
+    }
     mrc_comment_form($args);
 
 
