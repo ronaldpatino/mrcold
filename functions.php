@@ -311,6 +311,8 @@ function get_attachment_images($id)
  * @param string $where
  * @return string
  */
+/*
+ * Retirado hasta nuevo anuncio
 function filter_where($where = '')
 {
     $where .= " AND post_date <= '" . date('Y-m-d') . "'";
@@ -318,7 +320,7 @@ function filter_where($where = '')
 }
 
 add_filter('posts_where', 'filter_where');
-
+*/
 
 /**
  * Registramos en la metadata del post un contador de visitas
@@ -407,19 +409,19 @@ function mrc_comments($comment, $args, $depth) {
     <hr/>
     <div class="media">
 
-        <a class="pull-left" href="#"><?php echo get_avatar( $comment, '32' );?></a>
+    <a class="pull-left" href="#"><?php echo get_avatar( $comment, '32' );?></a>
 
-        <?php if ( '0' == $comment->comment_approved ) : ?>
-            <em class="comment-awaiting-moderation"><?php _e( 'Su comentario ha sido enviado, pronto ser&acute; publicado.' ) ?></em>
-            <br />
-        <?php endif; ?>
-        <div class="media-body">
-            <h4 class="media-heading">
-                <?php printf( __( '%s dijo el %1s - %2s:' ), get_comment_author_link(), get_comment_date('Y/m/d'), get_comment_time()) ?>
-            </h4>
-            <?php comment_text() ?>
-            <?php comment_reply_link( array_merge( $args, array('depth' => $depth, 'max_depth' => $args['max_depth'] ) ) ); ?>
-    <?php
+    <?php if ( '0' == $comment->comment_approved ) : ?>
+        <em class="comment-awaiting-moderation"><?php _e( 'Su comentario ha sido enviado, pronto ser&acute; publicado.' ) ?></em>
+        <br />
+    <?php endif; ?>
+    <div class="media-body">
+    <h4 class="media-heading">
+        <?php printf( __( '%s dijo el %1s - %2s:' ), get_comment_author_link(), get_comment_date('Y/m/d'), get_comment_time()) ?>
+    </h4>
+    <?php comment_text() ?>
+    <?php mrc_comment_reply_link( array_merge( $args, array('depth' => $depth, 'max_depth' => $args['max_depth'] ) ) ); ?>
+<?php
 }
 
 /**
@@ -440,9 +442,13 @@ function mrc_comments_end()
  */
 function mrc_comment_form( $args = array(), $post_id = null ) {
     if ( null === $post_id )
+    {
         $post_id = get_the_ID();
+    }
     else
+    {
         $id = $post_id;
+    }
 
     $commenter = wp_get_current_commenter();
     $user = wp_get_current_user();
@@ -478,6 +484,7 @@ function mrc_comment_form( $args = array(), $post_id = null ) {
         'cancel_reply_link'    => __( 'Cancel reply' ),
         'label_submit'         => __( 'Post Comment' ),
         'format'               => 'xhtml',
+
     );
 
     $args = wp_parse_args( $args, apply_filters( 'comment_form_defaults', $defaults ) );
@@ -488,8 +495,7 @@ function mrc_comment_form( $args = array(), $post_id = null ) {
         <div id="respond" class="comment-respond">
             <h3 id="reply-title" class="comment-reply-title"><?php comment_form_title( $args['title_reply'], $args['title_reply_to'] ); ?> <small><?php cancel_comment_reply_link( $args['cancel_reply_link'] ); ?></small></h3>
             <?php if ( get_option( 'comment_registration' ) && !is_user_logged_in() ) : ?>
-                <?php echo $args['must_log_in']; ?>
-                <?php do_action( 'comment_form_must_log_in_after' ); ?>
+                <?php require_once('blocks/login.php');?>
             <?php else : ?>
                 <form action="<?php echo site_url( '/wp-comments-post.php' ); ?>" method="post" id="<?php echo esc_attr( $args['id_form'] ); ?>" class="comment-form"<?php echo $html5 ? ' novalidate' : ''; ?>>
                     <?php do_action( 'comment_form_top' ); ?>
@@ -521,4 +527,139 @@ function mrc_comment_form( $args = array(), $post_id = null ) {
         <?php do_action( 'comment_form_comments_closed' ); ?>
     <?php endif; ?>
 <?php
+}
+
+
+/**
+ * Retrieve HTML content for reply to comment link.
+ *
+ * The default arguments that can be override are 'add_below', 'respond_id',
+ * 'reply_text', 'login_text', and 'depth'. The 'login_text' argument will be
+ * used, if the user must log in or register first before posting a comment. The
+ * 'reply_text' will be used, if they can post a reply. The 'add_below' and
+ * 'respond_id' arguments are for the JavaScript moveAddCommentForm() function
+ * parameters.
+ *
+ * @since 2.7.0
+ *
+ * @param array $args Optional. Override default options.
+ * @param int $comment Optional. Comment being replied to.
+ * @param int $post Optional. Post that the comment is going to be displayed on.
+ * @return string|bool|null Link to show comment form, if successful. False, if comments are closed.
+ */
+function mrc_get_comment_reply_link($args = array(), $comment = null, $post = null) {
+    global $user_ID;
+
+    $defaults = array('add_below' => 'comment', 'respond_id' => 'respond', 'reply_text' => __('Reply'),
+        'login_text' => __('Log in to Reply'), 'depth' => 0, 'before' => '', 'after' => '');
+
+    $args = wp_parse_args($args, $defaults);
+
+    if ( 0 == $args['depth'] || $args['max_depth'] <= $args['depth'] )
+        return;
+
+    extract($args, EXTR_SKIP);
+
+    $comment = get_comment($comment);
+    if ( empty($post) )
+        $post = $comment->comment_post_ID;
+    $post = get_post($post);
+
+    if ( !comments_open($post->ID) )
+        return false;
+
+    $link = '';
+
+    if ( get_option('comment_registration') && !$user_ID )
+    {
+        //No hay accion aca solo logeado puedes responder
+    }
+
+    else
+        $link = "<a class='comment-reply-link' href='" . esc_url( add_query_arg( 'replytocom', $comment->comment_ID ) ) . "#" . $respond_id . "' onclick='return addComment.moveForm(\"$add_below-$comment->comment_ID\", \"$comment->comment_ID\", \"$respond_id\", \"$post->ID\")'>$reply_text</a>";
+    return apply_filters('comment_reply_link', $link , $args, $comment, $post);
+}
+
+/**
+ * Displays the HTML content for reply to comment link.
+ *
+ * @since 2.7.0
+ * @see get_comment_reply_link() Echoes result
+ *
+ * @param array $args Optional. Override default options.
+ * @param int $comment Optional. Comment being replied to.
+ * @param int $post Optional. Post that the comment is going to be displayed on.
+ * @return string|bool|null Link to show comment form, if successful. False, if comments are closed.
+ */
+function mrc_comment_reply_link($args = array(), $comment = null, $post = null) {
+    echo mrc_get_comment_reply_link($args, $comment, $post);
+}
+
+
+add_action('register_form','myplugin_register_form');
+function myplugin_register_form (){
+    $first_name = ( isset( $_POST['first_name'] ) ) ? $_POST['first_name']: '';
+    $last_name = ( isset( $_POST['last_name'] ) ) ? $_POST['last_name']: '';
+    $cedula = ( isset( $_POST['cedula'] ) ) ? $_POST['cedula']: '';
+    ?>
+    <p>
+        <label for="first_name"><?php _e('Nombres','mydomain') ?><br />
+            <input type="text" name="first_name" id="first_name" class="input" value="<?php echo esc_attr(stripslashes($first_name)); ?>" size="25" /></label>
+    </p>
+    <p>
+        <label for="last_name"><?php _e('Apellidos','mydomain') ?><br />
+            <input type="text" name="last_name" id="last_name" class="input" value="<?php echo esc_attr(stripslashes($last_name)); ?>" size="25" /></label>
+    </p>
+    <p>
+        <label for="cedula"><?php _e('Cedula','mydomain') ?><br />
+            <input type="text" name="cedula" id="cedula" class="input" value="<?php echo esc_attr(stripslashes($cedula)); ?>" size="10" /></label>
+    </p>
+<?php
+}
+
+
+add_filter('registration_errors', 'myplugin_registration_errors', 10, 3);
+function myplugin_registration_errors ($errors, $sanitized_user_login, $user_email) {
+
+    if ( empty( $_POST['first_name'] ) )
+    {
+        $errors->add( 'first_name_error', __('<strong>ERROR</strong>: Por favor ingrese sus Nombres.','mydomain') );
+    }
+
+    if ( empty( $_POST['last_name'] ) )
+    {
+        $errors->add( 'last_name_error', __('<strong>ERROR</strong>: Por favor ingrese sus Apellidos.','mydomain') );
+    }
+
+    if ( empty( $_POST['cedula'] ) )
+    {
+        $errors->add( 'cedula_error', __('<strong>ERROR</strong>: Por favor ingrese su N&uacute;mero de C&eacute;dula.','mydomain') );
+    }
+    return $errors;
+}
+
+
+add_action('user_register', 'myplugin_user_register');
+function myplugin_user_register ($user_id) {
+    if ( isset( $_POST['first_name'] ) )
+    {
+        update_user_meta($user_id, 'first_name', $_POST['first_name']);
+    }
+
+    if ( isset( $_POST['last_name'] ) )
+    {
+        update_user_meta($user_id, 'last_name', $_POST['last_name']);
+    }
+
+    if ( isset( $_POST['cedula'] ) )
+    {
+        update_user_meta($user_id, 'cedula', $_POST['cedula']);
+    }
+}
+
+add_action( 'register_post', 'tml_register_post' );
+function tml_register_post() {
+    if ( ! empty( $_POST['user_email'] ) ) {
+        $_POST['user_login'] = $_POST['user_email'];
+    }
 }

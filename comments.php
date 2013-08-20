@@ -25,7 +25,7 @@ if ( post_password_required() ){
     $args = array(
         'id_form'           => 'commentform',
         'id_submit'         => 'submit',
-        'title_reply'       => __( 'Deje un comentario' ),
+        'title_reply'       => __( '' ),
         'title_reply_to'    => __( 'Deje un comentario a %s' ),
         'cancel_reply_link' => __( 'Cancelar Respuesta' ),
         'label_submit'      => __( 'Enviar Comentario' ),
@@ -33,7 +33,7 @@ if ( post_password_required() ){
         'comment_field' =>  '<p class="comment-form-comment"><textarea  class="input-block-level" id="comment" name="comment"  rows="3" aria-required="true">' .
         '</textarea></p>',
 
-        'must_log_in' => '<p class="must-log-in">' .
+        'must_log_in' => '<p class="must-log-in"> ' .
         sprintf(
             __( 'Ingrese a <a href="%s">El Mercurio</a> para comentar.' ),
             wp_login_url( apply_filters( 'the_permalink', get_permalink() ) )
