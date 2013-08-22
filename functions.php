@@ -596,8 +596,8 @@ function mrc_comment_reply_link($args = array(), $comment = null, $post = null) 
 }
 
 
-add_action('register_form','myplugin_register_form');
-function myplugin_register_form (){
+add_action('register_form','mrc_register_form');
+function mrc_register_form (){
     $first_name = ( isset( $_POST['first_name'] ) ) ? $_POST['first_name']: '';
     $last_name = ( isset( $_POST['last_name'] ) ) ? $_POST['last_name']: '';
     $cedula = ( isset( $_POST['cedula'] ) ) ? $_POST['cedula']: '';
@@ -618,8 +618,8 @@ function myplugin_register_form (){
 }
 
 
-add_filter('registration_errors', 'myplugin_registration_errors', 10, 3);
-function myplugin_registration_errors ($errors, $sanitized_user_login, $user_email) {
+add_filter('registration_errors', 'mrc_registration_errors', 10, 3);
+function mrc_registration_errors ($errors, $sanitized_user_login, $user_email) {
 
     if ( empty( $_POST['first_name'] ) )
     {
@@ -639,8 +639,8 @@ function myplugin_registration_errors ($errors, $sanitized_user_login, $user_ema
 }
 
 
-add_action('user_register', 'myplugin_user_register');
-function myplugin_user_register ($user_id) {
+add_action('user_register', 'mrc_user_register');
+function mrc_user_register ($user_id) {
     if ( isset( $_POST['first_name'] ) )
     {
         update_user_meta($user_id, 'first_name', $_POST['first_name']);
@@ -656,10 +656,24 @@ function myplugin_user_register ($user_id) {
         update_user_meta($user_id, 'cedula', $_POST['cedula']);
     }
 }
-
-add_action( 'register_post', 'tml_register_post' );
-function tml_register_post() {
-    if ( ! empty( $_POST['user_email'] ) ) {
-        $_POST['user_login'] = $_POST['user_email'];
+/*
+add_action( 'register_post', 'mrc_register_post' );
+function mrc_register_post() {
+    global $user_email;
+    echo "";
+    $user_email = $_POST['user_login'];
+    return $_POST['user_login'];
+}
+*/
+/*
+function access_admin_init() {
+    if ( !current_user_can('edit_posts') && ! ( defined( 'DOING_AJAX' ) && DOING_AJAX ) ) {
+        global $wp_query;
+        $wp_query->set_404();
+        status_header( 404 );
+        get_template_part( 404 );
+        exit;
     }
 }
+add_action( 'init', 'access_admin_init' );
+*/
