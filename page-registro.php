@@ -1,5 +1,6 @@
 <?php get_header(); ?>
 
+
 <!-- Cabecera, titulares -->
 <div class='container'>
 
@@ -17,8 +18,6 @@
 
     <div id='content' class='row-fluid'>
         <div class='span8 main'>
-
-
                 <div id="register-form">
                     <div class="title">
                         <h1>Register your Account</h1>
@@ -26,13 +25,12 @@
                     </div>
                     <form action="<?php echo site_url('wp-login.php?action=register', 'login_post') ?>" method="post">
 
-                        <input type="hidden" name="user_login" id="user_login" class="input" value="<?php echo rand();?>" size="20" />
-                        <input type="text" name="user_email" value="" id="user_email" class="input"  />
+                        <input type="text" name="user_login" value="" id="user_login" class="input" size="20" />
+                        <input type="text" name="user_email" id="user_email" class="input" value=""  />
                         <?php do_action('register_form'); ?>
                         <input type="submit" value="Register" id="register" />
                         <hr />
                         <p class="statement">A password will be e-mailed to you.</p>
-
 
                     </form>
                 </div>
