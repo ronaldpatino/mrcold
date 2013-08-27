@@ -3,7 +3,7 @@
         <form action="<?php echo site_url( 'wp-login.php', 'login'); ?>" name="loginform" id="loginform" method="post">
             <fieldset>
                 <legend>Ya esta registrado?</legend>
-                <label>Email</label>
+                <label>Usuario</label>
                 <input type="text" name="log" id="user_login">
                 <label>Password</label>
                 <input type="password" name="pwd" id="user_pass" t>
@@ -18,6 +18,14 @@
                 <?php endif;?>
             </fieldset>
         </form>
+
+        <?php if(isset($_GET['login']) && $_GET['login'] == 'failed'):?>
+            <div class="alert alert-error">
+                <h4>Lo Sentimos!</h4>
+                Su nombre de usuario o contraseña son incorrectos.
+            </div>
+        <?php endif;?>
+
     </div>
     <div class="span6">
         <legend>Registrese y comente</legend>
