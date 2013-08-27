@@ -17,6 +17,19 @@ add_filter( 'comment_text', 'wp_filter_nohtml_kses' );
 add_filter( 'comment_text_rss', 'wp_filter_nohtml_kses' );
 add_filter( 'comment_excerpt', 'wp_filter_nohtml_kses' );
 
+define('empty_username', 1);
+define('invalid_username', 2);
+define('username_exists', 4);
+define('empty_email', 8);
+define('invalid_email', 16);
+define('email_exists', 32);
+define('first_name_error', 64);
+define('last_name_error', 128);
+define('cedula_error', 256);
+
+
+
+
 if (function_exists('register_sidebar'))
 {
     register_sidebar( array (
@@ -657,15 +670,6 @@ function mrc_user_register ($user_id) {
     }
 }
 /*
-add_action( 'register_post', 'mrc_register_post' );
-function mrc_register_post() {
-    global $user_email;
-    echo "";
-    $user_email = $_POST['user_login'];
-    return $_POST['user_login'];
-}
-*/
-/*
 function access_admin_init() {
     if ( !current_user_can('edit_posts') && ! ( defined( 'DOING_AJAX' ) && DOING_AJAX ) ) {
         global $wp_query;
@@ -677,3 +681,205 @@ function access_admin_init() {
 }
 add_action( 'init', 'access_admin_init' );
 */
+
+add_action( 'wp_login_failed', 'mrc_login_failed' ); // hook failed login
+function mrc_login_failed( $user ) {
+    // check what page the login attempt is coming from
+    $referrer = $_SERVER['HTTP_REFERER'];
+    // check that were not on the default login page
+    if ( !empty($referrer) && !strstr($referrer,'wp-login') && !strstr($referrer,'wp-admin') && $user!=null ) {
+        // make sure we don't already have a failed login attempt
+        if ( !strstr($referrer, '?login=failed' )) {
+            // Redirect to the login page and append a querystring of login failed
+            wp_redirect( $referrer . '?login=failed');
+        } else {
+            wp_redirect( $referrer );
+        }
+        exit;
+    }
+}
+
+
+add_action( 'authenticate', 'mrc_blank_login');
+function mrc_blank_login( $user ){
+    // check what page the login attempt is coming from
+    $referrer = isset($_SERVER['HTTP_REFERER'])?$_SERVER['HTTP_REFERER']:'';
+    $error = false;
+    if($user == null || $_POST['pwd'] == '')
+    {
+        $error = true;
+    }
+    // check that were not on the default login page
+    if ( !empty($referrer) && !strstr($referrer,'wp-login') && !strstr($referrer,'wp-admin') && $error ) {
+        // make sure we don't already have a failed login attempt
+        if ( !strstr($referrer, '?login=failed') ) {
+            // Redirect to the login page and append a querystring of login failed
+            wp_redirect( $referrer . '?login=failed' );
+        } else {
+            wp_redirect( $referrer );
+        }
+        exit;
+    }
+}
+
+
+add_filter( 'registration_redirect', 'ckc_registration_redirect' );
+function ckc_registration_redirect() {
+    return home_url();
+}
+
+
+add_action( 'register_post', 'mrc_register_post', 99, 3 );
+function mrc_register_post($sanitized_user_login, $user_email, $errors ) {
+
+
+    $errors = apply_filters( 'registration_errors', $errors, $sanitized_user_login, $user_email );
+    $mascara_errores = 0;
+
+    if ( $errors->get_error_code() ){
+        //url a redireccionar
+        $redirect_url = get_bloginfo('url') . '/registro';
+        //concatenamos los errores
+        foreach ( $errors->errors as $e => $m ){
+
+            $mascara_errores += set_error_mask($e);
+        }
+
+        $redirect_url = add_query_arg( 'e', $mascara_errores, $redirect_url );
+
+        //add finally, redirect to your custom page with all errors in attributes
+        wp_redirect( $redirect_url );
+        exit;
+    }
+}
+
+function mrc_check_fields($errors, $sanitized_user_login, $user_email) {
+
+    if ( empty($_POST['cedula'])){
+        $errors->add( 'cedula_error', __('<strong>ERROR</strong>: Ingrese un n&uacute;mero de c&eacute;dula v&aacute;lido.','mydomain') );
+    }
+
+    return $errors;
+
+}
+add_filter('registration_errors', 'mrc_check_fields', 10, 3);
+
+/***
+ * Sacamos el error que se generó
+ * @param $e
+ * @return int
+ */
+function set_error_mask($e)
+{
+    $mascara_errores = 0;
+    if ( $e == "empty_username")
+    {
+        $mascara_errores  |=    empty_username;
+    }
+
+    if ( $e == "invalid_username")
+    {
+        $mascara_errores |=   invalid_username;
+    }
+
+    if ( $e == "username_exists")
+    {
+        $mascara_errores |=   username_exists;
+    }
+
+    if ( $e == "empty_email")
+    {
+        $mascara_errores |=   empty_email;
+    }
+
+    if ( $e == "invalid_email")
+    {
+        $mascara_errores |=   invalid_email;
+    }
+
+    if ( $e == "email_exists")
+    {
+        $mascara_errores |=   email_exists;
+    }
+
+    if ( $e == "first_name_error")
+    {
+        $mascara_errores |=   first_name_error;
+    }
+
+    if ( $e == "last_name_error")
+    {
+        $mascara_errores |=   last_name_error;
+    }
+
+    if ( $e == "cedula_error")
+    {
+        $mascara_errores |=   cedula_error;
+    }
+
+    return $mascara_errores;
+}
+
+function get_error_mask($mascara_errores)
+{
+/*
+define('empty_username', 1);
+define('invalid_username', 2);
+define('username_exists', 4);
+define('empty_email', 8);
+define('invalid_email', 16);
+define('email_exists', 32);
+define('first_name_error', 64);
+define('last_name_error', 128);
+define('cedula_error', 256);
+ */
+    $error = '<ul>';
+    if ($mascara_errores & empty_username)
+    {
+        $error .= "<li>Ingrese un Nombre de Usuario</li>";
+    }
+
+    if ($mascara_errores & invalid_username)
+    {
+        $error .= "<li>Nombre de Usuario no v&aaacute;lido</li>";
+    }
+    if ($mascara_errores & username_exists)
+    {
+        $error .= "<li>El Nombre de Usuario no disponible</li>";
+    }
+    if ($mascara_errores & empty_email)
+    {
+        $error .= "<li>Ingrese una Direcci&oacute;n de Email</li>";
+    }
+    if ($mascara_errores & invalid_email)
+    {
+        $error .= "<li>Direcci&oacute;n de Email no v&aacute;lida</li>";
+    }
+    if ($mascara_errores & email_exists)
+    {
+        $error .= "<li>Direcci&oacute;n de Email ya est&aacute; registrada</li>";
+    }
+    if ($mascara_errores & first_name_error)
+    {
+        $error .= "<li>Ingrese sus Nombres</li>";
+    }
+    if ($mascara_errores & last_name_error)
+    {
+        $error .= "<li>Ingrese sus Apellidos</li>";
+    }
+    if ($mascara_errores & cedula_error)
+    {
+        $error .= "<li>Error en su C&eacute;dula de Iidentidad</li>";
+    }
+
+    if ($error === "<ul>")
+    {
+        $error.="Error indefinido";
+    }
+
+    $error .= '</ul>';
+
+
+    return $error;
+
+}
