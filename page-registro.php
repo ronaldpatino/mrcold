@@ -20,14 +20,12 @@
         <div class='span8 main'>
 
             <?php if(isset($_GET['e']) && $_GET['e'] ==="done"): ?>
-                <h1>
-                    Gracias por registrarse
-                </h1>
+                <h1>Gracias por registrarse</h1>
+                <p>Por favor revise su correo electr&oacute;nico por su password temporal</p>
             <?php else:?>
                 <div id="register-form">
                     <div class="title">
                         <h1>Registrese en www.elmercurio.com</h1>
-                        <p>Por favor revise su correo electr&oacute;nico por su password temporal  </p>
                     </div>
                     <?php if(isset($_GET['e']) && !empty($_GET['e']) ):?>
                         <div class="alert alert-error">
