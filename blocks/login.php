@@ -18,7 +18,7 @@
                 <?php endif;?>
             </fieldset>
         </form>
-
+        <a  href="<?php bloginfo('url'); ?>/recuperar" class="">Olvido su clave</a>
         <?php if(isset($_GET['login']) && $_GET['login'] == 'failed'):?>
             <div class="alert alert-error">
                 <h4>Lo Sentimos!</h4>
