@@ -28,6 +28,7 @@ class NoticiasPortada extends WP_Widget {
             'posts_per_page' => $instance['numberposts']
         );
 
+        add_filter('posts_where', 'filter_where');
         $portada = query_posts($args);
 
         $noticia_col_izq = '<div class="span6 noticia-secundaria"><ul class="thumbnails">';
@@ -60,10 +61,11 @@ class NoticiasPortada extends WP_Widget {
 
 
         }
+
         $noticia_col_izq .= '</ul></div>';
         $noticia_col_der .= '</ul></div>';
         wp_reset_query();
-
+        remove_filter('posts_where', 'filter_where');
         echo '<div class="row-fluid">' . $noticia_col_izq . $noticia_col_der . '</div>';
 
     }

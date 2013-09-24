@@ -324,16 +324,14 @@ function get_attachment_images($id)
  * @param string $where
  * @return string
  */
-/*
- * Retirado hasta nuevo anuncio
+
 function filter_where($where = '')
 {
     $where .= " AND post_date <= '" . date('Y-m-d') . "'";
     return $where;
 }
 
-add_filter('posts_where', 'filter_where');
-*/
+
 
 /**
  * Registramos en la metadata del post un contador de visitas
@@ -882,4 +880,51 @@ define('cedula_error', 256);
 
     return $error;
 
+}
+
+/***
+ * @param $content
+ * @return mixed
+ */
+function remove_images( $content ) {
+    $postOutput = preg_replace('/<img[^>]+./','', $content);
+    return $postOutput;
+}
+add_filter( 'the_content', 'remove_images', 100 );
+
+/***
+ * @param $content
+ * @return mixed
+ */
+function remove_shortcode_page($content) {
+    $content = strip_shortcodes( $content );
+    return $content;
+}
+add_filter('the_content', 'remove_shortcode_page');
+
+
+/***
+ * Sacamos las imagenes de un post que esten como adjuntas
+ * @param $the_ID
+ * @return null
+ */
+function mrc_get_image_attachments($the_ID)
+{
+    $args = array(
+        'numberposts' => -1,
+        'order' => 'ASC',
+        'post_mime_type' => 'image',
+        'post_parent' => $the_ID,
+        'post_status' => null,
+        'post_type' => 'attachment',
+        'exclude'   => get_post_thumbnail_id()
+    );
+
+    $attachments = get_children( $args );
+
+    if ($attachments)
+    {
+        return $attachments;
+    }
+    return null;
 }
