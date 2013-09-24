@@ -18,80 +18,68 @@
     <div id='content' class='row-fluid'>
         <div class='span8 main'>
             <?php if (have_posts())
-             while (have_posts()) : the_post(); ?>
-                <!-- detalle de la noticia -->
-                <article role="main" class="primary-content" id="post-<?php the_ID(); ?>">
-                    <header>
-                        <h1><?php the_title(); ?></h1>
-                        <p>Publicado el <?php the_time('Y/m/d') ?> por  <?php echo get_the_author();?>
-                    </header>
+            while (have_posts()) :
+            the_post(); ?>
+            <!-- detalle de la noticia -->
+            <article role="main" class="primary-content" id="post-<?php the_ID(); ?>">
+                <header>
+                    <h1><?php the_title(); ?></h1>
+
+                    <p>Publicado el <?php the_time('Y/m/d') ?> por  <?php echo get_the_author(); ?>
+                </header>
 
 
-                    <?php
-                        if ( has_post_thumbnail() ) {
-                            the_post_thumbnail( array(660,330));
+                <?php
+
+                if (has_post_thumbnail()) {
+                    the_post_thumbnail(array(660, 330));
+                }
+
+                $has_attachment = false;
+                $attachments = mrc_get_image_attachments(get_the_ID());
+                if ($attachments) {
+
+                    $has_attachment = true;
+                    $primero = true;
+                    foreach ($attachments as $attachment) {
+                        if ($primero) {
+                            $cadena = '<div class="active item">';
+                            $cadena .= "<img src='{$attachment->guid}' alt='{$attachment->post_excerpt} El Mercurio Noticias Cuenca Ecuador' title='{$attachment->post_excerpt} - El Mercurio Noticias Cuenca Ecuador'/>";
+                            $cadena .= "<div class='carousel-caption carousel-caption_imagenes_noticia'>";
+                            $cadena .= "<p>{$attachment->post_excerpt}</p>";
+                            $cadena .= '</div>';
+                            $cadena .= '</div>';
+                            $primero = false;
+                        } else {
+                            $cadena .= '<div class="item">';
+                            $cadena .= "<img src='{$attachment->guid}' alt='{$attachment->post_excerpt} El Mercurio Noticias Cuenca Ecuador' title='{$attachment->post_excerpt} - El Mercurio Noticias Cuenca Ecuador'/>";
+                            $cadena .= "<div class='carousel-caption carousel-caption_imagenes_noticia'>";
+                            $cadena .= "<p>{$attachment->post_excerpt}</p>";
+                            $cadena .= '</div>';
+                            $cadena .= '</div>';
                         }
-                    ?>
 
-                    <?php
+                    }
+                }
+                ?>
 
-                        $attachments = mrc_get_image_attachments(get_the_ID());
-                        if ($attachments)
-                        {
-
-                        ?>
-
-
-                                    <?php
-                                        $primero = true;
-                                        foreach($attachments as $attachment)
-                                        {
-                                            if ($primero)
-                                            {
-                                                $cadena  = '<div class="active item">';
-                                                $cadena .= "<img src='{$attachment->guid}' alt='{$attachment->post_excerpt} El Mercurio Noticias Cuenca Ecuador' title='{$attachment->post_excerpt} - El Mercurio Noticias Cuenca Ecuador'/>";
-                                                $cadena .= "<div class='carousel-caption'>";
-                                                $cadena .= "<p style='font-size: 12px;padding-top: 0px; padding-bottom: 0px; line-height: 15px'>{$attachment->post_excerpt}</p>";
-                                                $cadena .= '</div>';
-                                                $cadena .= '</div>';
-                                                $primero = false;
-                                            }
-                                            else
-                                            {
-                                                $cadena  .= '<div class="item">';
-                                                $cadena .= "<img src='{$attachment->guid}' alt='{$attachment->post_excerpt} El Mercurio Noticias Cuenca Ecuador' title='{$attachment->post_excerpt} - El Mercurio Noticias Cuenca Ecuador'/>";
-                                                $cadena .= "<div class='carousel-caption'>";
-                                                $cadena .= "<p style='font-size: 12px;padding-top: 0px; padding-bottom: 0px; line-height: 15px'>{$attachment->post_excerpt}</p>";
-                                                $cadena .= '</div>';
-                                                $cadena .= '</div>';
-                                            }
-
-                                        }
-
-                                    ?>
+                <?php the_content(); ?>
 
 
 
-
-                    <?php
-                        }
-                    ?>
-
-                    <?php the_content(); ?>
-
-
-
-                     <hr/>
-                     <?php comments_template('',true); ?>
+                <hr/>
+                <?php comments_template('', true); ?>
 
                 <!-- fin detalle de la noticia -->
 
-            <?php endwhile; ?>
+                <?php endwhile; ?>
             </article>
         </div>
         <div class='span4 sidebar'>
 
-            <div id="imagenes_noticia" class="carousel slide" >
+            <?php if($has_attachment):?>
+            <br/>
+            <div id="imagenes_noticia" class="carousel slide">
                 <ol class="carousel-indicators">
                     <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
                     <li data-target="#myCarousel" data-slide-to="1"></li>
@@ -99,18 +87,21 @@
                 </ol>
                 <!-- Carousel items -->
                 <div class="carousel-inner">
-            <?php echo $cadena; if ( dynamic_sidebar('detallenoticia') ) : else : endif; ?>
+                    <?php echo $cadena;?>
+
                 </div>
                 <!-- Carousel nav -->
                 <a class="carousel-control left" href="#imagenes_noticia" data-slide="prev">&lsaquo;</a>
                 <a class="carousel-control right" href="#imagenes_noticia" data-slide="next">&rsaquo;</a>
             </div>
+            <?php endif;?>
+            <?php if (dynamic_sidebar('detallenoticia')) : else : endif; ?>
         </div>
     </div>
 
 </div>
 
-<?php wpb_set_post_views(get_the_ID());?>
+<?php wpb_set_post_views(get_the_ID()); ?>
 
 <?php get_template_part('blocks/pie'); ?>
 <?php get_template_part('blocks/twitter'); ?>

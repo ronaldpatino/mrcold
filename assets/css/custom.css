@@ -1031,3 +1031,6 @@ form.navbar-search .input-append {
 .carousel .caricatura-carousel-control { visibility: hidden !important; }
 .carousel:hover .caricatura-carousel-control { visibility: visible !important; }
 
+.carousel-caption_imagenes_noticia p{
+    font-size: 12px;padding:0px; line-height: 15px
+}
