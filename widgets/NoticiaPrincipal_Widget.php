@@ -21,6 +21,7 @@ class NoticiaPrincipal extends WP_Widget {
 
         extract( $args );
 
+        add_filter('posts_where', 'filter_where');
 
         $args = array(
             'category_name' => 'principal',
@@ -28,9 +29,9 @@ class NoticiaPrincipal extends WP_Widget {
             'posts_per_page' => 1
         );
 
-        $principal = query_posts($args);
+         query_posts($args);
 
-        //remove_filter('posts_where', 'filter_where');
+
 
         $noticia = '';
 
@@ -43,7 +44,7 @@ class NoticiaPrincipal extends WP_Widget {
 
         }
         wp_reset_query();
-
+        remove_filter('posts_where', 'filter_where');
         echo $noticia;
 
     }
@@ -72,5 +73,3 @@ class NoticiaPrincipal extends WP_Widget {
 }
 
 register_widget('NoticiaPrincipal');
-
-?>
