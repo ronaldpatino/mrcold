@@ -62,11 +62,7 @@
                     }
                 }
                 ?>
-
                 <?php the_content(); ?>
-
-
-
                 <hr/>
                 <?php comments_template('', true); ?>
 
