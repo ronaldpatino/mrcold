@@ -17,7 +17,7 @@ class Seccion_Widget extends WP_Widget {
         global $post;
 
         extract( $args );
-
+        add_filter('posts_where', 'filter_where');
         $args = array( 'posts_per_page' => 4,
                         'offset'=> 1,
                         'category' => $instance['categoria'],
@@ -58,6 +58,8 @@ class Seccion_Widget extends WP_Widget {
                 $post_imprimir .= '</div>';
             }
         }
+
+        remove_filter('posts_where', 'filter_where');
 
         $post_imprimir .= '<br/></div>';
         echo $post_imprimir;

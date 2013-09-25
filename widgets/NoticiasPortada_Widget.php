@@ -21,15 +21,19 @@ class NoticiasPortada extends WP_Widget {
 
         extract( $args );
 
+        $categoria = get_category_by_slug('principal');
 
         $args = array(
             'category_name' => 'portada',
             'post_status' => 'publish',
-            'posts_per_page' => $instance['numberposts']
+            'posts_per_page' => $instance['numberposts'],
+            'cat'   => -$categoria->term_id
         );
 
+
+
         add_filter('posts_where', 'filter_where');
-        $portada = query_posts($args);
+        query_posts($args);
 
         $noticia_col_izq = '<div class="span6 noticia-secundaria"><ul class="thumbnails">';
         $noticia_col_der = '<div class="span6 noticia-secundaria"><ul class="thumbnails">';
