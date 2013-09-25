@@ -938,8 +938,10 @@ function remove_word_html($text, $allowed_tags = '<strong><p><br>')
     //eliminate extraneous whitespace from start and end of line, or anywhere there are two or more spaces, convert it to one
     $text = preg_replace(array('/^\s\s+/', '/\s\s+$/', '/\s\s+/u'), array('', '', ' '), $text);
     //strip out inline css and simplify style tags
+    /*
     $search = array('#<(strong|b)[^>]*>(.*?)</(strong|b)>#isu', '#<(em|i)[^>]*>(.*?)</(em|i)>#isu', '#<u[^>]*>(.*?)</u>#isu');
     $replace = array('<b>$2</b>', '<i>$2</i>', '<u>$1</u>');
+    */
     $text = preg_replace($search, $replace, $text);
     //on some of the ?newer MS Word exports, where you get conditionals of the form 'if gte mso 9', etc., it appears
     //that whatever is in one of the html comments prevents strip_tags from eradicating the html comment that contains
