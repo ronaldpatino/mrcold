@@ -1042,3 +1042,8 @@ form.navbar-search .input-append {
 .carousel-caption_imagenes_noticia p{
     font-size: 12px;padding:0px; line-height: 15px
 }
+
+.img_caricatura{
+    width: 346px;
+    height: 346px;
+}

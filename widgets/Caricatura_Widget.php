@@ -25,16 +25,15 @@ class Caricatura_Widget extends WP_Widget
 
         extract($args);
 
+        $categoria = get_category_by_slug('caricaturas');
         $args = array(
             'posts_per_page' => $this->max_noticias,
             'offset' => 1,
-            'category' => 'caricaturas',
+            'category' =>  $categoria->term_id,
             'post_status' => 'publish',
         );
 
         $posts_categoria = get_posts($args);
-
-
 
 
         $activo = 1;
@@ -61,13 +60,11 @@ class Caricatura_Widget extends WP_Widget
             $caricatura .= "<li class='span12'>";
 
 
-            $caricatura .= "<img alt='' class='caricatura' src='". get_bloginfo('template_url') . "/assets/img/1.jpg'>";
+            $caricatura .= '<a href="#carruselCaricatura" data-caption=" ' . get_the_title() . '"  data-img=" ' . $imagen['imagen'][0] . '" data-toggle="modal">';
+            $caricatura .= '<img class="img_caricatura" src="' . $imagen['imagen'][0] . '" alt="' . get_the_title() . '" title="' . get_the_title() . '">';
+            $caricatura .= '</a>';
             $caricatura .= "</li>";
-
             //Fin Loop 3
-
-
-
             $caricatura .= '</ul>';
             $caricatura .= '</div>';
 
@@ -106,5 +103,3 @@ class Caricatura_Widget extends WP_Widget
 }
 
 register_widget('Caricatura_Widget');
-
-?>
