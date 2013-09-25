@@ -916,7 +916,7 @@ function remove_css($content)
 add_filter('the_content', 'remove_css');
 
 
-function remove_word_html($text, $allowed_tags = '<strong><p><br>')
+function remove_word_html($text, $allowed_tags = '<strong><p>')
 {
     mb_regex_encoding('UTF-8');
     //replace MS special characters first
@@ -941,8 +941,10 @@ function remove_word_html($text, $allowed_tags = '<strong><p><br>')
     /*
     $search = array('#<(strong|b)[^>]*>(.*?)</(strong|b)>#isu', '#<(em|i)[^>]*>(.*?)</(em|i)>#isu', '#<u[^>]*>(.*?)</u>#isu');
     $replace = array('<b>$2</b>', '<i>$2</i>', '<u>$1</u>');
-    */
     $text = preg_replace($search, $replace, $text);
+    */
+    $text = preg_replace('#<(p)[^>]*>(.*?)</(p)>#isu', '<p>$2</p>', $text);
+
     //on some of the ?newer MS Word exports, where you get conditionals of the form 'if gte mso 9', etc., it appears
     //that whatever is in one of the html comments prevents strip_tags from eradicating the html comment that contains
     //some MS Style Definitions - this last bit gets rid of any leftover comments */
@@ -954,6 +956,9 @@ function remove_word_html($text, $allowed_tags = '<strong><p><br>')
 }
 
 add_filter('the_content', 'remove_word_html');
+
+
+
 
 /***
  * Sacamos las imagenes de un post que esten como adjuntas
