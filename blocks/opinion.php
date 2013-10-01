@@ -5,20 +5,10 @@
             <?php if ( dynamic_sidebar('caricatura') ) : else : endif; ?>
         </div>
 
+
         <div class="span4">
-            <h2>Opini&oacute;n</h2>
-
-            <h3>
-                <a href="#">Consectetur adipisicing elit, sed do eiusmod tempor incididunt ut.</a>
-            </h3>
-
-            <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
-                labore et dolore magna aliqua.
-            </p>
-
-
-
+            <h2>Opinion</h2>
+            <?php if ( dynamic_sidebar('bloqueopinion') ) : else : endif; ?>
         </div>
 
         <div class="span4">

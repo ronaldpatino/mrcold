@@ -376,6 +376,12 @@ body {
 
 }
 
+#opinion hr{
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+
 #multimedia {
     background-color: #647687;
     color: #ffffff;

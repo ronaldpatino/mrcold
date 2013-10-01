@@ -17,6 +17,8 @@ class Seccion_Widget extends WP_Widget {
         global $post;
 
         extract( $args );
+        $category = get_the_category_by_ID($instance['categoria']);
+
         add_filter('posts_where', 'filter_where');
         $args = array( 'posts_per_page' => 4,
                         'offset'=> 1,
@@ -26,7 +28,7 @@ class Seccion_Widget extends WP_Widget {
 
         $posts_categoria = get_posts( $args );
 
-        $category = get_the_category_by_ID($instance['categoria']);
+
 
         $post_imprimir  = '<div class="span4 noticia-tricol">';
         $post_imprimir .= '<h2 class="cultura">' . $category . '</h2>';

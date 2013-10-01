@@ -11,6 +11,7 @@ require_once('widgets/NoticiasPortada_Widget.php');
 require_once('widgets/NoticiaPrincipal_Widget.php');
 require_once('widgets/PortadaImpresa_Widget.php');
 require_once('widgets/Caricatura_Widget.php');
+require_once('widgets/Opinion_Widget.php');
 
 
 add_filter( 'comment_text', 'wp_filter_nohtml_kses' );
@@ -189,6 +190,12 @@ if (function_exists('register_sidebar'))
         'name' => __( 'Side Bar Pagina Noticias', 'detallenoticia' ),
         'id' => 'detallenoticia',
         'description' => __( 'Side Bar Pagina Noticia', 'dir' )
+    ) );
+
+    register_sidebar( array (
+        'name' => __( 'Side Bar Opinion', 'opinion' ),
+        'id' => 'bloqueopinion',
+        'description' => __( 'Bloque opinion', 'dir' )
     ) );
 }
 
@@ -587,7 +594,9 @@ function mrc_get_comment_reply_link($args = array(), $comment = null, $post = nu
     }
 
     else
+    {
         $link = "<a class='comment-reply-link' href='" . esc_url( add_query_arg( 'replytocom', $comment->comment_ID ) ) . "#" . $respond_id . "' onclick='return addComment.moveForm(\"$add_below-$comment->comment_ID\", \"$comment->comment_ID\", \"$respond_id\", \"$post->ID\")'>$reply_text</a>";
+    }
     return apply_filters('comment_reply_link', $link , $args, $comment, $post);
 }
 
@@ -984,4 +993,17 @@ function mrc_get_image_attachments($the_ID)
         return $attachments;
     }
     return null;
+}
+
+
+function menu_activo($menu_item){
+
+    $menu_activo = '';
+
+    if($menu_item === get_query_var('pagename'))
+    {
+        $menu_activo = 'class="active"';
+    }
+
+   return $menu_activo;
 }
