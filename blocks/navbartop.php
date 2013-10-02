@@ -2,11 +2,8 @@
         <div class="navbar-inner top-navbar-inner search-bar">
             <div class="control-group">
                 <div class="controls hidden-phone">
-                    <form class="navbar-search pull-right">
-                        <div class="input-append">
-                            <input  class="search-query span2" placeholder="Buscar en El Mercurio" type="text" ><span class="add-on"><i class="icon-search"> </i></span>
-                        </div>
-                    </form>
+
+                    <?php echo wpbsearchform('');?>
                 </div>
                 <p class="pull-left p-top" id="clima"><?php echo get_fecha();?> </p>
                 <a href="http://www.facebook.com/diarioelmercurio" target="_blank"><img title="El Mercurio Noticias Ecuador Facebook" alt="El Mercurio Noticias Ecuador Facebook" class="pull-right img-top" src="<?php bloginfo('template_url'); ?>/assets/img/facebook.png"></a>
@@ -16,3 +13,4 @@
 
         </div>
     </div>
+

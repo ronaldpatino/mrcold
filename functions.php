@@ -1133,3 +1133,23 @@ function mrc_generate_tag_cloud( $tags, $args = '' ) {
     else
         return $return;
 }
+
+
+function wpbsearchform( $form ) {
+
+   /*
+    $form = '<form role="search" method="get" id="searchform" action="' . home_url( '/' ) . '" >
+    <div><label class="screen-reader-text" for="s">' . __('Search for:') . '</label>
+    <input type="text" value="' . get_search_query() . '" name="s" id="s" />
+    <input type="submit" id="searchsubmit" value="'. esc_attr__('Search') .'" />
+    </div>
+    </form>';
+*/
+    $form = '<form role="search" method="get" id="searchform" class="navbar-search pull-right" action="' . home_url( '/' ) . '" ><div class="input-append">';
+    $form .= '<input  class="search-query span2" placeholder="Buscar en El Mercurio" type="text" value="' . get_search_query() . '" name="s" id="s"  ><span class="add-on"><i class="icon-search"> </i></span>';
+    $form .= '</div></form>';
+    return $form;
+
+}
+
+add_shortcode('wpbsearch', 'wpbsearchform');
