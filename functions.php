@@ -1007,3 +1007,129 @@ function menu_activo($menu_item){
 
    return $menu_activo;
 }
+
+
+function get_my_tags( $args = '' ) {
+    $defaults = array(
+        'smallest' => 10, 'largest' => 10, 'unit' => 'pt', 'number' => 8,
+        'format' => 'flat', 'separator' => "\n", 'orderby' => 'count', 'order' => 'DESC',
+        'exclude' => '', 'include' => '', 'link' => 'view', 'taxonomy' => 'post_tag', 'echo' => true
+    );
+    $args = wp_parse_args( $args, $defaults );
+
+    $tags = get_terms( $args['taxonomy'], array_merge( $args, array( 'orderby' => 'count', 'order' => 'DESC' ) ) ); // Always query top tags
+
+    if ( empty( $tags ) || is_wp_error( $tags ) )
+        return;
+
+    foreach ( $tags as $key => $tag ) {
+        if ( 'edit' == $args['link'] )
+            $link = get_edit_tag_link( $tag->term_id, $tag->taxonomy );
+        else
+            $link = get_term_link( intval($tag->term_id), $tag->taxonomy );
+        if ( is_wp_error( $link ) )
+            return false;
+
+        $tags[ $key ]->link = $link;
+        $tags[ $key ]->id = $tag->term_id;
+    }
+
+    $return = mrc_generate_tag_cloud( $tags, $args ); // Here's where those top tags get sorted according to $args
+
+    $return = apply_filters( 'wp_tag_cloud', $return, $args );
+
+    if ( 'array' == $args['format'] || empty($args['echo']) )
+        return $return;
+
+    echo $return;
+}
+
+function mrc_generate_tag_cloud( $tags, $args = '' ) {
+    $defaults = array(
+        'smallest' => 10, 'largest' => 10, 'unit' => 'pt', 'number' => 8,
+        'format' => 'flat', 'separator' => "\n", 'orderby' => 'count', 'order' => 'DESC',
+        'topic_count_text_callback' => 'default_topic_count_text',
+        'topic_count_scale_callback' => 'default_topic_count_scale', 'filter' => 1,
+    );
+
+    if ( !isset( $args['topic_count_text_callback'] ) && isset( $args['single_text'] ) && isset( $args['multiple_text'] ) ) {
+        $body = 'return sprintf (
+			_n(' . var_export($args['single_text'], true) . ', ' . var_export($args['multiple_text'], true) . ', $count),
+			number_format_i18n( $count ));';
+        $args['topic_count_text_callback'] = create_function('$count', $body);
+    }
+
+    $args = wp_parse_args( $args, $defaults );
+    extract( $args );
+
+    if ( empty( $tags ) )
+        return;
+
+    $tags_sorted = apply_filters( 'tag_cloud_sort', $tags, $args );
+    if ( $tags_sorted != $tags  ) { // the tags have been sorted by a plugin
+        $tags = $tags_sorted;
+        unset($tags_sorted);
+    } else {
+        if ( 'RAND' == $order ) {
+            shuffle($tags);
+        } else {
+            // SQL cannot save you; this is a second (potentially different) sort on a subset of data.
+            if ( 'name' == $orderby )
+                uasort( $tags, '_wp_object_name_sort_cb' );
+            else
+                uasort( $tags, '_wp_object_count_sort_cb' );
+
+            if ( 'DESC' == $order )
+                $tags = array_reverse( $tags, true );
+        }
+    }
+
+    if ( $number > 0 )
+        $tags = array_slice($tags, 0, $number);
+
+    $counts = array();
+    $real_counts = array(); // For the alt tag
+    foreach ( (array) $tags as $key => $tag ) {
+        $real_counts[ $key ] = $tag->count;
+        $counts[ $key ] = $topic_count_scale_callback($tag->count);
+    }
+
+    $min_count = min( $counts );
+    $spread = max( $counts ) - $min_count;
+    if ( $spread <= 0 )
+        $spread = 1;
+    $font_spread = $largest - $smallest;
+    if ( $font_spread < 0 )
+        $font_spread = 1;
+    $font_step = $font_spread / $spread;
+
+    $a = array();
+
+    foreach ( $tags as $key => $tag ) {
+        $count = $counts[ $key ];
+        $real_count = $real_counts[ $key ];
+        $tag_link = '#' != $tag->link ? esc_url( $tag->link ) : '#';
+        $tag_id = isset($tags[ $key ]->id) ? $tags[ $key ]->id : $key;
+        $tag_name = $tags[ $key ]->name;
+        $a[] = "<li><a href='$tag_link' title='" . esc_attr( call_user_func( $topic_count_text_callback, $real_count, $tag, $args ) ) . "' style='font-size: 12pt;'>" . ucfirst($tag_name) ."</a><span class='divider'>&nbsp;</span></li>";
+    }
+
+    switch ( $format ) :
+        case 'array' :
+            $return =& $a;
+            break;
+        case 'list' :
+            $return = "<ul class='wp-tag-cloud'>\n\t<li>";
+            $return .= join( "</li>\n\t<li>", $a );
+            $return .= "</li>\n</ul>\n";
+            break;
+        default :
+            $return = join( $separator, $a );
+            break;
+    endswitch;
+
+    if ( $filter )
+        return apply_filters( 'wp_generate_tag_cloud', $return, $tags, $args );
+    else
+        return $return;
+}
