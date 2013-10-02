@@ -95,4 +95,4 @@ class MasLeidas_Widget extends WP_Widget {
     }
 }
 
-register_widget('Masleidas');
+register_widget('MasLeidas_Widgets');
