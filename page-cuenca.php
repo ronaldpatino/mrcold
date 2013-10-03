@@ -23,7 +23,16 @@ get_header(); ?>
     <div id='content' class='row-fluid'>
         <div class='span8 main'>
 
-           CONTENIDO
+            <?php query_posts('category_name=cuenca'); ?>
+            <?php
+            if ( have_posts() ) :
+                while ( have_posts() ) :
+                    the_post();?>
+                    <?php the_title(); ?>
+                    <hr/>
+
+                <?php endwhile;?>
+            <?php endif;?>
         </div>
         <div class='span4 sidebar'>
 
