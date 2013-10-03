@@ -23,7 +23,22 @@ get_header(); ?>
     <div id='content' class='row-fluid'>
         <div class='span8 main'>
 
-            <?php query_posts('category_name=cuenca'); ?>
+            <?php
+            $categoria = get_category_by_slug('cultura');
+            print_r($categoria);
+            $args = array(
+            'category_name' => 'portada',
+            'post_status' => 'publish',
+            'posts_per_page' => 10,
+            'cat'   => $categoria->term_id
+            );
+
+            //add_filter('posts_where', 'filter_where');
+            query_posts($args);
+
+            ?>
+
+
             <?php
             if ( have_posts() ) :
                 while ( have_posts() ) :
