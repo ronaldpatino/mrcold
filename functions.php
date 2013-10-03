@@ -900,6 +900,7 @@ function remove_images( $content ) {
     return $postOutput;
 }
 add_filter( 'the_content', 'remove_images', 100 );
+add_filter( 'get_the_content', 'remove_images', 100 );
 
 /***
  * @param $content
@@ -910,7 +911,7 @@ function remove_shortcode_page($content) {
     return $content;
 }
 add_filter('the_content', 'remove_shortcode_page');
-
+add_filter('get_the_content', 'remove_shortcode_page');
 
 function remove_css($content)
 {
@@ -923,6 +924,7 @@ function remove_css($content)
     return preg_replace($search, '', $content);
 }
 add_filter('the_content', 'remove_css');
+add_filter('get_the_content', 'remove_css');
 
 
 function remove_word_html($text, $allowed_tags = '<strong><p>')
@@ -965,6 +967,9 @@ function remove_word_html($text, $allowed_tags = '<strong><p>')
 }
 
 add_filter('the_content', 'remove_word_html');
+add_filter('get_the_content', 'remove_word_html');
+
+
 
 
 
@@ -1153,3 +1158,33 @@ function wpbsearchform( $form ) {
 }
 
 add_shortcode('wpbsearch', 'wpbsearchform');
+
+
+if ( ! function_exists( 'mrc_paging_nav' ) ) :
+    /**
+     * Displays navigation to next/previous set of posts when applicable.
+     *
+     * @since Twenty Thirteen 1.0
+     *
+     * @return void
+     */
+    function mrc_paging_nav() {
+        global $wp_query;
+
+        // Don't print empty markup if there's only one page.
+        if ( $wp_query->max_num_pages < 2 )
+            return;
+
+        $big = 999999999; // need an unlikely integer
+
+        echo paginate_links( array(
+            'base' => str_replace( $big, '%#%', esc_url( get_pagenum_link( $big ) ) ),
+            'format' => '?paged=%#%',
+            'current' => max( 1, get_query_var('paged') ),
+            'total' => $wp_query->max_num_pages,
+            'prev_text'    => __('« Anterior'),
+            'next_text'    => __('Siguiente »'),
+        ) );
+
+    }
+endif;

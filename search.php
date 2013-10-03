@@ -22,21 +22,25 @@ get_header(); ?>
 
             <?php if ( have_posts() ) : ?>
             <article role="main" class="page-content search-content">
-                <h1><?php printf( __( 'Search Results for: %s' ), '<span>' . get_search_query() . '</span>' ); ?></h1>
+                <h2><?php printf( __( 'Resultados para la búsqueda: %s' ), '<span>' . get_search_query() . '</span>' ); ?></h2>
                 <?php while ( have_posts() ) : the_post(); ?>
-                    <a href="<?php echo get_permalink( get_the_ID()); ?>"><?php the_title(); ?></a>
+                    <strong><a href="<?php echo get_permalink( get_the_ID()); ?>"><?php the_title(); ?></a></strong>
+                    <p> <?php echo substr(limpia_contenido(get_the_content('', false)), 0, 300);?>... </p>
+                    <p>Publicado el <?php the_time('Y/m/d') ?> por  <?php echo get_the_author(); ?>
                     <hr>
                 <?php endwhile; ?>
-
+                <?php mrc_paging_nav(); ?>
 
                 <?php else : ?>
-                    <h1 class="entry-title"><?php _e( 'Nothing Found' ); ?></h1>
+                    <h1><?php printf( __( 'No se encontraron resultados para: %s' ), '<span>' . get_search_query() . '</span>' ); ?></h1>
                     <article class="entry-content">
-                        <p><?php _e( 'Sorry, but nothing matched your search criteria. Please try again with some different keywords.' ); ?></p>
+                        <p><?php _e( 'Lo sentimos no se encontraron entradas para su búsqueda. Por favor intente con otras palabras.' ); ?></p>
                         <?php ?>
                     </article><!-- .entry-content -->
                 <?php endif; ?>
             </article>
+
+
 
         </div>
         <div class='span4 sidebar'>
