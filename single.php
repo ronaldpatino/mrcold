@@ -32,11 +32,12 @@
                 <?php
 
                 if (has_post_thumbnail()) {
-                    the_post_thumbnail(array(660, 330));
+                    the_post_thumbnail('noticia-single-imagen');
                 }
 
                 $has_attachment = false;
                 $attachments = mrc_get_image_attachments(get_the_ID());
+
                 if ($attachments) {
 
                     $has_attachment = true;
@@ -44,7 +45,7 @@
                     foreach ($attachments as $attachment) {
                         if ($primero) {
                             $cadena = '<div class="active item">';
-                            $cadena .= "<img src='{$attachment->guid}' alt='{$attachment->post_excerpt} El Mercurio Noticias Cuenca Ecuador' title='{$attachment->post_excerpt} - El Mercurio Noticias Cuenca Ecuador'/>";
+                            $cadena .= "<img style='width:310px !important;height:235px !important;' src='{$attachment->guid}' alt='{$attachment->post_excerpt} El Mercurio Noticias Cuenca Ecuador' title='{$attachment->post_excerpt} - El Mercurio Noticias Cuenca Ecuador'/>";
                             $cadena .= "<div class='carousel-caption carousel-caption_imagenes_noticia'>";
                             $cadena .= "<p>{$attachment->post_excerpt}</p>";
                             $cadena .= '</div>';
@@ -52,7 +53,7 @@
                             $primero = false;
                         } else {
                             $cadena .= '<div class="item">';
-                            $cadena .= "<img src='{$attachment->guid}' alt='{$attachment->post_excerpt} El Mercurio Noticias Cuenca Ecuador' title='{$attachment->post_excerpt} - El Mercurio Noticias Cuenca Ecuador'/>";
+                            $cadena .= "<img style='width:310px !important;height:235px !important;' src='{$attachment->guid}' alt='{$attachment->post_excerpt} El Mercurio Noticias Cuenca Ecuador' title='{$attachment->post_excerpt} - El Mercurio Noticias Cuenca Ecuador'/>";
                             $cadena .= "<div class='carousel-caption carousel-caption_imagenes_noticia'>";
                             $cadena .= "<p>{$attachment->post_excerpt}</p>";
                             $cadena .= '</div>';

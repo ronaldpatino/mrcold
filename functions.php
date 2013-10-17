@@ -14,6 +14,8 @@ require_once('widgets/Caricatura_Widget.php');
 require_once('widgets/Opinion_Widget.php');
 
 
+add_theme_support( 'post-thumbnails' );
+add_image_size( 'noticia-single-imagen', 660, 330, true );
 add_filter( 'comment_text', 'wp_filter_nohtml_kses' );
 add_filter( 'comment_text_rss', 'wp_filter_nohtml_kses' );
 add_filter( 'comment_excerpt', 'wp_filter_nohtml_kses' );
@@ -301,7 +303,7 @@ function wp_get_attachment($attachment_id)
  * @param $id
  * @return array()
  */
-function get_attachment_images($id)
+function get_featured_image($id)
 {
     $args = array(
         'post_type' => 'attachment',
@@ -313,8 +315,8 @@ function get_attachment_images($id)
     $attachments = get_posts($args);
 
     if ($attachments) {
-        $attachment_images['imagen'] = wp_get_attachment_image_src($attachments[0]->ID, array(730, 344));
-        $attachment_images['attachment_meta'] = wp_get_attachment($attachments[0]->ID);
+        $attachment_images['imagen'] = wp_get_attachment_image_src( get_post_thumbnail_id($id), array(730, 344));
+        $attachment_images['attachment_meta'] = wp_get_attachment($id);
 
     } else {
         $attachment_images['imagen'] = array( get_bloginfo('template_url') . '/assets/img/placeholder.png');
@@ -334,7 +336,8 @@ function get_attachment_images($id)
 
 function filter_where($where = '')
 {
-    $where .= " AND post_date >= '" . date('Y-m-d') . ' 00:00' . "'" . " AND post_date <= '" . date('Y-m-d') . ' 24:00' . "'" ;
+    //$where .= " AND post_date >= '" . date('Y-m-d') . ' 00:00' . "'" . " AND post_date <= '" . date('Y-m-d') . ' 24:00' . "'" ;
+    $where .= "  AND post_date <= '" . date('Y-m-d') . ' 24:00' . "'" ;
     return $where;
 }
 
@@ -1180,3 +1183,4 @@ if ( ! function_exists( 'mrc_paging_nav' ) ) :
 
     }
 endif;
+

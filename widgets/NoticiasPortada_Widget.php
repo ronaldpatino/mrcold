@@ -44,7 +44,7 @@ class NoticiasPortada extends WP_Widget {
         while (have_posts()) {
 
             the_post();
-            $imagen = get_attachment_images(get_the_ID());
+            $imagen = get_featured_image(get_the_ID());
 
             if ($izquierda <= 5) {
                 $noticia_col_izq .= '<li class="span12 nomargen-abajo"><div class="thumbnail thumbnail-custom">';

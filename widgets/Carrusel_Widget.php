@@ -58,7 +58,7 @@ class Carrusel_Widget extends WP_Widget
             //Loop 3
             $carrusel .= '<li class="span4">';
             $carrusel .= '<div class="thumbnail sociales-thumbnails-item">';
-            $imagen = get_attachment_images(get_the_ID());
+            $imagen = get_featured_image(get_the_ID());
 
             $carrusel .= '<a href="#' . $carrusel_modal . '" data-caption=" ' . get_the_title() . '"  data-img=" ' . $imagen['imagen'][0] . '" data-toggle="modal">';
             $carrusel .= '<img src="' . $imagen['imagen'][0] . '" alt="' . get_the_title() . '" title="' . get_the_title() . '">';

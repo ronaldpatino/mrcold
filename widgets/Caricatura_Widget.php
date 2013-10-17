@@ -28,9 +28,10 @@ class Caricatura_Widget extends WP_Widget
         $categoria = get_category_by_slug('caricaturas');
         $args = array(
             'posts_per_page' => $this->max_noticias,
-            'offset' => 1,
             'category' =>  $categoria->term_id,
             'post_status' => 'publish',
+            'orderby'          => 'post_date',
+            'order'            => 'DESC'
         );
 
         $posts_categoria = get_posts($args);
@@ -55,7 +56,7 @@ class Caricatura_Widget extends WP_Widget
             $caricatura .= '<ul class="thumbnails sociales-thumbnails">';
 
             //Loop 3
-            $imagen = get_attachment_images(get_the_ID());
+            $imagen = get_featured_image(get_the_ID());
 
             $caricatura .= "<li class='span12'>";
 

@@ -1053,3 +1053,10 @@ form.navbar-search .input-append {
     width: 346px;
     height: 346px;
 }
+
+
+.attachment-noticia-single-imagen{
+    width: 660px !important;
+    height: 330px !important;;
+
+}
