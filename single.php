@@ -23,7 +23,7 @@
             <!-- detalle de la noticia -->
             <article role="main" class="primary-content" id="post-<?php the_ID(); ?>">
                 <header>
-                    <h1><?php the_title(); ?></h1>
+                    <h2><?php the_title(); ?></h2>
 
                     <p>Publicado el <?php the_time('Y/m/d') ?> por  <?php echo get_the_author(); ?>
                 </header>

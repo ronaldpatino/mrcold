@@ -501,6 +501,10 @@ body {
     margin-top: 0 !important;
 }
 
+.navbar .nav > li > a {
+    padding: 10px;
+}
+
 .nomargen-abajo{
     margin-bottom: 0 !important;
 }
@@ -1059,4 +1063,8 @@ form.navbar-search .input-append {
     width: 660px !important;
     height: 330px !important;;
 
+}
+
+.widget .widget_text{
+    list-style: none !important;
 }

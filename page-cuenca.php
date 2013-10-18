@@ -24,20 +24,18 @@ get_header(); ?>
         <div class='span8 main'>
 
             <?php
-            $categoria = get_category_by_slug('cultura');
-            print_r($categoria);
+            //$categoria = get_category_by_slug('cuenca');
             $args = array(
-            'category_name' => 'portada',
+            'category_name' => 'cuenca',
             'post_status' => 'publish',
             'posts_per_page' => 10,
-            'cat'   => $categoria->term_id
+            'cat'=>-1
             );
 
             //add_filter('posts_where', 'filter_where');
             query_posts($args);
 
             ?>
-
 
             <?php
             if ( have_posts() ) :
@@ -48,6 +46,7 @@ get_header(); ?>
 
                 <?php endwhile;?>
             <?php endif;?>
+
         </div>
         <div class='span4 sidebar'>
 

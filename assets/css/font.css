@@ -1,3 +1,7 @@
+body{
+    font-family: Georgia, Times, "Times New Roman", serif;
+}
+
 a{
     color: #006BAE;
 }
@@ -245,3 +249,10 @@ a{
     font-weight: normal;
 }
 
+header > h2{
+    font-family: Georgia, Times, "Times New Roman", serif;
+    font-size: 2rem;
+    font-weight: normal;
+    line-height: 105%;
+    color: #03355A;
+}
