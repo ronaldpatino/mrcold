@@ -37,14 +37,29 @@ get_header(); ?>
 
             ?>
 
+            <ul class="media-list">
             <?php
+
             if ( have_posts() ) :
                 while ( have_posts() ) :
-                    the_post();?>
-                    <?php the_title(); ?>
-                    <hr/>
+                    the_post();
+                    $imagen = get_featured_image(get_the_ID());
+                    ;?>
+
+
+                        <li class="media ml2p">
+                            <a class="pull-left" href="<?php the_permalink();?>">
+                                <img class="media-object" src="<?php echo $imagen['imagen'][0]?>" alt="<?php echo  get_the_title(); ?>" title="<?php echo  get_the_title(); ?>">
+                            </a>
+                            <div class="media-body">
+                                <h3><a href="<?php the_permalink();?>"><?php the_title(); ?></a></h3>
+                                <p>Publicado el <?php the_time('Y/m/d') ?> por  <?php echo get_the_author(); ?></p>
+                            </div>
+                        </li>
+
 
                 <?php endwhile;?>
+            </ul>
             <?php endif;?>
 
         </div>
