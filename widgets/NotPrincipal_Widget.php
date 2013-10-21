@@ -46,11 +46,11 @@ class NotPrincipal_Widget extends WP_Widget {
             $noticia_principal_seccion .= '<ul class="thumbnails">';
             $noticia_principal_seccion .= '<li class="span12">';
             $noticia_principal_seccion .= '<div class="thumbnail thumbnail-custom">';
-            $noticia_principal_seccion .= '<h3>' . get_the_title() . '</h3>';
+            $noticia_principal_seccion .= '<h3><a href="' . get_permalink() . '">' . get_the_title() . '</a></h3>';
             $imagen = get_featured_image(get_the_ID());
             $noticia_principal_seccion .= '<img src="' . $imagen['imagen'][0] . '" alt="' . get_the_title() . '" title="' . get_the_title() . '">';
             /*330 * 154*/
-            $noticia_principal_seccion .= '<p>' . substr(limpia_contenido(get_the_content('', false)), 0, 450) . '</p>';
+            $noticia_principal_seccion .= '<p>' . substr(limpia_contenido(get_the_content('', false)), 0, 200) . '</p>';
             $noticia_principal_seccion .= '</div></li></ul></div>';
 
         }

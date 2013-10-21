@@ -3,8 +3,9 @@
 
 <!-- Cabecera, titulares -->
 <div class='container'>
-
     <?php get_template_part( 'blocks/menutop' ); ?>
+</div>
+<div class='container'>
     <?php get_template_part( 'blocks/logo' ); ?>
     <?php get_template_part( 'blocks/navbartop' ); ?>
 </div>
