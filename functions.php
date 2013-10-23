@@ -314,9 +314,17 @@ function get_featured_image($id)
 
     $attachments = get_posts($args);
 
+    $imagen = wp_get_attachment_image_src( get_post_thumbnail_id($id), array(730, 344));
     if ($attachments) {
-        $attachment_images['imagen'] = wp_get_attachment_image_src( get_post_thumbnail_id($id), array(730, 344));
-        $attachment_images['attachment_meta'] = wp_get_attachment($id);
+        if ($imagen != false)
+        {
+            $attachment_images['imagen'] = $imagen;
+            $attachment_images['attachment_meta'] = wp_get_attachment($id);
+        }
+        else{
+            $attachment_images['imagen'] = array( get_bloginfo('template_url') . '/assets/img/placeholder.png');
+            $attachment_images['attachment_meta'] = null;
+        }
 
     } else {
         $attachment_images['imagen'] = array( get_bloginfo('template_url') . '/assets/img/placeholder.png');

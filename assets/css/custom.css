@@ -1084,3 +1084,7 @@ form.navbar-search .input-append {
 .widget .widget_text{
     list-style: none !important;
 }
+
+li{
+    list-style: none;
+}
