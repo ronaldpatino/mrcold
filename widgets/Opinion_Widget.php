@@ -21,7 +21,7 @@ class Opinion_Widget extends WP_Widget {
 
         extract( $args );
 
-        add_filter('posts_where', 'filter_where');
+        //add_filter('posts_where', 'filter_where');
         $args = array(
             'category_name' => 'columnistas',
             'post_status' => 'publish',
@@ -44,7 +44,7 @@ class Opinion_Widget extends WP_Widget {
 
             $impreso .= '<hr/>';
         }
-        remove_filter('posts_where', 'filter_where');
+        //remove_filter('posts_where', 'filter_where');
         echo $impreso;
 
     }

@@ -21,7 +21,7 @@ class PortadaImpresa extends WP_Widget {
 
         extract( $args );
 
-        add_filter('posts_where', 'filter_where');
+        //add_filter('posts_where', 'filter_where');
         $args = array(
             'category_name' => 'impreso',
             'post_status' => 'publish',
@@ -40,7 +40,7 @@ class PortadaImpresa extends WP_Widget {
             //$impreso .= apply_filters('the_content', get_the_content());
             $impreso .= '</li></ul>';
         }
-        remove_filter('posts_where', 'filter_where');
+        //remove_filter('posts_where', 'filter_where');
         echo $impreso;
 
     }

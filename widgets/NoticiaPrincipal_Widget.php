@@ -21,7 +21,7 @@ class NoticiaPrincipal extends WP_Widget {
 
         extract( $args );
 
-        add_filter('posts_where', 'filter_where');
+        //add_filter('posts_where', 'filter_where');
 
         $args = array(
             'category_name' => 'principal',
@@ -46,7 +46,7 @@ class NoticiaPrincipal extends WP_Widget {
 
         }
         wp_reset_query();
-        remove_filter('posts_where', 'filter_where');
+        //remove_filter('posts_where', 'filter_where');
         echo $noticia;
 
     }
