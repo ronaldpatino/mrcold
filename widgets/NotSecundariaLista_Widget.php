@@ -43,7 +43,7 @@ class NotSecundariaLista extends WP_Widget {
             $noticia_secundaria_lista_seccion .= '<img src="' . $imagen['imagen'][0] . '" alt="' . get_the_title() . '" title="' . get_the_title() . '">';
             /*120*74*/
             $noticia_secundaria_lista_seccion .= '</a>';
-            $noticia_secundaria_lista_seccion .= '<div class="media-body media-body-tricol">' . get_the_title() . '</div>';
+            $noticia_secundaria_lista_seccion .= '<div class="media-body media-body-tricol">' .'<strong><a href="' . get_permalink() .'">' . get_the_title() . '</a></strong></div>';
             $noticia_secundaria_lista_seccion .= '</div>';
 
         }

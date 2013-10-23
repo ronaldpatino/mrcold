@@ -56,7 +56,7 @@ class Seccion_Widget extends WP_Widget {
                 $imagen = get_featured_image(get_the_ID());
                 $post_imprimir  .= '<img src="' . $imagen['imagen'][0] . '" alt="' . get_the_title() . '" title="' . get_the_title() . '">';
                 $post_imprimir .= '</a>';
-                $post_imprimir .= '<div class="media-body media-body-tricol">' . get_the_title() . '</div>';
+                $post_imprimir .= '<div class="media-body media-body-tricol">' . '<a class="pull-left" href="'. get_permalink() .'">' . get_the_title() . '</a></div>';
                 $post_imprimir .= '</div>';
             }
         }

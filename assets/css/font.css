@@ -153,10 +153,15 @@ a{
 }
 
 .media-body-tricol{
-    font-size: 0.7rem;
+    font-size: 1rem;
     font-weight: normal;
     line-height: 105%;
     text-align: justify;
+}
+
+.media-body-tricol > a:hover{
+
+    text-decoration: none;
 }
 
 #tricoldeportes > h2{
