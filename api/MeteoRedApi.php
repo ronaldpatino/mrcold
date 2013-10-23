@@ -14,7 +14,7 @@ function get_clima()
 
     $html = file_get_contents('http://www.meteored.com.ec/getwid/e4085e7778f2d5fe273a9a0651f87a1e', false, $context);
     $doc = new DOMDocument();
-    @$doc->loadHTML($html);
+    @$doc->loadHTML(gzdecode($html));
 
     $tags = $doc->getElementsByTagName('img');
     foreach ($tags as $tag) {
