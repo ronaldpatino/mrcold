@@ -1,6 +1,6 @@
 <?php
 /*
-Template Name: Pagina Interior
+Template Name: Pagina Interior Seccion
 */
 get_header(); ?>
 

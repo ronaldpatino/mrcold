@@ -1192,3 +1192,17 @@ if ( ! function_exists( 'mrc_paging_nav' ) ) :
     }
 endif;
 
+/**
+ * Sacamos la seccion actual en la que se está navegando
+ * @return mixed
+ */
+function get_seccion()
+{
+    $requestUri = $_SERVER['REQUEST_URI'];
+    $requestUri = trim($requestUri, '/');
+    # Note that delimeter is '/'
+    $arr = explode('/', $requestUri);
+    $count = count($arr);
+
+    return $arr[$count - 1];
+}
