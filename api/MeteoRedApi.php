@@ -6,7 +6,7 @@ function get_clima()
         'http'=>array(
             'method'=>"GET",
             'header'=>"Accept-language: en\r\n" .
-                "Cookie: foo=bar\r\n"
+            "Accept-Encoding: gzip\r\n"
         )
     );
 
@@ -17,7 +17,6 @@ function get_clima()
     @$doc->loadHTML($html);
 
     $tags = $doc->getElementsByTagName('img');
-
     foreach ($tags as $tag) {
         $items[] = $tag->getAttribute('src');
 
