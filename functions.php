@@ -1172,8 +1172,29 @@ if ( ! function_exists( 'mrc_paging_nav' ) ) :
      * @return void
      */
     function mrc_paging_nav() {
-        global $wp_query;
+        global $wp_query, $wp_rewrite;
 
+        get_query_var('paged') > 1 ? $current = get_query_var('paged') : $current = 1;
+
+        $pagination = array(
+            'base' => @add_query_arg('page','%#%'),
+            'format' => '',
+            'total' => $wp_query->max_num_pages,
+            'current' => $current,
+            'show_all' => false,
+
+            'prev_text'    => __('« Anterior'),
+            'next_text'    => __('Siguiente »'),
+        );
+
+        if( $wp_rewrite->using_permalinks() )
+            $pagination['base'] = user_trailingslashit( trailingslashit( remove_query_arg( 's', get_pagenum_link( 1 ) ) ) . 'page/%#%/', 'paged' );
+
+        if( !empty($wp_query->query_vars['s']) )
+            $pagination['add_args'] = array( 's' => get_query_var( 's' ) );
+
+        echo paginate_links( $pagination );
+/*
         // Don't print empty markup if there's only one page.
         if ( $wp_query->max_num_pages < 2 )
             return;
@@ -1189,6 +1210,7 @@ if ( ! function_exists( 'mrc_paging_nav' ) ) :
             'next_text'    => __('Siguiente »'),
         ) );
 
+  */
     }
 endif;
 
@@ -1204,5 +1226,14 @@ function get_seccion()
     $arr = explode('/', $requestUri);
     $count = count($arr);
 
-    return $arr[$count - 1];
+    if ($count > 3)
+    {
+        $ret = $arr[$count - 3];
+        return $arr[$count - 3];
+    }
+    else
+    {
+        return $arr[$count - 1];
+    }
+
 }

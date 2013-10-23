@@ -26,13 +26,16 @@ get_header(); ?>
             <?php
 
             $args = array(
-            'category_name' => get_seccion(),
-            'post_status' => 'publish',
-            'posts_per_page' => 10,
-            'cat'=>-1
+
+                'category_name' => get_seccion(),
+                'post_status' => 'publish',
+                'orderby' => 'date',
+                'order' => 'DESC',
+                'posts_per_page' => 10,
+                'paged' => ( get_query_var('paged') ? get_query_var('paged') : 1 ),
+
             );
 
-            //add_filter('posts_where', 'filter_where');
             query_posts($args);
 
             ?>
@@ -47,19 +50,24 @@ get_header(); ?>
                     ;?>
 
 
-                        <li class="media ml2p">
+                        <li class="media mlseccion">
                             <a class="pull-left" href="<?php the_permalink();?>">
                                 <img class="media-object" src="<?php echo $imagen['imagen'][0]?>" alt="<?php echo  get_the_title(); ?>" title="<?php echo  get_the_title(); ?>">
                             </a>
                             <div class="media-body">
                                 <h3><a href="<?php the_permalink();?>"><?php the_title(); ?></a></h3>
-                                <p>Publicado el <?php the_time('Y/m/d') ?> por  <?php echo get_the_author(); ?></p>
+                                <p> <?php echo substr(limpia_contenido(get_the_content('', false)), 0, 100);?>... </p>
+                                <p>Publicado el <?php the_time('Y/m/d') ?></p>
                             </div>
+                        </li>
+                        <li>
+                            <hr/>
                         </li>
 
 
                 <?php endwhile;?>
             </ul>
+        <?php mrc_paging_nav(); ?>
             <?php endif;?>
 
         </div>

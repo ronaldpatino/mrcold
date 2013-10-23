@@ -523,6 +523,15 @@ body {
     height: 74px !important;
 }
 
+.ml2p{
+}
+
+.mlseccion > a >img {
+    width: 170px !important;
+    height: 124px !important;
+}
+
+
 .thumbnail-custom{
     border: 0;
     border-radius: 0;

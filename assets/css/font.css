@@ -270,3 +270,16 @@ header > h2{
     line-height: 105%;
     color: #03355A;
 }
+
+.media-body > h3 {
+    font-family: Georgia, Times, "Times New Roman", serif;
+    font-size: 1.2rem;
+    font-weight: normal;
+    line-height: 105%;
+    color: #03355A;
+    margin: 0;
+}
+
+.media-body > h3 > a:hover{
+    text-decoration: none;
+}
