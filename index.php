@@ -13,7 +13,7 @@
 <?php get_template_part( 'blocks/publicidadcabecera' ); ?>
 
 <div class='container'>
-    <?php get_template_part( 'blocks/masleido' ); ?>
+    <?php //get_template_part( 'blocks/masleido' ); ?>
     <?php get_template_part( 'blocks/titulares' ); ?>
 </div>
 <!-- Fin cabecera, titulares -->
