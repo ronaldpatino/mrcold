@@ -70,6 +70,7 @@
                 <!-- fin detalle de la noticia -->
 
                 <?php endwhile; ?>
+                <?php echo do_shortcode('[LoginRadius_Share type="horizontal"]'); ?>
             </article>
         </div>
         <div class='span4 sidebar'>
