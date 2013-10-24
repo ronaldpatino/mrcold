@@ -5,6 +5,7 @@ require_once('widgets/NotPrincipal_Widget.php');
 require_once('widgets/NotSecundariaLista_Widget.php');
 require_once('widgets/OtrasNotListado_Widget.php');
 require_once('widgets/Carrusel_Widget.php');
+require_once('widgets/Multimedia_Widget.php');
 require_once('widgets/UltimasNoticias_Widget.php');
 require_once('widgets/MasLeidas_Widget.php');
 require_once('widgets/NoticiasPortada_Widget.php');
@@ -938,7 +939,7 @@ add_filter('the_content', 'remove_css');
 add_filter('get_the_content', 'remove_css');
 
 
-function remove_word_html($text, $allowed_tags = '<strong><p>')
+function remove_word_html($text, $allowed_tags = '<strong><p><iframe><object><param><embed>')
 {
     mb_regex_encoding('UTF-8');
     //replace MS special characters first
@@ -1226,14 +1227,39 @@ function get_seccion()
     $arr = explode('/', $requestUri);
     $count = count($arr);
 
-    if ($count > 3)
+    if ($count > 1)
     {
-        $ret = $arr[$count - 3];
-        return $arr[$count - 3];
+        $seccion = $arr[$count - 3];
+        
     }
     else
     {
-        return $arr[$count - 1];
+        $seccion = $arr[$count - 1];
     }
 
+
+	if ($seccion === 'sucesos')
+	{
+		$seccion= get_category_by_slug('loja')->term_id;		
+	}
+	
+	else if ($seccion === 'austro')
+	{
+		$seccion = get_category_by_slug('azuay')->term_id . ',' . get_category_by_slug('loja')->term_id . ',' . get_category_by_slug('canar-2')->term_id;		
+	}
+
+	else if ($seccion === 'farandula')
+	{
+		$seccion= get_category_by_slug('farandula-sociales')->term_id;				
+	}
+	else if ($seccion === 'mundo')
+	{
+		$seccion= get_category_by_slug('internacionales')->term_id;				
+	}		
+	else {
+			$seccion = get_category_by_slug($seccion)->term_id;		
+	}
+	
+
+	return $seccion;
 }

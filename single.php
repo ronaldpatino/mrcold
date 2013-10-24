@@ -65,7 +65,7 @@
                 ?>
                 <?php the_content(); ?>
                 <hr/>
-                <?php comments_template('', true); ?>
+                <?php //comments_template('', true); ?>
 
                 <!-- fin detalle de la noticia -->
 

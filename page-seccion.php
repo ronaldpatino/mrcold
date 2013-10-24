@@ -24,10 +24,11 @@ get_header(); ?>
         <div class='span8 main'>
 
             <?php
+            
 
             $args = array(
 
-                'category_name' => get_seccion(),
+                'cat' => get_seccion(),
                 'post_status' => 'publish',
                 'orderby' => 'date',
                 'order' => 'DESC',

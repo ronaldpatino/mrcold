@@ -27,7 +27,9 @@ class NoticiasPortada extends WP_Widget {
             'category_name' => 'portada',
             'post_status' => 'publish',
             'posts_per_page' => $instance['numberposts'],
-            'cat'   => -$categoria->term_id
+            'cat'   => -$categoria->term_id,
+            'orderby'          => 'post_date',
+            'order'            => 'DESC'
         );
 
 

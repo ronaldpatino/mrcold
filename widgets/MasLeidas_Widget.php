@@ -30,7 +30,8 @@ class MasLeidas_Widget extends WP_Widget {
                 'meta_key' => 'wpb_post_views_count',
                 'orderby' => 'meta_value_num',
                 'order' => 'DESC',
-                'posts_per_page' => $this->max_noticias,
+                'posts_per_page' => $this->max_noticias,                
+                'post_status' => 'publish',
                 'meta_query' => array(
                     array(
                         'key' => 'wpb_post_views_count',
