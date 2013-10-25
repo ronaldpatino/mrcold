@@ -25,14 +25,18 @@ class PortadaImpresa extends WP_Widget {
         $args = array(
             'category_name' => 'impreso',
             'post_status' => 'publish',
-            'posts_per_page' => 1
+            'posts_per_page' => 1,
+            'orderby'          => 'post_date',
+            'order'            => 'DESC'
         );
 
-        query_posts($args);
-        $impreso = '';
-        while (have_posts()) {
+        $posts_categoria = new WP_Query( $args );
 
-            the_post();
+        $impreso = '';
+
+        while ( $posts_categoria->have_posts() )
+        {
+            $posts_categoria->the_post();
 
             $impreso = '<ul class="thumbnails" style="margin-top: 20px;">';
             $impreso .= '<li class="span12 thumbnail portada" style="text-align: center;"><h3>Portada</h3>';
@@ -41,6 +45,7 @@ class PortadaImpresa extends WP_Widget {
             $impreso .= '</li></ul>';
         }
         //remove_filter('posts_where', 'filter_where');
+        wp_reset_postdata();
         echo $impreso;
 
     }

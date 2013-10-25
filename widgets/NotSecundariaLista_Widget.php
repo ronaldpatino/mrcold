@@ -17,25 +17,25 @@ class NotSecundariaLista extends WP_Widget {
 
         if ($instance['categoria'] == -1) {return;}
 
-        global $post;
-
         extract( $args );
 
         $args = array( 'posts_per_page' => 4,
                         'offset'=> 1,
-                        'category' => $instance['categoria'],
+                        'cat' => $instance['categoria'],
                         'category__not_in' => array( 16 ),
                         'post_status' => 'publish',
         );
 
-        $posts_categoria = get_posts( $args );
+        $posts_categoria = new WP_Query( $args );
 
         $category = get_the_category_by_ID($instance['categoria']);
 
         $noticia_secundaria_lista_seccion = '<div class="span4 noticia-tricol">';
 
-        foreach( $posts_categoria as $post ) {
-            setup_postdata($post);
+        while ( $posts_categoria->have_posts() )
+        {
+            $posts_categoria->the_post();
+
 
             $noticia_secundaria_lista_seccion .= '<div class="media ml2p">';
             $noticia_secundaria_lista_seccion .= '<a class="pull-left" href="' . get_permalink() .'">';
@@ -47,6 +47,8 @@ class NotSecundariaLista extends WP_Widget {
             $noticia_secundaria_lista_seccion .= '</div>';
 
         }
+
+        wp_reset_postdata();
         $noticia_secundaria_lista_seccion .= '</div>';
 
         echo $noticia_secundaria_lista_seccion;

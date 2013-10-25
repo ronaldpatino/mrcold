@@ -14,29 +14,26 @@ class Seccion_Widget extends WP_Widget {
 
         if ($instance['categoria'] == -1) {return;}
 
-        global $post;
-
         extract( $args );
         $category = get_the_category_by_ID($instance['categoria']);
 
         //add_filter('posts_where', 'filter_where');
         $args = array( 'posts_per_page' => 4,
+
                         'offset'=> 1,
-                        'category' => $instance['categoria'],
+                        'cat'=> $instance['categoria'],
                         'post_status' => 'publish',
         );
 
-        $posts_categoria = get_posts( $args );
-
-
-
+        $posts_categoria = new WP_Query( $args );
         $post_imprimir  = '<div class="span4 noticia-tricol">';
         $post_imprimir .= '<h2 class="cultura">' . $category . '</h2>';
         $primera_noticia = 0;
 
 
-        foreach( $posts_categoria as $post ) {
-            setup_postdata($post);
+        while ( $posts_categoria->have_posts() )
+        {
+            $posts_categoria->the_post();
 
             if (!$primera_noticia)
             {
@@ -62,6 +59,7 @@ class Seccion_Widget extends WP_Widget {
         }
 
         //remove_filter('posts_where', 'filter_where');
+        wp_reset_postdata();
 
         $post_imprimir .= '<br/></div>';
         echo $post_imprimir;

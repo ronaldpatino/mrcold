@@ -26,7 +26,7 @@ class MasLeidas_Widget extends WP_Widget {
 
         $popularpost = new WP_Query(
             array(
-                //'posts_per_page' => $instance['numberposts'],
+
                 'meta_key' => 'wpb_post_views_count',
                 'orderby' => 'meta_value_num',
                 'order' => 'DESC',
@@ -49,7 +49,7 @@ class MasLeidas_Widget extends WP_Widget {
             $popularpost->the_post();
             $mas_leidas .= '<li><a href="' . get_permalink(get_the_ID()) . '" title="' . esc_attr(get_the_title()) . '" >' . get_the_title() . ' <span class="label label-warning">' . wpb_get_post_views(get_the_ID()) . '</span></a> </li> ';
         }
-
+        wp_reset_postdata();
         $mas_leidas .= '</ul>';
 
         echo $mas_leidas;

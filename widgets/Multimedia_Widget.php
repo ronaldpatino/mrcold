@@ -24,7 +24,7 @@ class Multimedia_Widget extends WP_Widget
         extract($args);
 
         $args = array(
-        	'posts_per_page' => 12,
+        	'posts_per_page' => 11,
             'offset' => 0,
             'category' => $instance['categoria'],
             'post_status' => 'publish',
@@ -32,7 +32,7 @@ class Multimedia_Widget extends WP_Widget
             'order'            => 'DESC'
         );
 
-        $posts_categoria = get_posts($args);
+        $posts_categoria = new WP_Query( $args );
         $category = str_replace(" ", "_", get_the_category_by_ID($instance['categoria']));
         $carussel_id = 'carrusel' . $category;
         $carrusel_modal = 'modal' . $category;
@@ -45,8 +45,9 @@ class Multimedia_Widget extends WP_Widget
         $carrusel .= '<div class="carousel-inner">';
 
 
-        foreach ($posts_categoria as $post) {
-            setup_postdata($post);
+        while ( $posts_categoria->have_posts() )
+        {
+            $posts_categoria->the_post();
 
 
             if ($counter == 1) {
@@ -96,7 +97,7 @@ class Multimedia_Widget extends WP_Widget
         $carrusel .= '<a data-slide="next" href="#' . $carussel_id . '" class="right sociales-carousel-control">&gt;</a>';
         $carrusel .= '</div>';
 
-       
+        wp_reset_postdata();
         echo $carrusel;
 
     }

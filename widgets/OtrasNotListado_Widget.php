@@ -14,17 +14,15 @@ class OtrasNotListado_Widget extends WP_Widget {
 
         if ($instance['categoria'] == -1) {return;}
 
-        global $post;
-
         extract( $args );
 
         $args = array( 'posts_per_page' => 6,
                         'offset'=> 1,
-                        'category' => $instance['categoria'],
+                        'cat' => $instance['categoria'],
                         'post_status' => 'publish',
         );
 
-        $posts_categoria = get_posts( $args );
+        $posts_categoria = new WP_Query( $args );
 
         $category = get_the_category_by_ID($instance['categoria']);
 
@@ -33,11 +31,13 @@ class OtrasNotListado_Widget extends WP_Widget {
 
         $otras_noticia_listado = '<div class="span4 noticia-tricol sidebar"><ul class="nav nav-tabs nav-stacked">';
 
-        foreach( $posts_categoria as $post ) {
-            setup_postdata($post);
+        while ( $posts_categoria->have_posts() )
+        {
+            $posts_categoria->the_post();
+
             $otras_noticia_listado .= '<li><a href="' . get_permalink() . '">' . get_the_title() . '</a></li>';
         }
-
+        wp_reset_postdata();
         $otras_noticia_listado .= '</ul></div>';
         echo $otras_noticia_listado;
     }

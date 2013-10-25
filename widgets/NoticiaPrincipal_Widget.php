@@ -16,9 +16,6 @@ class NoticiaPrincipal extends WP_Widget {
     public function widget( $args, $instance ) {
 
         if (!isset($instance['numberposts'])) {$instance['numberposts']= $this->max_noticias;}
-
-        global $post;
-
         extract( $args );
 
         //add_filter('posts_where', 'filter_where');
@@ -29,14 +26,16 @@ class NoticiaPrincipal extends WP_Widget {
             'posts_per_page' => 1
         );
 
-         query_posts($args);
-
+         //query_posts($args);
+        $posts_categoria = new WP_Query( $args );
 
 
         $noticia = '';
 
-        while (have_posts()) {
-            the_post();
+        while ( $posts_categoria->have_posts() )
+        {
+            $posts_categoria->the_post();
+
             $noticia .= '<h2><a href="' . get_permalink() . '">' . get_the_title() . '</a></h2>';
             $imagen = get_featured_image(get_the_ID());
 
@@ -45,7 +44,7 @@ class NoticiaPrincipal extends WP_Widget {
             $noticia .= '<p>' . substr(limpia_contenido(get_the_content('', false)), 0, 450) . '</p>';
 
         }
-        wp_reset_query();
+        wp_reset_postdata();
         //remove_filter('posts_where', 'filter_where');
         echo $noticia;
 

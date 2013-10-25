@@ -19,8 +19,6 @@ class NotPrincipal_Widget extends WP_Widget {
 
         if ($instance['categoria'] == -1) {return;}
 
-        global $post;
-
         extract( $args );
 
         //Categoria 16 destacados
@@ -30,17 +28,14 @@ class NotPrincipal_Widget extends WP_Widget {
                         'post_status' => 'publish',
         );
 
-        $posts_categoria = get_posts( $args );
-
-        $category = get_the_category_by_ID($instance['categoria']);
-
-
+        $posts_categoria = new WP_Query( $args );
 
 
         $noticia_principal_seccion = '';
 
-        foreach( $posts_categoria as $post ) {
-            setup_postdata($post);
+        while ( $posts_categoria->have_posts() )
+        {
+            $posts_categoria->the_post();
 
             $noticia_principal_seccion  .= '<div class="span4 noticia-tricol">';
             $noticia_principal_seccion .= '<ul class="thumbnails">';
@@ -55,7 +50,7 @@ class NotPrincipal_Widget extends WP_Widget {
 
         }
 
-
+        wp_reset_postdata();
         echo $noticia_principal_seccion;
 
     }

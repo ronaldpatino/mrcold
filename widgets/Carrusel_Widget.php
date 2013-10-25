@@ -19,19 +19,21 @@ class Carrusel_Widget extends WP_Widget
             return;
         }
 
-        global $post;
 
         extract($args);
 
-        $args = array('posts_per_page' => 12,
-            'offset' => 1,
-            'category' => $instance['categoria'],
+        $args = array(
+            'posts_per_page' => 11,
+            'offset' => 0,
+            'cat' => $instance['categoria'],
             'post_status' => 'publish',
-            'orderby'          => 'post_date',
-            'order'            => 'DESC'
+            'orderby' => 'post_date',
+            'order' => 'DESC'
         );
 
-        $posts_categoria = get_posts($args);
+        //$posts_categoria = get_posts($args);
+        $posts_categoria = new WP_Query( $args );
+
         $category = str_replace(" ", "_", get_the_category_by_ID($instance['categoria']));
         $carussel_id = 'carrusel' . $category;
         $carrusel_modal = 'modal' . $category;
@@ -40,11 +42,12 @@ class Carrusel_Widget extends WP_Widget
         $counter = 1;
         $activo = 1;
 
-        $carrusel  = '<div class="carousel slide" id="'. $carussel_id .'">';
+        $carrusel = '<div class="carousel slide" id="' . $carussel_id . '">';
         $carrusel .= '<div class="carousel-inner">';
 
-        foreach ($posts_categoria as $post) {
-            setup_postdata($post);
+        while ( $posts_categoria->have_posts() )
+        {
+            $posts_categoria->the_post();
 
 
             if ($counter == 1) {
@@ -65,7 +68,7 @@ class Carrusel_Widget extends WP_Widget
             $carrusel .= '<a href="#' . $carrusel_modal . '" data-caption=" ' . get_the_title() . '"  data-img=" ' . $imagen['imagen'][0] . '" data-toggle="modal">';
             $carrusel .= '<img src="' . $imagen['imagen'][0] . '" alt="' . get_the_title() . '" title="' . get_the_title() . '">';
             $carrusel .= '</a>';
-            $carrusel .= '<p>'. get_the_title() .'</p>';
+            $carrusel .= '<p>' . get_the_title() . '</p>';
             $carrusel .= '</div>';
             $carrusel .= '</li>';
             //Fin Loop 3
@@ -78,14 +81,14 @@ class Carrusel_Widget extends WP_Widget
             } else {
                 $counter++;
             }
-
-
         }
 
         if (count($posts_categoria) % 3 != 0) {
             $carrusel .= '</ul>';
             $carrusel .= '</div>';
         }
+
+        wp_reset_postdata();
 
         $carrusel .= '</div>';
 
@@ -95,7 +98,7 @@ class Carrusel_Widget extends WP_Widget
         $carrusel .= '</div>';
 
         $carrusel .= '<script type="text/javascript">jQuery(document).ready(function($) {';
-        $carrusel .= "$('[data-toggle=\"modal\"]').click(function(e) {e.preventDefault();var imagen_sociales = $(this).data('img');var caption_sociales = $(this).data('caption');$('.modal-body #" . $imagen_modal ."').attr('src', imagen_sociales);$('.modal-footer').html('<p>'+ caption_sociales +'</p>');});";
+        $carrusel .= "$('[data-toggle=\"modal\"]').click(function(e) {e.preventDefault();var imagen_sociales = $(this).data('img');var caption_sociales = $(this).data('caption');$('.modal-body #" . $imagen_modal . "').attr('src', imagen_sociales);$('.modal-footer').html('<p>'+ caption_sociales +'</p>');});";
         $carrusel .= '});</script>';
         $carrusel .= '<div id="' . $carrusel_modal . '" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">';
         $carrusel .= '<div class="modal-header">';

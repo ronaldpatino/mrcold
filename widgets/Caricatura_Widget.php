@@ -26,15 +26,16 @@ class Caricatura_Widget extends WP_Widget
         extract($args);
 
         $categoria = get_category_by_slug('caricaturas');
+
         $args = array(
             'posts_per_page' => $this->max_noticias,
-            'category' =>  $categoria->term_id,
+            'cat' =>  $categoria->term_id,
             'post_status' => 'publish',
             'orderby'          => 'post_date',
             'order'            => 'DESC'
         );
 
-        $posts_categoria = get_posts($args);
+        $posts_categoria = new WP_Query( $args );
 
 
         $activo = 1;
@@ -43,9 +44,10 @@ class Caricatura_Widget extends WP_Widget
 
         $caricatura .= '<div class="carousel-inner">';
 
-        foreach ($posts_categoria as $post) {
+        while ( $posts_categoria->have_posts() )
+        {
+            $posts_categoria->the_post();
 
-            setup_postdata($post);
                 if ($activo) {
                     $caricatura .= '<div class="item active">';
                     $activo = 0;
@@ -73,7 +75,7 @@ class Caricatura_Widget extends WP_Widget
 
 
         }
-
+        wp_reset_postdata();
 
 
         $caricatura .= '</div>';

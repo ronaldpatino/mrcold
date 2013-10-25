@@ -28,11 +28,13 @@ class Opinion_Widget extends WP_Widget {
             'posts_per_page' => 6
         );
 
-        $a = query_posts($args);
+        $posts_categoria = new WP_Query( $args );
         $impreso = '';
-        while (have_posts()) {
 
-            the_post();
+        while ( $posts_categoria->have_posts() )
+        {
+            $posts_categoria->the_post();
+
             $impreso .= '<h3>';
             $impreso .= '<a href="' . get_permalink() .'">';
             $impreso .= get_the_title();
@@ -45,6 +47,7 @@ class Opinion_Widget extends WP_Widget {
             $impreso .= '<hr/>';
         }
         //remove_filter('posts_where', 'filter_where');
+        wp_reset_postdata();
         echo $impreso;
 
     }
