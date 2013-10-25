@@ -7,7 +7,7 @@ class Multimedia_Widget extends WP_Widget
     {
         parent::__construct(
             'multimedia_widget', // Base ID
-            'M_Carrusel: Imagenes', // Name
+            'M_Carrusel: Multimedia', // Name
             array('description' => __('Carrusel de Multimedia con un texto en la parte inferior', 'text_domain'),)
         );
     }
@@ -24,15 +24,15 @@ class Multimedia_Widget extends WP_Widget
         extract($args);
 
         $args = array(
-        	'posts_per_page' => 11,
+            'posts_per_page' => 11,
             'offset' => 0,
-            'category' => $instance['categoria'],
+            'cat' => $instance['categoria'],
             'post_status' => 'publish',
-            'orderby'          => 'post_date',
-            'order'            => 'DESC'
+            'orderby' => 'post_date',
+            'order' => 'DESC'
         );
 
-        $posts_categoria = new WP_Query( $args );
+        $posts_categoria = new WP_Query($args);
         $category = str_replace(" ", "_", get_the_category_by_ID($instance['categoria']));
         $carussel_id = 'carrusel' . $category;
         $carrusel_modal = 'modal' . $category;
@@ -41,12 +41,11 @@ class Multimedia_Widget extends WP_Widget
         $counter = 1;
         $activo = 1;
 
-        $carrusel  = '<div class="carousel slide" id="'. $carussel_id .'">';
+        $carrusel = '<div class="carousel slide" id="' . $carussel_id . '">';
         $carrusel .= '<div class="carousel-inner">';
 
 
-        while ( $posts_categoria->have_posts() )
-        {
+        while ($posts_categoria->have_posts()) {
             $posts_categoria->the_post();
 
 
@@ -65,10 +64,10 @@ class Multimedia_Widget extends WP_Widget
             $carrusel .= '<div class="thumbnail sociales-thumbnails-item">';
             $imagen = get_featured_image(get_the_ID());
 
-            $carrusel .= '<a href="' . get_permalink() . '">' ;
+            $carrusel .= '<a href="' . get_permalink() . '">';
             $carrusel .= '<img src="' . $imagen['imagen'][0] . '" alt="' . get_the_title() . '" title="' . get_the_title() . '">';
             $carrusel .= '</a>';
-            $carrusel .= '<p>'. get_the_title() .'</p>';
+            $carrusel .= '<p>' . get_the_title() . '</p>';
             $carrusel .= '</div>';
             $carrusel .= '</li>';
             //Fin Loop 3
