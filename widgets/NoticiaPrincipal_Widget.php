@@ -37,9 +37,12 @@ class NoticiaPrincipal extends WP_Widget {
             $posts_categoria->the_post();
 
             $noticia .= '<h2><a href="' . get_permalink() . '">' . get_the_title() . '</a></h2>';
+
             $imagen = get_featured_image(get_the_ID());
 
-            $noticia .= '<img src="' . $imagen['imagen'][0] . '" width="730" height="344" alt="' . $imagen['attachment_meta']['alt'] . '" title="' . $imagen['attachment_meta']['title'] . '">';
+            $src= getphpthumburl($imagen['imagen'][0], 'w=668&h=344&zc=1&q=90');
+
+            $noticia .= '<img src="' . $src . '" alt="' . $imagen['attachment_meta']['alt'] . '  - El Mercurio de Cuenca Noticias Ecuador Azuay" title="' . $imagen['attachment_meta']['title'] . '  - El Mercurio de Cuenca Noticias Ecuador Azuay">';
 
             $noticia .= '<p>' . substr(limpia_contenido(get_the_content('', false)), 0, 450) . '</p>';
 

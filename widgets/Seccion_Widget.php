@@ -41,7 +41,8 @@ class Seccion_Widget extends WP_Widget {
                 $post_imprimir .= '<li class="span12"><div class="thumbnail thumbnail-custom"><h3>';
                 $post_imprimir .= '<a href="' . get_permalink() .'">' . get_the_title() . '</a></h3>';
                 $imagen = get_featured_image(get_the_ID());
-                $post_imprimir  .= '<img src="' . $imagen['imagen'][0] . '" alt="' . get_the_title() . '" title="' . get_the_title() . '">';
+                $src= getphpthumburl($imagen['imagen'][0], 'w=332&h=260&zc=1');
+                $post_imprimir  .= '<img src="' . $src . '" alt="' . get_the_title() . '  - El Mercurio de Cuenca Noticias Ecuador Azuay" title="' . get_the_title() . '  - El Mercurio de Cuenca Noticias Ecuador Azuay">';
                 $post_imprimir .= '<p>' . substr(limpia_contenido(get_the_content('', false)), 0, 450) . '</p>';
                 $post_imprimir .= '</div></li></ul>';
                 $primera_noticia = 1;
@@ -51,7 +52,8 @@ class Seccion_Widget extends WP_Widget {
                 $post_imprimir .= '<div class="media ml2p">';
                 $post_imprimir .= '<a class="pull-left" href="'. get_permalink() .'">';
                 $imagen = get_featured_image(get_the_ID());
-                $post_imprimir  .= '<img src="' . $imagen['imagen'][0] . '" alt="' . get_the_title() . '" title="' . get_the_title() . '">';
+                $src= getphpthumburl($imagen['imagen'][0], 'w=120&h=74&zc=1');
+                $post_imprimir  .= '<img src="' . $src . '" alt="' . get_the_title() . '" title="' . get_the_title() . '">';
                 $post_imprimir .= '</a>';
                 $post_imprimir .= '<div class="media-body media-body-tricol">' . '<a class="pull-left" href="'. get_permalink() .'">' . get_the_title() . '</a></div>';
                 $post_imprimir .= '</div>';

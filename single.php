@@ -7,7 +7,6 @@
 <div class='container'>
 
 
-
     <?php get_template_part('blocks/menutop'); ?>
 
     <?php get_template_part('blocks/logo'); ?>
@@ -25,7 +24,6 @@
 <!-- Fin cabecera, titulares -->
 
 
-
 <div class='container'>
 
     <?php get_template_part('blocks/masleido'); ?>
@@ -40,7 +38,7 @@
 
             while (have_posts()) :
 
-            the_post(); ?>
+                the_post(); ?>
 
             <!-- detalle de la noticia -->
 
@@ -51,150 +49,75 @@
                     <h2><?php the_title(); ?></h2>
 
 
-
                     <p>Publicado el <?php the_time('Y/m/d') ?> por  <?php echo get_the_author(); ?>
 
 
+                        <?php get_template_part('blocks/socialtags'); ?>
 
-<!-- AddThis Button BEGIN -->
-
-<div class="addthis_toolbox addthis_default_style addthis_32x32_style">
-
-<a class="addthis_button_facebook"></a>
-
-<a class="addthis_button_twitter"></a>
-
-<a class="addthis_button_google_plusone_share"></a>
-
-<a class="addthis_button_email"></a>
-
-<a class="addthis_button_print"></a>
-
-<a class="addthis_counter addthis_bubble_style"></a>
-
-</div>
-
-<script type="text/javascript">var addthis_config = {"data_track_addressbar":true};</script>
-
-<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-526a919519b96717"></script>
-
-<!-- AddThis Button END -->
-
-<br>
+                    <br>
 
                 </header>
 
-
-
-
-
                 <?php
-
-
 
                 if (has_post_thumbnail()) {
 
-                    the_post_thumbnail('noticia-single-imagen');
+                    $src= getphpthumburl(wp_get_attachment_url( get_post_thumbnail_id(get_the_ID()) ), 'w=660&h=330&zc=1');
+
+                    echo '<img  src="' . $src . '" ' . 'alt="' . get_the_title() . ' - El Mercurio de Cuenca Noticias Ecuador Azuay" title="' . get_the_title() . '  - El Mercurio de Cuenca Noticias Ecuador Azuay" >';
 
                 }
 
-
-
                 $has_attachment = false;
-
                 $attachments = mrc_get_image_attachments(get_the_ID());
-
-
 
                 if ($attachments) {
 
-
-
                     $has_attachment = true;
-
                     $primero = true;
 
                     foreach ($attachments as $attachment) {
 
                         if ($primero) {
 
+                            $src= getphpthumburl($attachment->guid, 'w=310&h=350&zc=1');
+
                             $cadena = '<div class="active item">';
-
-                            $cadena .= "<img style='width:310px !important;height:235px !important;' src='{$attachment->guid}' alt='{$attachment->post_excerpt} El Mercurio Noticias Cuenca Ecuador' title='{$attachment->post_excerpt} - El Mercurio Noticias Cuenca Ecuador'/>";
-
+                            $cadena .= "<img  src='{$src}' alt='{$attachment->post_excerpt}  - El Mercurio de Cuenca Noticias Ecuador Azuay' title='{$attachment->post_excerpt}  - El Mercurio de Cuenca Noticias Ecuador Azuay'/>";
                             $cadena .= "<div class='carousel-caption carousel-caption_imagenes_noticia'>";
-
                             $cadena .= "<p>{$attachment->post_excerpt}</p>";
-
                             $cadena .= '</div>';
-
                             $cadena .= '</div>';
-
                             $primero = false;
 
                         } else {
 
+                            $src= getphpthumburl($attachment->guid, 'w=310&h=350&zc=1');
                             $cadena .= '<div class="item">';
-
-                            $cadena .= "<img style='width:310px !important;height:235px !important;' src='{$attachment->guid}' alt='{$attachment->post_excerpt} El Mercurio Noticias Cuenca Ecuador' title='{$attachment->post_excerpt} - El Mercurio Noticias Cuenca Ecuador'/>";
-
+                            $cadena .= "<img  src='{$src}' alt='{$attachment->post_excerpt}   - El Mercurio de Cuenca Noticias Ecuador Azuay' title='{$attachment->post_excerpt}  - El Mercurio de Cuenca Noticias Ecuador Azuay'/>";
                             $cadena .= "<div class='carousel-caption carousel-caption_imagenes_noticia'>";
-
                             $cadena .= "<p>{$attachment->post_excerpt}</p>";
-
                             $cadena .= '</div>';
-
                             $cadena .= '</div>';
 
                         }
-
-
-
                     }
-
                 }
 
                 ?>
 
                 <?php the_content(); ?>
-
                 <hr/>
 
                 <?php //comments_template('', true); ?>
 
 
-
                 <!-- fin detalle de la noticia -->
-
-
 
                 <?php endwhile; ?>
 
 
-
-<!-- AddThis Button BEGIN -->
-
-<div class="addthis_toolbox addthis_default_style addthis_32x32_style">
-
-<a class="addthis_button_facebook"></a>
-
-<a class="addthis_button_twitter"></a>
-
-<a class="addthis_button_google_plusone_share"></a>
-
-<a class="addthis_button_email"></a>
-
-<a class="addthis_button_print"></a>
-
-<a class="addthis_counter addthis_bubble_style"></a>
-
-</div>
-
-<script type="text/javascript">var addthis_config = {"data_track_addressbar":true};</script>
-
-<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-526a919519b96717"></script>
-
-<!-- AddThis Button END -->
+                <?php get_template_part('blocks/socialtags'); ?>
 
             </article>
 
@@ -203,42 +126,40 @@
         <div class='span4 sidebar'>
 
 
+            <?php if ($has_attachment): ?>
 
-            <?php if($has_attachment):?>
+                <br/>
 
-            <br/>
+                <div id="imagenes_noticia" class="carousel slide">
 
-            <div id="imagenes_noticia" class="carousel slide">
+                    <ol class="carousel-indicators">
 
-                <ol class="carousel-indicators">
+                        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
 
-                    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                        <li data-target="#myCarousel" data-slide-to="1"></li>
 
-                    <li data-target="#myCarousel" data-slide-to="1"></li>
+                        <li data-target="#myCarousel" data-slide-to="2"></li>
 
-                    <li data-target="#myCarousel" data-slide-to="2"></li>
+                    </ol>
 
-                </ol>
+                    <!-- Carousel items -->
 
-                <!-- Carousel items -->
+                    <div class="carousel-inner">
 
-                <div class="carousel-inner">
-
-                    <?php echo $cadena;?>
+                        <?php echo $cadena; ?>
 
 
+                    </div>
+
+                    <!-- Carousel nav -->
+
+                    <a class="carousel-control left" href="#imagenes_noticia" data-slide="prev">&lsaquo;</a>
+
+                    <a class="carousel-control right" href="#imagenes_noticia" data-slide="next">&rsaquo;</a>
 
                 </div>
 
-                <!-- Carousel nav -->
-
-                <a class="carousel-control left" href="#imagenes_noticia" data-slide="prev">&lsaquo;</a>
-
-                <a class="carousel-control right" href="#imagenes_noticia" data-slide="next">&rsaquo;</a>
-
-            </div>
-
-            <?php endif;?>
+            <?php endif; ?>
 
             <?php if (dynamic_sidebar('detallenoticia')) : else : endif; ?>
 
@@ -247,20 +168,15 @@
     </div>
 
 
-
 </div>
 
 
 
 <?php wpb_set_post_views(get_the_ID()); ?>
 
-
-
 <?php get_template_part('blocks/pie'); ?>
 
 <?php get_template_part('blocks/twitter'); ?>
-
-
 
 <?php get_footer(); ?>
 

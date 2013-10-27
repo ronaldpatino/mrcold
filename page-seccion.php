@@ -53,6 +53,7 @@ get_header(); ?>
 
                         <li class="media mlseccion">
                             <a class="pull-left" href="<?php the_permalink();?>">
+
                                 <img class="media-object" src="<?php echo $imagen['imagen'][0]?>" alt="<?php echo  get_the_title(); ?>" title="<?php echo  get_the_title(); ?>">
                             </a>
                             <div class="media-body">
