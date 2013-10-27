@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-
+    <link rel="icon" type="image/png" href="<?php bloginfo('template_url'); ?>/favicon.png/">
     <title>
         <?php
         global $page, $paged;
