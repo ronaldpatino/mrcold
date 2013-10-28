@@ -27,7 +27,7 @@ class Seccion_Widget extends WP_Widget {
 
         $posts_categoria = new WP_Query( $args );
         $post_imprimir  = '<div class="span4 noticia-tricol">';
-        $post_imprimir .= '<h2 class="cultura">' . $category . '</h2>';
+        $post_imprimir .= '<h2 class="cultura"><a href="' . get_home_url() . '/'. strtolower($category) . '">' . $category . '</a></h2>';
         $primera_noticia = 0;
 
 

@@ -2,7 +2,7 @@
 <div class='container margen-container'>
     <div id='multimedia' class='row-fluid'>
         <div class="span8 seccion-left">
-            <h2>Multimedia</h2>
+            <h2><a href="<?php echo get_home_url()?>/multimedia" >Multimedia</a></h2>
             <?php if ( dynamic_sidebar('multimedia') ) : else : endif; ?>
         </div>
         <div class="span4">

@@ -149,8 +149,12 @@ a{
     font-family: Georgia, Times, "Times New Roman", serif;
     font-size: 1.5rem;
     font-weight: normal;
+    color: #ffffff !important;
+}
 
-    color: #ffffff;
+.noticia-tricol > h2 > a {
+    color: #ffffff !important;
+    display: block;
 }
 
 .media-body-tricol{
@@ -169,8 +173,13 @@ a{
     font-family: Georgia, Times, "Times New Roman", serif;
     font-size: 1.5rem;
     font-weight: normal;
-
     color: #ffffff;
+}
+
+
+#tricoldeportes > h2 > a{
+    color: #FFFFFF !important;
+    display: block;
 }
 
 #deportivocuenca h2{
@@ -181,6 +190,21 @@ a{
     color: #ffffff;
 }
 
+#deportivocuenca > h2 > a{
+    color: #FFFFFF !important;
+    display: block;
+}
+#deportivocuenca > h2 > a:hover{
+    color: #FFFFFF !important;
+    display: block;
+}
+
+#deportivocuenca > h2:hover{
+    display: block;
+    background-color: #e5000e;
+}
+
+
 #sociales h2{
     font-family: Georgia, Times, "Times New Roman", serif;
     font-size: 1.5rem;
@@ -188,6 +212,12 @@ a{
 
     color: #ffffff;
 }
+
+#sociales h2 > a{
+    color: #FFFFFF !important;
+    display: block;
+}
+
 
 
 #opinion h2{
@@ -198,21 +228,39 @@ a{
     color: #ffffff;
 }
 
+#opinion h2 > a{
+    color: #FFFFFF !important;
+    display: block;
+}
+
+
 #opinion h3{
-    font-family: Georgia,Times,"Times New Roman",serif;
-    font-size: 1rem;
-    font-weight: bold;
-    line-height: 105%;
+
     margin: 0 0 3px 0;
+
+font-family: Georgia,Times,"Times New Roman",serif;
+    font-size: 1.2rem;
+    font-weight: normal;
+    line-height: 105%;
 
 
 }
 #opinion p{
 
-    font-size: 0.7rem;
+    font-size: 1rem;
     font-weight: normal;
     line-height: 105%;
 }
+
+#opinion p > a{
+   color: #000000;
+}
+
+#opinion p > a:hover{
+    text-decoration: none;
+    color: #005580;
+}
+
 
 #opinion h3 > a:hover{
     text-decoration: none;
@@ -226,14 +274,32 @@ a{
     color: #ffffff;
 }
 
+#multimedia h2 >a {
+    color: #FFFFFF !important;
+    display: block;
+}
+
+#multimedia h2:hover {
+    background-color: #296a87;
+    display: block;
+}
+
 #suplementos h2{
     font-family: Georgia, Times, "Times New Roman", serif;
     font-size: 1.5rem;
     font-weight: normal;
-
     color: #ffffff;
 }
 
+#suplementos h2 >a {
+    color: #FFFFFF !important;
+    display: block;
+}
+
+#suplementos h2:hover {
+    background-color: #005580;
+    display: block;
+}
 
 .sociales-thumbnails-item > p {
     color: #ffffff !important;

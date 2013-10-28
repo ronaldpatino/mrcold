@@ -25,7 +25,7 @@ class Opinion_Widget extends WP_Widget {
         $args = array(
             'category_name' => 'columnistas',
             'post_status' => 'publish',
-            'posts_per_page' => 6
+            'posts_per_page' => 4
         );
 
         $posts_categoria = new WP_Query( $args );
@@ -37,11 +37,13 @@ class Opinion_Widget extends WP_Widget {
 
             $impreso .= '<h3>';
             $impreso .= '<a href="' . get_permalink() .'">';
-            $impreso .= get_the_title();
+            $impreso .= strtoupper(get_the_title());
             $impreso .= '</a>';
             $impreso .= '</h3>';
             $impreso .= '<p>';
-            $impreso .=  substr(get_the_content('', false), 0, 110);
+            $impreso .= '<a href="' . get_permalink() .'">';
+            $impreso .=   get_summary((get_the_content('', false)),70);
+            $impreso .= '</a>';
             $impreso .= '</p>';
 
             $impreso .= '<hr/>';

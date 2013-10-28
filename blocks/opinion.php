@@ -7,12 +7,12 @@
 
 
         <div class="span4">
-            <h2>Opinion</h2>
+            <h2><a href="<?php echo get_home_url()?>/opinion" >Opini&oacute;n</a></h2>
             <?php if ( dynamic_sidebar('bloqueopinion') ) : else : endif; ?>
         </div>
 
         <div class="span4">
-            <h2>Temas</h2>
+            <h2><a href="<?php echo get_home_url()?>/temas" >Temas</a></h2>
         </div>
     </div>
 </div>
