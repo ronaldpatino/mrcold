@@ -1263,3 +1263,14 @@ function get_seccion()
 
 	return $seccion;
 }
+
+/**
+ * Sacamos el primer parrafo
+ *
+ * @param $string
+ * @return mixed|string
+ */
+function get_primer_parrafo($string){
+    $string = substr($string,0, strpos($string, ".")+4);
+    return $string;
+}

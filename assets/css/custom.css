@@ -1097,3 +1097,7 @@ form.navbar-search .input-append {
 li{
     list-style: none;
 }
+
+.primary-content > p{
+    text-align: justify;
+}

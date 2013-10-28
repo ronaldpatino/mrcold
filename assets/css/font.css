@@ -1,5 +1,6 @@
 body{
     font-family: Georgia, Times, "Times New Roman", serif;
+    line-height: 1.5;
 }
 
 a{
@@ -287,4 +288,17 @@ header > h2{
 
 .media-body > h3 > a:hover{
     text-decoration: none;
+}
+
+.primary-content > p{
+    font-size: 16px;
+}
+
+.primary-content > p > strong{
+
+    font-family: Bitter,Georgia,serif;
+    color: #000000;
+    font-size: 1.5rem;
+    font-weight: normal;
+    line-height: 105%;
 }
