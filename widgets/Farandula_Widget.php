@@ -63,8 +63,11 @@ class Farandula_Widget extends WP_Widget
             $caricatura .= "<li class='span12'>";
 
 
-            $caricatura .= '<a href="#carruselCaricatura" data-caption=" ' . get_the_title() . '"  data-img=" ' . $imagen['imagen'][0] . '" data-toggle="modal">';
+            $caricatura .= '<a href="#carruselFarandula" data-caption=" ' . get_the_title() . '"  data-img=" ' . $imagen['imagen'][0] . '" data-toggle="modal">';
             $caricatura .= '<img class="img_caricatura" src="' . $imagen['imagen'][0] . '" alt="' . get_the_title() . '" title="' . get_the_title() . '">';
+            $caricatura .= "<div class='carousel-caption carousel-caption_imagenes_noticia'>";
+            $caricatura .= '<p>' . get_the_title() . '</p>';
+            $caricatura .= '</div>';
             $caricatura .= '</a>';
             $caricatura .= "</li>";
             //Fin Loop 3
@@ -87,7 +90,7 @@ class Farandula_Widget extends WP_Widget
         $caricatura .= '<script type="text/javascript">jQuery(document).ready(function($) {';
         $caricatura .= "$('[data-toggle=\"modal\"]').click(function(e) {e.preventDefault();var imagen_sociales = $(this).data('img');var caption_sociales = $(this).data('caption');$('.modal-body #imagen_caricatura_modal').attr('src', imagen_sociales);$('.modal-footer').html('<p>'+ caption_sociales +'</p>');});";
         $caricatura .= '});</script>';
-        $caricatura .= '<div id="carruselCaricatura" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">';
+        $caricatura .= '<div id="carruselFarandula" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">';
         $caricatura .= '<div class="modal-header">';
         $caricatura .= '<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>';
         $caricatura .= '<h3><i class="icon-eye-open icon-white"></i> </h3>';
