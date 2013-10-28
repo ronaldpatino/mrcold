@@ -1,5 +1,5 @@
 <div id='content' class='row-fluid'>
-        <div class='span8 main'>
+        <div class='span8 main principal'>
             <?php if ( dynamic_sidebar('portada_titulares') ) : else : endif; ?>
         </div>
         <div class='span4 sidebar'>

@@ -1274,3 +1274,23 @@ function get_primer_parrafo($string){
     $string = substr($string,0, strpos($string, ".")+4);
     return $string;
 }
+
+/***
+ * Sacamos el sumario de una noticia sin cortar palabras
+ * @param $text
+ * @param int $length
+ * @return string
+ */
+
+function get_summary($text, $length = 155)
+{
+    $text = trim(preg_replace('~(\s+)~', ' ', strip_tags($text)));
+    if (strlen($text) > $length)
+    {
+        $cut = substr($text, 0, $length);
+        if (substr($text, $length, 1) != ' ')
+            $cut = substr($cut, 0, strrpos($cut, ' '));
+        $text = $cut.'... <strong>[Leer M&aacute;s]</strong>';
+    }
+    return $text;
+}

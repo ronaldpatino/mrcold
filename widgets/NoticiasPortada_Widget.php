@@ -55,7 +55,7 @@ class NoticiasPortada extends WP_Widget
                 $noticia_col_izq .= '<li class="span12 nomargen-abajo"><div class="thumbnail thumbnail-custom">';
 
                 $src= getphpthumburl($imagen['imagen'][0], 'w=295&h=154&zc=1');
-                $noticia_col_izq .= '<a href="' . get_permalink() . '">' . '<img class="img-cultura"  src="' . $src . '" ' . 'alt="' . get_the_title() . '  - El Mercurio de Cuenca Noticias Ecuador Azuay" title="' . get_the_title() . '  - El Mercurio de Cuenca Noticias Ecuador Azuay" >' . '</a>';
+                $noticia_col_izq .= '<a href="' . get_permalink() . '">' . '<img class="img-cultura"  src="' . $src . '" ' . 'alt="' . get_the_title() . '  - El Mercurio de Cuenca Noticias Tiempo  Ecuador Azuay" title="' . get_the_title() . '  - El Mercurio de Cuenca Noticias Tiempo  Ecuador Azuay" >' . '</a>';
                 $noticia_col_izq .= '<h3 style="height:65px;"><a href="' . get_permalink() . '">' . get_the_title() . '</a></h3>';
                 $noticia_col_izq .= '</div></li>';
                 $izquierda++;
@@ -63,7 +63,7 @@ class NoticiasPortada extends WP_Widget
             } else if ($derecha <= 5 && $izquierda == 6) {
 
                 $noticia_col_der .= '<li class="span12 nomargen-abajo"><div class="thumbnail thumbnail-custom">';
-                $noticia_col_der .= '<a href="' . get_permalink() . '">' . '<img class="img-cultura"  src="' . $src . '" ' . 'alt="' . get_the_title() . '  - El Mercurio de Cuenca Noticias Ecuador Azuay" title="' . get_the_title() . '  - El Mercurio de Cuenca Noticias Ecuador Azuay" >' . '</a>';
+                $noticia_col_der .= '<a href="' . get_permalink() . '">' . '<img class="img-cultura"  src="' . $src . '" ' . 'alt="' . get_the_title() . '  - El Mercurio de Cuenca Noticias Tiempo  Ecuador Azuay" title="' . get_the_title() . '  - El Mercurio de Cuenca Noticias Tiempo  Ecuador Azuay" >' . '</a>';
                 $noticia_col_der .= '<h3 style="height:65px;"><a href="' . get_permalink() . '">' . get_the_title() . '</a></h3>';
                 $noticia_col_der .= '</div></li>';
                 $derecha++;

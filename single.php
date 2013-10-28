@@ -64,7 +64,7 @@
 
                     $src= getphpthumburl(wp_get_attachment_url( get_post_thumbnail_id(get_the_ID()) ), 'w=660&h=330&zc=1');
 
-                    echo '<img  src="' . $src . '" ' . 'alt="' . get_the_title() . ' - El Mercurio de Cuenca Noticias Ecuador Azuay" title="' . get_the_title() . '  - El Mercurio de Cuenca Noticias Ecuador Azuay" >';
+                    echo '<img  src="' . $src . '" ' . 'alt="' . get_the_title() . ' - El Mercurio de Cuenca Noticias Tiempo  Ecuador Azuay" title="' . get_the_title() . '  - El Mercurio de Cuenca Noticias Tiempo  Ecuador Azuay" >';
 
                 }
 
@@ -83,7 +83,7 @@
                             $src= getphpthumburl($attachment->guid, 'w=310&h=350&zc=1');
 
                             $cadena = '<div class="active item">';
-                            $cadena .= "<img  src='{$src}' alt='{$attachment->post_excerpt}  - El Mercurio de Cuenca Noticias Ecuador Azuay' title='{$attachment->post_excerpt}  - El Mercurio de Cuenca Noticias Ecuador Azuay'/>";
+                            $cadena .= "<img  src='{$src}' alt='{$attachment->post_excerpt}  - El Mercurio de Cuenca Noticias Tiempo  Ecuador Azuay' title='{$attachment->post_excerpt}  - El Mercurio de Cuenca Noticias Tiempo  Ecuador Azuay'/>";
                             $cadena .= "<div class='carousel-caption carousel-caption_imagenes_noticia'>";
                             $cadena .= "<p>{$attachment->post_excerpt}</p>";
                             $cadena .= '</div>';
@@ -94,7 +94,7 @@
 
                             $src= getphpthumburl($attachment->guid, 'w=310&h=350&zc=1');
                             $cadena .= '<div class="item">';
-                            $cadena .= "<img  src='{$src}' alt='{$attachment->post_excerpt}   - El Mercurio de Cuenca Noticias Ecuador Azuay' title='{$attachment->post_excerpt}  - El Mercurio de Cuenca Noticias Ecuador Azuay'/>";
+                            $cadena .= "<img  src='{$src}' alt='{$attachment->post_excerpt}   - El Mercurio de Cuenca Noticias Tiempo  Ecuador Azuay' title='{$attachment->post_excerpt}  - El Mercurio de Cuenca Noticias Tiempo  Ecuador Azuay'/>";
                             $cadena .= "<div class='carousel-caption carousel-caption_imagenes_noticia'>";
                             $cadena .= "<p>{$attachment->post_excerpt}</p>";
                             $cadena .= '</div>';

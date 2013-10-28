@@ -42,7 +42,7 @@ class Seccion_Widget extends WP_Widget {
                 $post_imprimir .= '<a href="' . get_permalink() .'">' . get_the_title() . '</a></h3>';
                 $imagen = get_featured_image(get_the_ID());
                 $src= getphpthumburl($imagen['imagen'][0], 'w=332&h=260&zc=1');
-                $post_imprimir  .= '<img src="' . $src . '" alt="' . get_the_title() . '  - El Mercurio de Cuenca Noticias Ecuador Azuay" title="' . get_the_title() . '  - El Mercurio de Cuenca Noticias Ecuador Azuay">';
+                $post_imprimir  .= '<img src="' . $src . '" alt="' . get_the_title() . '  - El Mercurio de Cuenca Noticias Tiempo  Ecuador Azuay" title="' . get_the_title() . '  - El Mercurio de Cuenca Noticias Tiempo  Ecuador Azuay">';
                 $post_imprimir .= '<p>' . substr(limpia_contenido(get_the_content('', false)), 0, 450) . '</p>';
                 $post_imprimir .= '</div></li></ul>';
                 $primera_noticia = 1;
