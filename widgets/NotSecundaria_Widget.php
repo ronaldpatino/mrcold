@@ -20,6 +20,8 @@ class NotSecundaria_Widget extends WP_Widget {
                         'offset'=> 1,
                         'category' => $instance['categoria'],
                         'post_status' => 'publish',
+                        'orderby'          => 'post_date',
+                        'order'            => 'DESC'
         );
 
         $posts_categoria = new WP_Query( $args );

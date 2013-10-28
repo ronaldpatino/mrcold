@@ -19,8 +19,8 @@ class NotSecundariaLista extends WP_Widget {
 
         extract( $args );
 
-        $args = array( 'posts_per_page' => 4,
-                        'offset'=> 1,
+        $args = array( 'posts_per_page' => 5,
+                        'offset'=> 0,
                         'cat' => $instance['categoria'],
                         'category__not_in' => array( 16 ),
                         'post_status' => 'publish',
@@ -40,10 +40,10 @@ class NotSecundariaLista extends WP_Widget {
             $noticia_secundaria_lista_seccion .= '<div class="media ml2p">';
             $noticia_secundaria_lista_seccion .= '<a class="pull-left" href="' . get_permalink() .'">';
             $imagen = get_featured_image(get_the_ID());
-            $noticia_secundaria_lista_seccion .= '<img src="' . $imagen['imagen'][0] . '" alt="' . get_the_title() . '" title="' . get_the_title() . '">';
-            /*120*74*/
+            $src= getphpthumburl($imagen['imagen'][0], 'w=120&h=74&zc=1&q=90');
+            $noticia_secundaria_lista_seccion .= '<img src="' . $src . '" alt="' . get_the_title() . '  - El Mercurio de Cuenca Noticias Tiempo  Ecuador Azuay" title="' . get_the_title() . '  - El Mercurio de Cuenca Noticias Tiempo  Ecuador Azuay">';
             $noticia_secundaria_lista_seccion .= '</a>';
-            $noticia_secundaria_lista_seccion .= '<div class="media-body media-body-tricol">' .'<strong><a href="' . get_permalink() .'">' . get_the_title() . '</a></strong></div>';
+            $noticia_secundaria_lista_seccion .= '<div class="media-body media-body-tricol">' .'<a href="' . get_permalink() .'">' . get_the_title() . '</a></div>';
             $noticia_secundaria_lista_seccion .= '</div>';
 
         }

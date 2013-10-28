@@ -7,7 +7,7 @@ class NoticiaPrincipal extends WP_Widget {
         parent::__construct(
             'noticiaprincipal_widget', // Base ID
             'M_Noticias: Noticia Principal', // Name
-            array( 'description' => __( 'Noticia principal, contiene cabecera, imagen grande y extrato', 'text_domain' ), ) // Args
+            array( 'description' => __( 'Noticia principal, contiene cabecera, imagen grande y extracto', 'text_domain' ), ) // Args
         );
 
         $this->max_noticias = 1;
@@ -23,7 +23,9 @@ class NoticiaPrincipal extends WP_Widget {
         $args = array(
             'category_name' => 'principal',
             'post_status' => 'publish',
-            'posts_per_page' => 1
+            'posts_per_page' => 1,
+            'orderby'          => 'post_date',
+            'order'            => 'DESC'
         );
 
          //query_posts($args);

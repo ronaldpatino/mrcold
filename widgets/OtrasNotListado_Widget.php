@@ -16,8 +16,8 @@ class OtrasNotListado_Widget extends WP_Widget {
 
         extract( $args );
 
-        $args = array( 'posts_per_page' => 6,
-                        'offset'=> 1,
+        $args = array( 'posts_per_page' => 8,
+                        'offset'=> 0,
                         'cat' => $instance['categoria'],
                         'post_status' => 'publish',
         );

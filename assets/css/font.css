@@ -117,10 +117,22 @@ a{
 }
 
 .thumbnail-custom > p{
-    font-size: 0.8rem;
+    font-size: 0.9rem;
     line-height: 120%;
     text-align: justify;
 }
+
+
+.thumbnail-custom > p > a{
+    text-decoration: none;
+    color: #000000;
+}
+
+.thumbnail-custom > p > a:hover{
+    text-decoration: none;
+    color: #005580;
+}
+
 
 
 .sidebar > h2 {

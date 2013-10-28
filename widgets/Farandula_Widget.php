@@ -40,39 +40,40 @@ class Farandula_Widget extends WP_Widget
 
         $activo = 1;
 
-        $caricatura  = "<div id='caricaturamain' class='carousel slide'>";
+        $farandula  = "<div id='farandulamain' class='carousel slide'>";
 
-        $caricatura .= '<div class="carousel-inner">';
+        $farandula .= '<div class="carousel-inner">';
 
         while ( $posts_categoria->have_posts() )
         {
             $posts_categoria->the_post();
 
                 if ($activo) {
-                    $caricatura .= '<div class="item active">';
+                    $farandula .= '<div class="item active">';
                     $activo = 0;
                 } else {
-                    $caricatura .= '<div class="item">';
+                    $farandula .= '<div class="item">';
                 }
 
-            $caricatura .= '<ul class="thumbnails sociales-thumbnails">';
+            $farandula .= '<ul class="thumbnails sociales-thumbnails">';
 
             //Loop 3
             $imagen = get_featured_image(get_the_ID());
+            $src = getphpthumburl($imagen['imagen'][0], 'w=356&h=356&zc=1');
+            $farandula .= "<li class='span12'>";
 
-            $caricatura .= "<li class='span12'>";
 
+            $farandula .= '<a href="#carruselFarandula" data-caption=" ' . get_the_title() . '">';
 
-            $caricatura .= '<a href="#carruselFarandula" data-caption=" ' . get_the_title() . '"  data-img=" ' . $imagen['imagen'][0] . '" data-toggle="modal">';
-            $caricatura .= '<img class="img_caricatura" src="' . $imagen['imagen'][0] . '" alt="' . get_the_title() . '" title="' . get_the_title() . '">';
-            $caricatura .= "<div class='carousel-caption carousel-caption_imagenes_noticia'>";
-            $caricatura .= '<p>' . get_the_title() . '</p>';
-            $caricatura .= '</div>';
-            $caricatura .= '</a>';
-            $caricatura .= "</li>";
+            $farandula .= '<img class="img_farandula" src="' . $src . '" alt="' . get_the_title() . '  - El Mercurio de Cuenca Noticias Tiempo  Ecuador Azuay" title="' . get_the_title() . '  - El Mercurio de Cuenca Noticias Tiempo  Ecuador Azuay">';
+            $farandula .= "<div class='carousel-caption carousel-caption_imagenes_noticia'>";
+            $farandula .= '<p>' . get_the_title() . '</p>';
+            $farandula .= '</div>';
+            $farandula .= '</a>';
+            $farandula .= "</li>";
             //Fin Loop 3
-            $caricatura .= '</ul>';
-            $caricatura .= '</div>';
+            $farandula .= '</ul>';
+            $farandula .= '</div>';
 
 
 
@@ -81,27 +82,12 @@ class Farandula_Widget extends WP_Widget
         wp_reset_postdata();
 
 
-        $caricatura .= '</div>';
-        $caricatura .= '<a data-slide="prev" href="#caricaturamain"  class="left sociales-carousel-control">&lt;</a>';
-        $caricatura .= '<a data-slide="next" href="#caricaturamain"  class="right sociales-carousel-control">&gt;</a>';
-        $caricatura .= '</div>';
+        $farandula .= '</div>';
+        $farandula .= '<a data-slide="prev" href="#farandulamain"  class="left sociales-carousel-control">&lt;</a>';
+        $farandula .= '<a data-slide="next" href="#farandulamain"  class="right sociales-carousel-control">&gt;</a>';
+        $farandula .= '</div>';
 
-
-        $caricatura .= '<script type="text/javascript">jQuery(document).ready(function($) {';
-        $caricatura .= "$('[data-toggle=\"modal\"]').click(function(e) {e.preventDefault();var imagen_sociales = $(this).data('img');var caption_sociales = $(this).data('caption');$('.modal-body #imagen_caricatura_modal').attr('src', imagen_sociales);$('.modal-footer').html('<p>'+ caption_sociales +'</p>');});";
-        $caricatura .= '});</script>';
-        $caricatura .= '<div id="carruselFarandula" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">';
-        $caricatura .= '<div class="modal-header">';
-        $caricatura .= '<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>';
-        $caricatura .= '<h3><i class="icon-eye-open icon-white"></i> </h3>';
-        $caricatura .= '</div>';
-        $caricatura .= '<div class="modal-body">';
-        $caricatura .= '<img id="imagen_caricatura_modal" class="img_caricatura" src=""/>';
-        $caricatura .= '</div>';
-        $caricatura .= '<div class="modal-footer"></div>';
-        $caricatura .= '</div>';
-
-        echo $caricatura;
+        echo $farandula;
 
     }
 
@@ -110,7 +96,7 @@ class Farandula_Widget extends WP_Widget
         $selected = (isset($instance['categoria']) && $instance['categoria'] != -1) ? $instance['categoria'] : -1;
 
         $form = '<p>';
-        $form .= "Caricatura";
+        $form .= "farandula";
         $form .= '</p>';
         echo $form;
     }
