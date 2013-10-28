@@ -59,12 +59,14 @@ class Caricatura_Widget extends WP_Widget
 
             //Loop 3
             $imagen = get_featured_image(get_the_ID());
-
+            $src = getphpthumburl($imagen['imagen'][0], 'w=346&h=346&iar=1');
+            $src_big = getphpthumburl($imagen['imagen'][0], 'w=400&h=400&iar=1');
             $caricatura .= "<li class='span12'>";
-
-
-            $caricatura .= '<a href="#carruselCaricatura" data-caption=" ' . get_the_title() . '"  data-img=" ' . $imagen['imagen'][0] . '" data-toggle="modal">';
-            $caricatura .= '<img class="img_caricatura" src="' . $imagen['imagen'][0] . '" alt="' . get_the_title() . '" title="' . get_the_title() . '">';
+            $caricatura .= '<a href="#carruselCaricatura" data-caption=" ' . get_the_title() . '"  data-img=" ' . $src_big . '" data-toggle="modal">';
+            $caricatura .= '<img class="img_caricatura" src="' . $src . '" alt="' . get_the_title() . '  - El Mercurio de Cuenca Noticias Tiempo  Ecuador Azuay" title="' . get_the_title() . '  - El Mercurio de Cuenca Noticias Tiempo  Ecuador Azuay">';
+            $caricatura .= "<div class='carousel-caption carousel-caption_imagenes_noticia' data-interval='10000'>";
+            $caricatura .= '<p>' . get_the_title() . ' - ' . get_the_time('Y/m/d') .  '</p>';
+            $caricatura .= '</div>';
             $caricatura .= '</a>';
             $caricatura .= "</li>";
             //Fin Loop 3
@@ -93,7 +95,7 @@ class Caricatura_Widget extends WP_Widget
         $caricatura .= '<h3><i class="icon-eye-open icon-white"></i> </h3>';
         $caricatura .= '</div>';
         $caricatura .= '<div class="modal-body">';
-        $caricatura .= '<img id="imagen_caricatura_modal" class="img_caricatura" src=""/>';
+        $caricatura .= '<img id="imagen_caricatura_modal"  src=""/>';
         $caricatura .= '</div>';
         $caricatura .= '<div class="modal-footer"></div>';
         $caricatura .= '</div>';

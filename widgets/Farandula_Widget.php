@@ -59,7 +59,7 @@ class Farandula_Widget extends WP_Widget
 
             //Loop 3
             $imagen = get_featured_image(get_the_ID());
-            $src = getphpthumburl($imagen['imagen'][0], 'w=356&h=356&zc=1');
+            $src = getphpthumburl($imagen['imagen'][0], 'w=365&h=356&zc=1');
             $farandula .= "<li class='span12'>";
 
 

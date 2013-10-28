@@ -21,6 +21,8 @@ class NotSecundariaLista extends WP_Widget {
 
         $args = array( 'posts_per_page' => 5,
                         'offset'=> 0,
+                        'orderby'  => 'post_date',
+                        'order' => 'DESC',
                         'cat' => $instance['categoria'],
                         'category__not_in' => array( 16 ),
                         'post_status' => 'publish',
