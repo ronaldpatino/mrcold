@@ -54,7 +54,8 @@ get_header(); ?>
                         <li class="media mlseccion">
                             <a class="pull-left" href="<?php the_permalink();?>">
 
-                                <img class="media-object" src="<?php echo $imagen['imagen'][0]?>" alt="<?php echo  get_the_title(); ?>" title="<?php echo  get_the_title(); ?>">
+                                <?php $src = getphpthumburl($imagen['imagen'][0], 'w=170&h=124&zc=1');?>
+                                <img class="media-object" src="<?php echo $src;?>" alt="<?php echo  get_the_title(); ?>" title="<?php echo  get_the_title(); ?>">
                             </a>
                             <div class="media-body">
                                 <h3><a href="<?php the_permalink();?>"><?php the_title(); ?></a></h3>
