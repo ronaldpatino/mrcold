@@ -58,7 +58,7 @@ get_header(); ?>
                             </a>
                             <div class="media-body">
                                 <h3><a href="<?php the_permalink();?>"><?php the_title(); ?></a></h3>
-                                <p> <?php echo substr(limpia_contenido(get_the_content('', false)), 0, 100);?>... </p>
+                                <p> <?php echo get_summary(limpia_contenido(get_the_content('', false)));?></p>
                                 <p>Publicado el <?php the_time('Y/m/d') ?></p>
                             </div>
                         </li>
