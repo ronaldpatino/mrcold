@@ -65,9 +65,10 @@ class Multimedia_Widget extends WP_Widget
             $carrusel .= '<li class="span4">';
             $carrusel .= '<div class="thumbnail sociales-thumbnails-item">';
             $imagen = get_featured_image(get_the_ID());
+            $src = getphpthumburl($imagen['imagen'][0], 'w=201&h=164&zc=1');
 
             $carrusel .= '<a href="' . get_permalink() . '">' ;
-            $carrusel .= '<img src="' . $imagen['imagen'][0] . '" alt="' . get_the_title() . '" title="' . get_the_title() . '">';
+            $carrusel .= '<img src="' . $src . '" alt="' . get_the_title() . '" title="' . get_the_title() . '">';
             $carrusel .= '</a>';
             $carrusel .= '<p>'. get_the_title() .'</p>';
             $carrusel .= '</div>';
