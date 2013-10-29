@@ -7,8 +7,8 @@ class Multimedia_Widget extends WP_Widget
     {
         parent::__construct(
             'multimedia_widget', // Base ID
-            'M_Carrusel: Imagenes', // Name
-            array('description' => __('Carrusel de Multimedia con un texto en la parte inferior', 'text_domain'),)
+            'M_Carrusel: Multimdia', // Name
+            array('description' => __('Carrusel de Multimedia con un texto en la parte inferior link a una pagina no zoom', 'text_domain'),)
         );
     }
 
