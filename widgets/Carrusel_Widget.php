@@ -23,7 +23,7 @@ class Carrusel_Widget extends WP_Widget
         extract($args);
 
         $args = array(
-            'posts_per_page' => 11,
+            'posts_per_page' => 12,
             'offset' => 0,
             'cat' => $instance['categoria'],
             'post_status' => 'publish',
@@ -44,6 +44,8 @@ class Carrusel_Widget extends WP_Widget
 
         $carrusel = '<div class="carousel slide" id="' . $carussel_id . '">';
         $carrusel .= '<div class="carousel-inner">';
+
+        $pintado = false;
 
         while ( $posts_categoria->have_posts() )
         {
@@ -82,12 +84,14 @@ class Carrusel_Widget extends WP_Widget
                 $carrusel .= '</ul>';
                 $carrusel .= '</div>';
                 $counter = 1;
+                $pintado = true;
             } else {
                 $counter++;
+                $pintado = false;
             }
         }
 
-        if (count($posts_categoria) % 3 != 0) {
+        if (!$pintado) {
             $carrusel .= '</ul>';
             $carrusel .= '</div>';
         }
