@@ -26,7 +26,7 @@ class Multimedia_Widget extends WP_Widget
         $args = array(
         	'posts_per_page' => 11,
             'offset' => 0,
-            'category' => $instance['categoria'],
+            'cat' => $instance['categoria'],
             'post_status' => 'publish',
             'orderby'          => 'post_date',
             'order'            => 'DESC'
@@ -43,7 +43,6 @@ class Multimedia_Widget extends WP_Widget
 
         $carrusel  = '<div class="carousel slide" id="'. $carussel_id .'">';
         $carrusel .= '<div class="carousel-inner">';
-
 
         while ( $posts_categoria->have_posts() )
         {
