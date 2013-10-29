@@ -63,8 +63,7 @@ class Farandula_Widget extends WP_Widget
             $farandula .= "<li class='span12'>";
 
 
-            $farandula .= '<a href="#carruselFarandula" data-caption=" ' . get_the_title() . '">';
-
+            $farandula .= '<a href="' . get_permalink() . '">';
             $farandula .= '<img class="img_farandula" src="' . $src . '" alt="' . get_the_title() . '  - El Mercurio de Cuenca Noticias Tiempo  Ecuador Azuay" title="' . get_the_title() . '  - El Mercurio de Cuenca Noticias Tiempo  Ecuador Azuay">';
             $farandula .= "<div class='carousel-caption carousel-caption_imagenes_noticia'>";
             $farandula .= '<p>' . get_the_title() . '</p>';
