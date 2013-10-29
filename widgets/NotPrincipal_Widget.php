@@ -46,7 +46,7 @@ class NotPrincipal_Widget extends WP_Widget {
             $noticia_principal_seccion .= '<h3><a href="' . get_permalink() . '">' . get_the_title() . '</a></h3>';
             $imagen = get_featured_image(get_the_ID());
             $src= getphpthumburl($imagen['imagen'][0], 'w=345&h=260&zc=1&q=90');
-            $noticia_principal_seccion .= '<a href="' . get_permalink() . '">' . '<img src="' . $src . '" alt="' . get_the_title() . 'alt="' . get_the_title() . '  - El Mercurio de Cuenca Noticias Tiempo  Ecuador Azuay" title="' . get_the_title() . '  - El Mercurio de Cuenca Noticias Tiempo  Ecuador Azuay">' . '</a>';
+            $noticia_principal_seccion .= '<a href="' . get_permalink() . '">' . '<img src="' . $src . '" alt="' . get_the_title() . '  - El Mercurio de Cuenca Noticias Tiempo  Ecuador Azuay" title="' . get_the_title() . '  - El Mercurio de Cuenca Noticias Tiempo  Ecuador Azuay">' . '</a>';
             /*330 * 154*/
             $noticia_principal_seccion .= '<p>' . '<a href="' . get_permalink() . '">' . get_summary(limpia_contenido(get_the_content('', false)), 100) . '' . '</p>';
             $noticia_principal_seccion .= '</div></li></ul></div>';
