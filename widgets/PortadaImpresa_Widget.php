@@ -15,9 +15,6 @@ class PortadaImpresa extends WP_Widget {
 
     public function widget( $args, $instance ) {
 
-        if (!isset($instance['numberposts'])) {$instance['numberposts']= $this->max_noticias;}
-
-        global $post;
 
         extract( $args );
 
@@ -40,8 +37,10 @@ class PortadaImpresa extends WP_Widget {
 
             $impreso = '<ul class="thumbnails" style="margin-top: 20px;">';
             $impreso .= '<li class="span12 thumbnail portada" style="text-align: center;"><h3>Portada</h3>';
-            $impreso .= preg_replace('|\[(.+?)\](.+?\[/\\1\])?|s', '', get_the_content());
-            //$impreso .= apply_filters('the_content', get_the_content());
+            $imagen = get_featured_image(get_the_ID());
+            $src= getphpthumburl($imagen['imagen'][0], 'w=276&q=95');
+            //$impreso .= '<a href="' . get_permalink() . '">' . '<img src="' . $src . '" alt="' . get_the_title() . '  - El Mercurio de Cuenca Noticias Tiempo  Ecuador Azuay" title="' . get_the_title() . '  - El Mercurio de Cuenca Noticias Tiempo  Ecuador Azuay">' . '</a>';
+            $impreso .= '<img src="' . $src . '" alt="' . get_the_title() . '  - El Mercurio de Cuenca Noticias Tiempo  Ecuador Azuay" title="' . get_the_title() . '  - El Mercurio de Cuenca Noticias Tiempo  Ecuador Azuay">';
             $impreso .= '</li></ul>';
         }
         //remove_filter('posts_where', 'filter_where');
