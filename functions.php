@@ -307,28 +307,15 @@ function wp_get_attachment($attachment_id)
  */
 function get_featured_image($id)
 {
-    $args = array(
-        'post_type' => 'attachment',
-        'numberposts' => -1,
-        'post_status' => null,
-        'post_parent' => $id
-    );
+    $the_post_thumbnail = wp_get_attachment_image_src( get_post_thumbnail_id($id));
 
-    $attachments = get_posts($args);
+    if('' != $the_post_thumbnail ) {
+        $attachment_images['imagen'][0] =  $the_post_thumbnail[0];
+        $attachment_images['attachment_meta'] = wp_get_attachment($id);
 
-    $imagen = wp_get_attachment_image_src( get_post_thumbnail_id($id), array(730, 344));
-    if ($attachments) {
-        if ($imagen != false)
-        {
-            $attachment_images['imagen'] = $imagen;
-            $attachment_images['attachment_meta'] = wp_get_attachment($id);
-        }
-        else{
-            $attachment_images['imagen'] = array( get_bloginfo('template_url') . '/assets/img/placeholder.png');
-            $attachment_images['attachment_meta'] = null;
-        }
-
-    } else {
+    }
+    else
+    {
         $attachment_images['imagen'] = array( get_bloginfo('template_url') . '/assets/img/placeholder.png');
         $attachment_images['attachment_meta'] = null;
     }
