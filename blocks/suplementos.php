@@ -5,7 +5,7 @@
             <?php get_template_part( 'blocks/publicidadsuplementos' ); ?>
         </div>
         <div class="span8 seccion-right">
-            <h2><a href="<?php echo get_home_url()?>/Suplementos" >Suplementos</a></h2>
+            <h2><a href="<?php echo get_home_url()?>/suplementos" >Suplementos</a></h2>
             <!-- Carrusel suplementos -->
             <?php if ( dynamic_sidebar('suplementos') ) : else : endif; ?>
             <!-- Fin Carrusel suplementos -->
