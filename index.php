@@ -43,5 +43,3 @@
 <?php get_template_part( 'blocks/twitter' ); ?>
 
  <?php get_footer(); ?>
-</body>
-</html>
