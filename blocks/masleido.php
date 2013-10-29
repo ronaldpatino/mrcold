@@ -1,4 +1,5 @@
     <!-- Mas leido -->
+<!--
     <div class="row-fluid">
         <div class="span12">
             <ul class="breadcrumb">
@@ -7,4 +8,5 @@
             </ul>
         </div>
     </div>
+-->    
     <!-- Fin Mas leido -->
